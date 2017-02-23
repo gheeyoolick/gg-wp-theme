@@ -1,0 +1,101 @@
+// Footer
+// --------------------------------------------------
+
+.footer-site {
+	background: $brand-primary url(images/pattern-footer.png);
+	padding-bottom: 20px;
+	color: $brand-primary-light;	
+	a {
+		color: $brand-primary-light;
+	}
+	a:hover {
+		color: $brand-highlight;
+	}
+	z-index: 1000;
+	position: relative;
+}
+.footer-links {
+	@extend .col-xs-12;
+	@extend .col-md-8;
+	@extend .col-lg-7;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 11px;
+	padding-top: 15px;
+	line-height: 1.7;
+	@media (min-width: $screen-sm-min) {
+		line-height: 1.4;
+		padding-top: 30px;
+		padding-left: 0;
+	}
+	@media (min-width: $screen-lg-min) {
+		padding-top: 50px;
+	}
+	ul {
+		margin-top: 4px;
+	}
+	ul li {
+		display: inline-block;
+		border-right: 1px solid $brand-primary-highlight;
+		margin-right: 5px;
+		padding-right: 7px;
+	}
+	ul li:last-child {
+		border-right: none;
+		margin-right: 0;
+		padding-right: 0;
+	}
+	&:before {
+		content: "";
+		@include use-sprite("gs-sm-green");
+		float: left;
+		margin-right: 15px;
+		margin-bottom: 15px;
+	}
+}
+.footer-script {
+	@extend .col-xs-12;
+	@extend .col-md-4;
+	@extend .col-lg-5;
+	@media (min-width: $screen-sm-min) {
+		padding: 0;
+	}
+}
+.script-img {
+	width: 100%;
+	max-width: 350px;
+	height: auto;
+	margin-top: 5px;
+	@media (min-width: $screen-sm-min) {
+		max-width: 400px;
+	}
+	@media (min-width: $screen-md-min) {
+		max-width: 100%;
+		margin-top: -10px;
+		float: right;
+	}
+	@media (min-width: $screen-lg-min) {
+		margin-top: -15px;
+	}
+}
+p.copyright {
+	font-weight: 500;
+	margin: 10px 0 0 0;
+	clear: both;
+	@media (min-width: $screen-sm-min) {
+		margin: 5px 0 0 0;
+		clear: none;
+	}
+}
+.eho {
+	display: block;
+	@media (min-width: $screen-sm-min) {
+		display: inline;
+		margin-left: 7px;
+	}
+	&:before {
+		content: "";
+		@include use-sprite("icon-eho");
+		margin-right: 5px;
+	}
+}

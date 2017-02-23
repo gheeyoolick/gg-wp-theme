@@ -1,0 +1,61 @@
+// Highlights Bar
+// --------------------------------------------------
+
+.highlights {
+	background: $brand-background-light url(images/pattern-highlights.png);
+	border-bottom: 1px solid $brand-background-darker;
+	font-family: $font-family-serif;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 1.2;
+	//@include antialiased();
+	color: $brand-primary-gray-dark;
+	text-align: center;
+	@media (min-width: $screen-sm-min) {
+		font-size: 18px;
+	}
+	@media (min-width: $screen-lg-min) {
+		padding-top: 20px;
+		padding-bottom: 25px;
+	}
+	span {
+		font-size: 22px;
+		line-height: 1;
+		@media (min-width: $screen-sm-min) {
+			font-size: 30px;
+		}
+	}
+	.row {	
+		border-left: 1px solid $brand-background-darker;
+		@media (min-width: $screen-lg-min) {
+			border-left: 0;
+		}
+	}
+}
+.highlight {
+	@extend .col-xs-6;
+	@extend .col-sm-4;
+	@extend .col-lg-2;
+	border-right: 1px solid $brand-background-darker;
+	border-bottom: 1px solid $brand-background-darker;
+	height: 80px;
+	line-height: 80px;
+	overflow: hidden;
+	margin-bottom: -1px;
+	@media (min-width: $screen-lg-min) {
+		float: none;
+		display: inline-block;
+		border-bottom: 0;
+		height: 65px;
+		line-height: 65px;
+		&:last-child {
+			border-right: 0;
+		}
+	}
+	p {
+		display: inline-block;
+  		vertical-align: middle;
+		line-height: 21px;
+		margin: 0;
+	}
+}

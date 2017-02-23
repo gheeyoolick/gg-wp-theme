@@ -1,0 +1,48 @@
+// Wordpress Reqs
+// --------------------------------------------------
+
+// Captions
+.wp-caption, .gallery-caption {
+	margin-bottom: 20px;
+	max-width: 100%;
+	img[class*="wp-image-"] {
+		display: block;
+		margin: 0;
+	}
+	.wp-caption-text {
+		color: $brand-secondary;
+		font-size: 13px;
+		padding-top: 8px;
+	}
+}
+
+// Misc
+.sticky, .bypostauthor {
+	display: inherit;
+}
+
+// Image Alignment
+.pull-left, .alignleft {
+	float: left;
+	margin: 0 20px 20px 0;
+}
+.pull-right, .alignright {
+	float: right;
+	margin: 0 0 20px 20px;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 0 auto;
+}
+// Text meant only for screen readers
+.says,
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute !important;
+	width: 1px;
+	/* many screen reader and browser combinations announce broken words as they would appear visually */
+	word-wrap: normal !important;
+}

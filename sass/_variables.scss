@@ -1,0 +1,67 @@
+// Variables
+// --------------------------------------------------
+
+//== Colors
+$brand-primary: #2a3b41;  //Blue
+$brand-primary-light: #e8eded;
+$brand-primary-lightest: #e9f1f1;
+$brand-primary-medium: #d1d9da;
+$brand-primary-gray: #43585f;
+$brand-primary-gray-dark: #3d484c;
+$brand-primary-highlight: #717a7e;
+$brand-primary-border: #f8fefe;
+$brand-secondary: #483637;  //Purple
+$brand-secondary-dark: #211919;
+$brand-secondary-medium: #5d494c;
+$brand-secondary-light: #bcb6b7;
+$brand-highlight: #a2b67c; //Green
+$brand-highlight-dark: #678925;
+$brand-background: #e5e3dd; //tan
+$brand-background-light: #f1f0eb;
+$brand-background-lightest: #fbfaf6;
+$brand-background-dark: #cfccc5;
+$brand-background-darker: #c0bdb7;
+$white: #ffffff;
+$black: #000000;
+
+//== Scaffolding
+$body-bg: $brand-background;
+$text-color: $brand-secondary-dark;
+$link-color: $brand-secondary;
+$link-hover-color: $brand-highlight-dark;
+$link-hover-decoration: none;
+$border-radius-base: 0px;
+
+//== Typography
+$font-family-sans-serif: "museo-sans", Helvetica, Arial, sans-serif !default;
+$font-family-serif: "museo-slab", Georgia, "Times New Roman", Times, serif !default;
+$headings-font-family: $font-family-serif;
+$headings-font-weight: 300;
+$headings-color: $brand-primary;
+$font-size-base: 13px;
+
+//== Navbar
+$navbar-margin-bottom: 0;
+$navbar-border-radius: 0;
+
+//=== Inverted navbar
+$navbar-inverse-color: $white;
+$navbar-inverse-border: none;
+
+// Inverted navbar links
+$navbar-inverse-link-color: $white;
+$navbar-inverse-link-hover-color: $brand-secondary-light;
+$navbar-inverse-link-active-color: $white;
+$navbar-inverse-link-active-bg: $brand-secondary-medium;
+
+// Inverted navbar toggle
+$navbar-inverse-toggle-hover-bg: $brand-secondary-medium;
+$navbar-inverse-toggle-icon-bar-bg: $white;
+
+//== Buttons
+$btn-default-color: $link-color;
+$btn-default-border: $brand-background-dark;
+$btn-primary-bg: $link-color;
+
+// Forms
+$input-border-focus: $brand-secondary-medium;

@@ -1,0 +1,32 @@
+/*!
+Theme Name: Gulick Group
+Theme URI: 
+Author: Brian Cordyack
+Author URI: http://cordyack.com
+Description: Description
+Version: 1.1
+License: GNU General Public License
+License URI: license.txt
+Tags:
+*/
+
+// Core variables and mixins
+@import "variables";
+@import "mixins";
+@import "retina-sprites";
+
+// Bootstrap
+@import "bootstrap";
+
+// Core CSS
+@import "scaffolding";
+@import "header";
+@import "footer";
+@import "intro-quote";
+@import "hero";
+@import "carousel";
+@import "highlights";
+@import "content-base";
+@import "content-sidebars";
+@import "homepage";
+@import "wordpress";

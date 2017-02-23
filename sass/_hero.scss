@@ -1,0 +1,101 @@
+// Hero
+// --------------------------------------------------
+
+//Header Default
+.header-page {
+	text-align: center;
+	h1 {
+		color: $white;
+		@include text-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
+		margin: 0;
+		padding: 0;
+		line-height: 1;
+	}
+	h2 {
+		color: $brand-highlight;
+		@include text-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
+		font-size: 16px;
+		letter-spacing: 1px;
+		margin: 5px 0 0 0;
+		padding: 0;
+		@media (min-width: $screen-sm-min) {
+			font-size: 22px;
+			margin-top: 10px;
+			letter-spacing: 3px;
+		}
+	}
+}
+.header-content {
+	background: $brand-primary-gray;
+	@extend .col-xs-12;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	@media (min-width: $screen-sm-min) {
+		padding-top: 15px;
+		padding-bottom: 20px;
+	}
+}
+
+// Header with background photo
+.hero {
+	position: relative;
+	z-index: 800;
+	overflow: hidden;
+	.hero-img {
+		width: 100%;
+		height: auto;
+	}
+	.header-page {
+		background: rgba(60,71,75,0.7);
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		h1 {
+			@media (min-width: $screen-sm-min) {
+				font-size: 54px;
+			}
+			@media (min-width: $screen-lg-min) {
+				font-size: 80px;
+			}
+		}
+		h2 {
+			@media (min-width: $screen-lg-min) {
+				font-size: 30px;
+			}
+		}
+	}
+	.header-content {
+		background: none;
+	}
+}
+.hero.map {
+	padding-bottom: 40%; // This is the aspect ratio
+	padding-top: 100px;
+	height: 0;
+	overflow: hidden;
+	iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+		pointer-events: none;
+		&.clicked {
+			pointer-events: auto;
+		}
+	}
+}
+
+// Slideshow
+.hero .carousel {
+	.hero-img {
+		width: 100%;
+		height: auto;
+	}
+}
+.header-carousel + .header-page .header-content {
+	@media (max-width: $screen-xs-max) {
+		padding-left: 60px;
+		padding-right: 60px;
+	}
+}

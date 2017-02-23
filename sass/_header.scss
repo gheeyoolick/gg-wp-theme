@@ -1,0 +1,314 @@
+// Header
+// --------------------------------------------------
+
+.header-site {
+	background: $brand-secondary url(images/pattern-header.png);
+	color: $brand-secondary-light;
+	font-weight: 700;
+	@include antialiased();
+	a {
+		color: $white;
+	}
+	position: relative;
+	z-index: 900;
+}
+
+//Secondary, Utility
+.header-secondary {
+	background: transparent url(images/pattern-header2.png);
+	border-bottom: 1px solid $brand-secondary-medium;
+	height: 36px;
+	overflow: hidden;
+	li {
+		float: left;
+	}
+	li > a {
+		color: $brand-secondary-light;
+		display: block;
+		border-right: 1px solid $brand-secondary-medium;
+		padding: 10px;
+		&:before {
+			content: "";
+		}
+		&:after {
+			content: "";
+		}
+	}
+	span.text {
+		display: none;
+		@media (min-width: $screen-sm-min) {
+			display: inline;	
+		}
+	}
+	span.remove {
+		display: none;
+		@media (min-width: $screen-lg-min) {
+			display: inline;	
+		}
+	}
+}
+.nav-social {
+	a {
+		@include transition(background .3s ease);
+	}
+	a:hover {
+		background: $brand-secondary-medium;
+	}
+	li:first-child > a {
+		border-left: 1px solid $brand-secondary-medium;
+	}
+	span.text {
+		display: none;
+	}
+}
+.nav-news {
+	float: left;
+	padding: 9px 15px;
+	text-transform: uppercase;
+	color: $brand-secondary-light;
+	font-size: 11px;
+	text-align: center;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	display: none;
+	a {
+		color: $brand-highlight;
+		text-transform: none;
+		font-size: 13px;
+	}
+	a:hover {
+		color: $brand-secondary-light;
+	}
+	@media (min-width: $screen-sm-min) {
+		width: 270px;
+		display: block;
+		transition: all 0.4s linear;
+		.header-fixed & {
+			position: fixed;
+			top: 13px;
+			z-index: 1000;
+			text-align: left;
+			padding-left: 0;
+			margin-left: 55px;
+			background: transparent;
+		}
+	}
+	@media (min-width: $screen-md-min) {
+		width: 460px;
+	}
+	@media (min-width: $screen-lg-min) {
+		width: 590px;
+	}
+}
+.nav-utility {
+	ul {
+		float: right;
+	}
+	li a {
+		@include transition(background .3s ease);
+		text-transform: uppercase;
+		font-size: 11px;
+		padding-top: 8px;
+		&:before {
+			margin-bottom: -5px;
+			@media (min-width: $screen-sm-min) {
+				margin-right: 8px;
+			}
+		}
+		&:hover {
+			background: $brand-secondary-medium;
+			color: $white;
+		}
+	}
+	li:first-child a {
+		border-left: 1px solid $brand-secondary-medium;
+	}
+}
+
+//Primary
+.header-primary {
+	background: $brand-secondary url(images/pattern-header.png);
+	@include box-shadow(0 2px 3px rgba(0,0,0,0.3));
+	.header-fixed & {
+		position: fixed;
+		top: 0;
+		width: 100%;
+	}
+}
+.navbar-inverse {
+	background: transparent;
+}
+.navbar-container {
+	@media (min-width: $screen-sm-min) {
+		padding-right: 0;
+	}
+}
+.navbar-collapse {
+	padding: 0;
+}
+.navbar-wrapper {
+	@media (min-width: $screen-sm-min) {
+		float: right;	
+	}
+}
+.navbar-brand {
+	padding: 10px 0 15px 15px;
+	height: auto;
+	@media (min-width: $screen-sm-min) {
+		padding: 16px 0 0 0;
+		.header-fixed & {
+			padding-top: 12px;
+		}
+		.header-fixed &:after {
+			content: "";
+			@include use-sprite("gs-sm");
+		}
+	}
+}
+.navbar-toggle {
+	border: none;
+	margin-top: 13px;
+	margin-right: 10px;
+}
+.logo {
+	width: 190px;
+	height: auto;
+	@media (min-width: $screen-sm-min) {
+		.header-fixed & {
+			display: none;
+		}
+	}
+	@media (min-width: $screen-md-min) {
+		width: 230px;
+		height: auto;
+	}
+}
+.navbar-nav>li>a {
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 13px;
+	@media (min-width: $screen-md-min) {
+		font-size: 14px;
+	}
+}
+.nav>li>a {
+	@media (min-width: $screen-sm-min) {
+		padding: 25px 10px;
+	}
+	@media (min-width: $screen-md-min) {
+		padding: 30px 15px;
+		.header-fixed & {
+			padding: 20px 15px;
+		}
+	}
+}
+//--Dropdown Menus
+.dropdown-menu {
+	border-radius: 0;
+	@include box-shadow(0 2px 3px rgba(0,0,0,0.3));
+	background: $brand-secondary-medium !important;
+	padding-bottom: 15px !important;
+	border: 0;
+	@media (min-width: $screen-sm-min) {
+		padding-top: 15px !important;
+		right: 0;
+    	left: auto;
+	}
+	min-width: 210px;
+	li.nav-subhead {
+		padding: 14px 20px 4px 20px;
+		text-transform: uppercase;
+		font-size: 12px;
+		line-height: 1.2;
+		color: $brand-secondary-light;
+	}
+	li > ul {
+		margin-left: 10px;
+	}
+	li > ul > li.nav-subhead {
+		padding-top: 3px;
+		font-size: 11px;
+	}
+	a, > li > a {
+		font-weight: 700;
+		color: $white;
+		padding: 5px 20px !important;
+	}
+	a:hover, a:focus, >li>a:hover, >li>a:focus {
+		background: none;
+		color: $brand-secondary-light;
+	}
+	> .active > a {
+		background: $brand-secondary;
+	}
+	@media (min-width: $screen-sm-min) {
+		opacity: 0;
+		-webkit-transform-origin: top;
+		transform-origin: top;
+		-webkit-animation-fill-mode: forwards;  
+		animation-fill-mode: forwards; 
+		-webkit-transform: scale(1, 0);
+		display: block; 
+		transition: all 0.3s linear;
+		-webkit-transition: all 0.3s linear;
+	}
+}
+.open .dropdown-menu {
+	@media (min-width: $screen-sm-min) {
+		-webkit-transform: scale(1, 1);
+		transform: scale(1, 1);  
+		opacity:1;
+	}
+}
+.dropdown-menu.site-search {
+	padding: 0 20px 20px 20px;
+	@media (min-width: $screen-sm-min) {
+		padding-top: 20px;
+	}
+	min-width: 300px;
+	.icon-search {
+		background: $brand-secondary-dark;
+	}
+}
+
+//Icons
+a.dropdown-toggle:after {
+	content: "";
+	@include use-sprite("icon-caret");
+	margin-left: 8px;
+	margin-bottom: 2px;
+}
+.icon-search:before {
+	content: "";
+	@include use-sprite("icon-search");
+	display: block;
+	height: 18px;
+}
+.icon-twitter a:after {
+	@include use-sprite("icon-twitter");
+}
+.icon-facebook a:after {
+	@include use-sprite("icon-facebook");
+}
+.icon-linkedin a:after {
+	@include use-sprite("icon-linkedin");
+}
+.icon-pinterest a:after {
+	@include use-sprite("icon-pinterest");
+}
+.icon-instagram a:after {
+	@include use-sprite("icon-instagram");
+}
+.icon-flickr a:after {
+	@include use-sprite("icon-flickr");
+}
+.icon-houzz a:after {
+	@include use-sprite("icon-houzz");
+}
+.icon-contact a:before {
+	@include use-sprite("icon-contact");
+}
+.icon-email-updates a:before {
+	@include use-sprite("icon-emailsignup");
+}

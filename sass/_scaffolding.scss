@@ -1,0 +1,134 @@
+// Global Base Styles
+// --------------------------------------------------
+
+body {
+	font-weight: 300;
+	font-style: normal;
+	background: $body-bg url(images/pattern-body.png);
+	text-rendering: optimizeLegibility;
+}
+a {
+	@include transition(color .1s ease);
+	-webkit-tap-highlight-color: rgba(0,165,199,0.2);
+}
+.header-site ul, .footer-site ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+// Headers
+h1, .h1 {
+	@include antialiased();
+	font-family: $font-family-sans-serif;
+	font-size: 28px;
+	@media (min-width: $screen-sm-min) {
+		font-size: 40px;
+	}
+	@media (min-width: $screen-lg-min) {
+		font-size: 50px;
+	}
+	margin-bottom: 20px;
+}
+h2, .h2 {
+	text-transform: uppercase;
+	font-size: 24px;
+}
+h3, .h3 {
+	font-family: $font-family-sans-serif;
+	font-size: 18px;
+	font-weight: 500;
+}
+h4, .h4 {
+	text-transform: uppercase;
+	font-size: 19px;
+}
+h5, .h5 {
+	font-family: $font-family-sans-serif;
+	font-weight: 700;
+	text-transform: uppercase;
+	@include antialiased();
+}
+h6, .h6 {
+	
+}
+
+// Text Features
+strong {
+	font-weight: 700;
+}
+.more {
+	text-transform: uppercase;
+	font-weight: 700;
+	&:after {
+		content: " ›";
+	}
+}
+p.meta {
+	text-transform: uppercase;
+	font-family: $font-family-serif;
+	font-size: 16px;
+	color: $brand-primary;
+}
+p.price, p.mris {
+	text-transform: uppercase;
+	font-weight: 300;
+	font-size: 40px;
+	color: $brand-highlight-dark;
+	background: $brand-background;
+	padding: 10px 15px;
+	margin-bottom: 20px;
+	line-height: 1;
+	border: 1px solid $brand-background-darker;
+}
+p.mris {
+	font-size: 30px;
+}
+.callout {
+	@extend .h3;
+	color: $brand-secondary-medium;
+	line-height: 1.35;
+	a:not(:hover) {
+		color: $brand-secondary-medium;
+	}
+}
+
+// Icons
+.icon-directions:before {
+	content: "";
+	@include use-sprite("icon-directions");
+	margin: 3px 10px 10px 0;
+	display: block;
+	float: left;
+}
+.icon-phone:before {
+	content: "";
+	@include use-sprite("icon-phone");
+	margin: 0 10px -3px 0;
+}
+.icon-email:before {
+	content: "";
+	@include use-sprite("icon-email");
+	margin: 0 10px -5px 0;
+}
+
+// Forms & Buttons
+.wpcf7-form-control.wpcf7-textarea, .wpcf7-form-control.wpcf7-text {
+	@extend .form-control;
+}
+.wpcf7-form-control.wpcf7-submit {
+	@extend .btn;
+	@extend .btn-primary;	
+}
+.btn {
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 500;
+	border-radius: 3px;
+	padding: 10px 20px;
+	@include transition(background .3s ease);
+	&:hover {
+		background: $brand-highlight-dark;
+		border-color: $brand-highlight-dark;
+	}
+}
