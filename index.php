@@ -17,7 +17,7 @@ get_header();
 					
 					<?php
 					// Start the Loop.
-					while ( have_posts() ) : the_post();
+					if ( have_posts() ) : while ( have_posts() ) : the_post();
 					?>
 					
 					<article class="article-summary">
@@ -26,17 +26,18 @@ get_header();
 						<?php the_excerpt(); ?>
 					</article>
 
-					<?php
-					endwhile;
-					?>
+					<?php endwhile; else : ?>
+						<p>Sorry, no content matched your criteria.</p>
+					<?php endif; ?>
+					
 					<div class="article-navigation">
-					<?php
-					// Previous/next page navigation.
-					the_posts_pagination( array(
-						'prev_text'          => __( '< Previous', 'gulickgroup' ),
-						'next_text'          => __( 'Next >', 'gulickgroup' ),
-					) );
-					?>
+						<?php
+						// Previous/next page navigation.
+						the_posts_pagination( array(
+							'prev_text'          => __( '< Previous', 'gulickgroup' ),
+							'next_text'          => __( 'Next >', 'gulickgroup' ),
+						) );
+						?>
 					</div>
 					
 				</section>
