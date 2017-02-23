@@ -18,14 +18,13 @@ get_template_part( 'template-parts/content', 'header' );
 
 					<?php
 					// Start the Loop.
-					while ( have_posts() ) : the_post();
-					?>
+					if ( have_posts() ) : while ( have_posts() ) : the_post();
 					
-					<?php the_content(); ?>
-
-					<?php
-					endwhile;
-					?>
+					the_content();
+					
+					endwhile; else : ?>
+						<p>Sorry, there is no content for this page.</p>
+					<?php endif; ?>
 
 				</section>
 			</div>

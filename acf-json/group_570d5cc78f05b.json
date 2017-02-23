@@ -3,13 +3,25 @@
     "title": "Index Features",
     "fields": [
         {
+            "key": "field_570d5cdbd2d23",
+            "label": "Feature Collection",
+            "name": "feature_collection",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Collection",
             "sub_fields": [
                 {
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
                     "key": "field_570d5d2bc0df5",
                     "label": "Collection Title",
                     "name": "collection_title",
@@ -22,15 +34,15 @@
                         "class": "",
                         "id": ""
                     },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
                     "readonly": 0,
                     "disabled": 0
                 },
                 {
-                    "default_value": "",
-                    "new_lines": "wpautop",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "rows": 3,
                     "key": "field_570d5d36c0df6",
                     "label": "Collection Description",
                     "name": "collection_description",
@@ -43,21 +55,15 @@
                         "class": "",
                         "id": ""
                     },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": 3,
+                    "new_lines": "wpautop",
                     "readonly": 0,
                     "disabled": 0
                 },
                 {
-                    "layout": "vertical",
-                    "choices": {
-                        "gg_community": "Communities",
-                        "gg_home": "Homes",
-                        "gg_delivery": "Quick Deliveries"
-                    },
-                    "default_value": [],
-                    "allow_custom": 0,
-                    "save_custom": 0,
-                    "toggle": 1,
-                    "return_format": "value",
                     "key": "field_570e640e38d58",
                     "label": "Type of Content",
                     "name": "content_type",
@@ -69,17 +75,20 @@
                         "width": "",
                         "class": "",
                         "id": ""
-                    }
+                    },
+                    "choices": {
+                        "gg_community": "Communities",
+                        "gg_home": "Homes",
+                        "gg_delivery": "Quick Deliveries"
+                    },
+                    "default_value": [],
+                    "layout": "vertical",
+                    "toggle": 1,
+                    "allow_custom": 0,
+                    "save_custom": 0,
+                    "return_format": "value"
                 },
                 {
-                    "taxonomy": "category",
-                    "field_type": "select",
-                    "multiple": 0,
-                    "allow_null": 0,
-                    "return_format": "id",
-                    "add_term": 1,
-                    "load_terms": 0,
-                    "save_terms": 0,
                     "key": "field_570e65853ab05",
                     "label": "Category",
                     "name": "category",
@@ -91,26 +100,17 @@
                         "width": "",
                         "class": "",
                         "id": ""
-                    }
+                    },
+                    "taxonomy": "category",
+                    "field_type": "select",
+                    "allow_null": 0,
+                    "add_term": 1,
+                    "save_terms": 0,
+                    "load_terms": 0,
+                    "return_format": "id",
+                    "multiple": 0
                 }
-            ],
-            "min": 0,
-            "max": 0,
-            "layout": "block",
-            "button_label": "Add Collection",
-            "collapsed": "",
-            "key": "field_570d5cdbd2d23",
-            "label": "Feature Collection",
-            "name": "feature_collection",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
+            ]
         }
     ],
     "location": [
@@ -132,5 +132,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1483633103
+    "modified": 1487820114
 }

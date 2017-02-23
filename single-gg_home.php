@@ -7,7 +7,7 @@ get_header();
 
 get_template_part( 'template-parts/content', 'header' );
 
-get_template_part( 'template-parts/content', 'highlights' );
+get_template_part( 'template-parts/content', 'bullets' );
 
 ?>
 

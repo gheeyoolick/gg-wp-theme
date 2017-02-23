@@ -8,7 +8,7 @@
 
 if( $bullets ) { ?>
 		
-<section class="highlights">
+<section class="bullets">
 	<div class="container">
 		<div class="row">
 			<!--Highlights-->
@@ -16,7 +16,7 @@ if( $bullets ) { ?>
 				if ( isset( $bullet['bullet_text'] ) )
 				$text = ( $bullet['bullet_text'] ); ?>
 			
-				<div class="highlight"><p><?php echo $text; ?></p></div>
+				<div class="bullet"><p><?php echo $text; ?></p></div>
 			
 			<?php } ?>
 		</div>

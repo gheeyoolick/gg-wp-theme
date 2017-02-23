@@ -3,13 +3,25 @@
     "title": "Bullets",
     "fields": [
         {
+            "key": "field_570c0764ba8c8",
+            "label": "Bullet",
+            "name": "bullets",
+            "type": "repeater",
+            "instructions": "Add up to 6 bullets. Wrap text in a span tag to display bigger.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Bullet",
             "sub_fields": [
                 {
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
                     "key": "field_570c0780ba8c9",
                     "label": "Bullet Text",
                     "name": "bullet_text",
@@ -22,27 +34,15 @@
                         "class": "",
                         "id": ""
                     },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
                     "readonly": 0,
                     "disabled": 0
                 }
-            ],
-            "min": 0,
-            "max": 0,
-            "layout": "block",
-            "button_label": "Add Bullet",
-            "collapsed": "",
-            "key": "field_570c0764ba8c8",
-            "label": "Bullet",
-            "name": "bullets",
-            "type": "repeater",
-            "instructions": "Add up to 6 bullets. Wrap text in a span tag to display bigger.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
+            ]
         }
     ],
     "location": [
@@ -76,5 +76,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1483633137
+    "modified": 1487820203
 }

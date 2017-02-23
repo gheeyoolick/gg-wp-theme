@@ -3,17 +3,6 @@
     "title": "Floorplan Slideshow",
     "fields": [
         {
-            "library": "all",
-            "min": "",
-            "max": "",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "insert": "append",
             "key": "field_570d5591c0c37",
             "label": "Floorplan Slides",
             "name": "floorplan_slides",
@@ -26,7 +15,18 @@
                 "class": "",
                 "id": ""
             },
-            "preview_size": "medium"
+            "min": "",
+            "max": "",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "insert": "append"
         }
     ],
     "location": [
@@ -53,5 +53,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1483633153
+    "modified": 1487820239
 }

@@ -1,7 +1,7 @@
 // Highlights Bar
 // --------------------------------------------------
 
-.highlights {
+.bullets {
 	background: $brand-background-light url(images/pattern-highlights.png);
 	border-bottom: 1px solid $brand-background-darker;
 	font-family: $font-family-serif;
@@ -32,7 +32,7 @@
 		}
 	}
 }
-.highlight {
+.bullet {
 	@extend .col-xs-6;
 	@extend .col-sm-4;
 	@extend .col-lg-2;
