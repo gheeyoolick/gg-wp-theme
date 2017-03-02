@@ -12,10 +12,12 @@ get_template_part( 'template-parts/content', 'header' );
 <main class="main-content">
 	<div class="container">
 		<?php get_template_part( 'template-parts/content', 'intro' );
+		$promo_title = get_field('promo_title');
+		$promo_content = get_field('promo_content');
 		
 		if( have_rows('feature_collection') ): ?>
 		<div class="row row-content">
-			<div class="content-main full">
+			<div class="content-main <?php if ( $promo_title || $promo_content ) { echo ''; } else { echo 'full'; } ?>">
 				<?php while ( have_rows('feature_collection') ) : the_row();
 					$title = get_sub_field('collection_title');
 					$desc = get_sub_field('collection_description');
@@ -60,6 +62,17 @@ get_template_part( 'template-parts/content', 'header' );
 				
 				<?php endwhile; ?>
 			</div>
+			
+			<?php if ( $promo_title || $promo_content ) { ?>
+			<!--Sidebar Promo if available-->
+			<aside class="content-sidebar" role="complementary">
+				<div class="sidebar">
+					<h4><?php echo $promo_title; ?></h4>
+					<?php echo $promo_content; ?>
+				</div>
+			</aside>
+			<?php } ?>
+			
 		</div>
 		<?php endif; ?>
 	</div>

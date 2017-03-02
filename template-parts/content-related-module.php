@@ -8,6 +8,7 @@ $img_url = wp_get_attachment_image_url( $img, 'full', false );
 $img_srcset = wp_get_attachment_image_srcset( $img, 'full', false );
 $img_alt = get_post_meta($img, '_wp_attachment_image_alt', true);
 $summary_text = get_field( 'summary_text' );
+$subhead = get_field( 'subheader' );
 
 ?>
 <article class="module-wrapper">
@@ -15,12 +16,15 @@ $summary_text = get_field( 'summary_text' );
 		<img src="<?php echo $img_url; ?>"
 			srcset="<?php echo esc_attr( $img_srcset ); ?>"
 		 	sizes="(max-width: 786px) calc(100vw - 60px), 33.33vw" alt="<?php echo $img_alt; ?>">
-		<figcaption class="module-text">
-			<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-			<div class="module-details">
-				<?php echo $summary_text; ?>
-				<p class="more"><a href="<?php the_permalink(); ?>">Learn More</a></p>
-			</div>
+		<figcaption>
+			<a href="<?php the_permalink(); ?>" class="module-text">
+				<h3><?php the_title(); ?></h3>
+				<?php if( $subhead ) { echo '<h4>'. $subhead . '</h4>'; } ?>
+				<div class="module-details">
+					<?php echo $summary_text; ?>
+					<p class="more">Learn More</p>
+				</div>
+			</a>
 		</figcaption>
 	</figure>
 </article>

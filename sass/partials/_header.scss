@@ -203,6 +203,9 @@
 		}
 	}
 }
+.navbar-inverse .navbar-nav>.active>a {
+	background: inherit;
+}
 //--Dropdown Menus
 .dropdown-menu {
 	border-radius: 0;
@@ -215,7 +218,7 @@
 		right: 0;
     	left: auto;
 	}
-	min-width: 210px;
+	min-width: 240px;
 	li.nav-subhead {
 		padding: 14px 20px 4px 20px;
 		text-transform: uppercase;

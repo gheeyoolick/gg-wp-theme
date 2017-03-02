@@ -191,22 +191,29 @@
 	}
 }
 .module-text {
+	display: block;
 	background: rgba(251,250,246,0.75);
 	position: absolute;
 	bottom: -1px;
 	width: 100%;
 	padding: 16px 20px;
-	height: 50px;
+	height: 70px;
 	overflow: hidden;
 	@include transition(all .5s ease);
 	.module-details {
 		display: none;
 		margin-top: 15px;
-		@include transition(all .5s ease);
 	}
 	h3 {
 		text-align: center;
 		margin: 0;
+	}
+	h4 {
+		text-align: center;
+		font-size: 15px;
+		color: $brand-highlight-dark;
+		margin-top: 5px;
+		margin-bottom: 0;
 	}
 	p {
 		font-size: 13px;
@@ -217,6 +224,14 @@
 		font-size: 12px;
 		line-height: 1.2;
 		margin: 0;
+	}
+	&:hover {
+		p:not(.more) {
+			color: $text-color;
+		}
+		h3 {
+			color: $link-hover-color;
+		}
 	}
 }
 .title-text {
@@ -232,8 +247,8 @@
 	}
 }
 .module.active .module-text {
-	background: rgba(251,250,246,0.9);
-	height: 80%;
+	background: rgba(255,255,255,0.9);
+	height: 85%;
 	.module-details {
 		display: block;
 	}

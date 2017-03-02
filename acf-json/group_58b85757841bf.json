@@ -1,12 +1,28 @@
 {
-    "key": "group_570f00650b93f",
-    "title": "Sidebar: Contact",
+    "key": "group_58b85757841bf",
+    "title": "Sidebar: Model Home",
     "fields": [
         {
-            "key": "field_570f009e28300",
-            "label": "Phone",
-            "name": "contact_phone",
-            "type": "text",
+            "key": "field_58b8575787a09",
+            "label": "Google Map Link",
+            "name": "model_map_src",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_58b8575787a17",
+            "label": "Address",
+            "name": "model_address",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -17,34 +33,14 @@
             },
             "default_value": "",
             "placeholder": "",
-            "prepend": "",
-            "append": "",
             "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
+            "rows": 2,
+            "new_lines": "br"
         },
         {
-            "key": "field_570f00cb28301",
-            "label": "Email Address",
-            "name": "contact_email",
-            "type": "email",
-            "instructions": "This will show up as \"Email Us\"",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_570f017d2e161",
+            "key": "field_58b8575787a23",
             "label": "Additional Details",
-            "name": "contact_details",
+            "name": "model_additional_details",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -68,23 +64,9 @@
                 "operator": "==",
                 "value": "gg_community"
             }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "gg_home"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "gg_delivery"
-            }
         ]
     ],
-    "menu_order": 3,
+    "menu_order": 2,
     "position": "side",
     "style": "default",
     "label_placement": "top",
@@ -92,5 +74,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1488476088
+    "modified": 1488476785
 }

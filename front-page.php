@@ -44,12 +44,14 @@ $bg_image = get_field( 'homepage_background_image' ); ?>
 							<img src="<?php echo $img; ?>"
 							 srcset="<?php echo $img_srcset; ?>"
 							 sizes="(max-width: 786px) calc(100vw - 60px), 33.33vw" alt="<?php echo $img_alt; ?>">
-							<figcaption class="module-text">
-								<h3><a href="<?php echo $link; ?>"><?php echo $title; ?></a></h3>
-								<div class="module-details">
-									<p><?php echo $desc; ?></p>
-									<p class="more"><a href="<?php echo $link; ?>">Learn More</a></p>
-								</div>
+							<figcaption>
+								<a href="<?php echo $link; ?>" class="module-text">
+									<h3><?php echo $title; ?></h3>
+									<div class="module-details">
+										<p><?php echo $desc; ?></p>
+										<p class="more">Learn More</p>
+									</div>
+								</a>
 							</figcaption>
 						</figure>
 					</article>
