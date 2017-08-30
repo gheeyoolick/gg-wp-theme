@@ -1,0 +1,15 @@
+{
+	"name": "gulick-group",
+	"version": "1.2.0",
+	"description": "Gulick Group Wordpress Theme",
+	"main": "index.js",
+	"scripts": {
+		"build": "compass compile",
+		"watch": "compass watch",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Brian Cordyack",
+	"dependencies": {
+		
+	}
+}
