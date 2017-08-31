@@ -6,6 +6,13 @@ body {
 	font-style: normal;
 	background: $body-bg url(images/pattern-body.png);
 	text-rendering: optimizeLegibility;
+	padding-top: $header-primary-height + $header-secondary-height;
+	@media (min-width: $screen-sm-min) {
+		padding-top: $header-primary-height-sm + $header-secondary-height;
+	}
+	@media (min-width: $screen-lg-min) {
+		padding-top: $header-primary-height-lg + $header-secondary-height;
+	}
 }
 a {
 	@include transition(color .1s ease);

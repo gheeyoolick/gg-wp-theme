@@ -9,15 +9,25 @@
 	a {
 		color: $white;
 	}
-	position: relative;
+	position: fixed;
+	top: 0;
+	width: 100%;
 	z-index: 900;
+	@include box-shadow(0 2px 3px rgba(0,0,0,0.3));
+	@include transition(margin-top .3s);
+	&.header-fixed {
+		margin-top: -$header-secondary-height;
+	}
+	body.logged-in & { // account for WP admin bar
+		top: 32px;
+	}
 }
 
 //Secondary, Utility
 .header-secondary {
 	background: transparent url(images/pattern-header2.png);
 	border-bottom: 1px solid $brand-secondary-medium;
-	height: 36px;
+	height: $header-secondary-height;
 	overflow: hidden;
 	li {
 		float: left;
@@ -36,7 +46,7 @@
 	}
 	span.text {
 		display: none;
-		@media (min-width: $screen-sm-min) {
+		@media (min-width: $screen-md-min) {
 			display: inline;	
 		}
 	}
@@ -93,6 +103,9 @@
 			margin-left: 55px;
 			background: transparent;
 		}
+		body.logged-in .header-fixed & { // account for WP admin bar
+			top: 45px;
+		}
 	}
 	@media (min-width: $screen-md-min) {
 		width: 460px;
@@ -129,12 +142,12 @@
 //Primary
 .header-primary {
 	background: $brand-secondary url(images/pattern-header.png);
-	@include box-shadow(0 2px 3px rgba(0,0,0,0.3));
+	/*@include box-shadow(0 2px 3px rgba(0,0,0,0.3));
 	.header-fixed & {
 		position: fixed;
 		top: 0;
 		width: 100%;
-	}
+	}*/
 }
 .navbar-inverse {
 	background: transparent;

@@ -4,7 +4,7 @@ jQuery(document).ready(function($){
 	var headerWrap = $("#header-site");
 	$(window).scroll(function() {    
 		var scroll = $(this).scrollTop();
-		if (scroll >= 36) {
+		if (scroll >= 40) {
 			headerWrap.addClass("header-fixed");
 		} else {
 			headerWrap.removeClass("header-fixed");

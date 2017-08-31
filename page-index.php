@@ -27,6 +27,7 @@ get_template_part( 'template-parts/content', 'header' );
 				
 				<section class="content-section">
 					<div class="row">
+						
 						<article class="module-wrapper">
 							<figure class="module title">
 								<img src="<?php echo get_template_directory_uri(); ?>/images/house-thumbnail-placeholder.png">
@@ -36,6 +37,7 @@ get_template_part( 'template-parts/content', 'header' );
 								</figcaption>
 							</figure>
 						</article>
+						
 						<?php
 						$content1 = ' ';
 						$content2 = ' ';
@@ -48,12 +50,23 @@ get_template_part( 'template-parts/content', 'header' );
 						endforeach;
 						?>
 						
+					<?php $c = 0; ?>
+						
 						<?php $args = array('post_type' => array($content1,$content2,$content3), 'category'  => $category, 'orderby'=> 'title', 'order' => 'ASC', 'posts_per_page' => -1);
 						$featureposts = get_posts( $args );
 						foreach ( $featureposts as $post ) : setup_postdata( $post );
 						
-						get_template_part( 'template-parts/content', 'related-module' );
+						get_template_part( 'template-parts/content', 'related-module' ); ?>
 						
+					<?php
+					// Add a clearfix after every 3 item to get clean grid
+					if($c % 3 == 1) {
+					?>
+					<div class="clearfix"></div>
+					<?php }
+					$c++; ?>
+					
+						<?php
 						endforeach; 
 						wp_reset_postdata();?>
 						
