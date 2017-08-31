@@ -125,7 +125,7 @@
 		padding-top: 8px;
 		&:before {
 			margin-bottom: -5px;
-			@media (min-width: $screen-sm-min) {
+			@media (min-width: $screen-md-min) {
 				margin-right: 8px;
 			}
 		}
