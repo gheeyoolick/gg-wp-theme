@@ -90,8 +90,8 @@
 	a:hover {
 		color: $brand-secondary-light;
 	}
-	@media (min-width: $screen-sm-min) {
-		width: 270px;
+	@media (min-width: 600px) {
+		width: 250px;
 		display: block;
 		transition: all 0.4s linear;
 		.header-fixed & {
@@ -108,10 +108,10 @@
 		}
 	}
 	@media (min-width: $screen-md-min) {
-		width: 460px;
+		width: 370px;
 	}
 	@media (min-width: $screen-lg-min) {
-		width: 590px;
+		width: 570px;
 	}
 }
 .nav-utility {
@@ -142,15 +142,10 @@
 //Primary
 .header-primary {
 	background: $brand-secondary url(images/pattern-header.png);
-	/*@include box-shadow(0 2px 3px rgba(0,0,0,0.3));
-	.header-fixed & {
-		position: fixed;
-		top: 0;
-		width: 100%;
-	}*/
 }
 .navbar-inverse {
 	background: transparent;
+	border: none;
 }
 .navbar-container {
 	@media (min-width: $screen-sm-min) {
@@ -197,7 +192,7 @@
 		height: auto;
 	}
 }
-.navbar-nav>li>a {
+.navbar-nav > li > a {
 	text-transform: uppercase;
 	font-weight: 700;
 	font-size: 13px;
@@ -205,7 +200,7 @@
 		font-size: 14px;
 	}
 }
-.nav>li>a {
+.nav > li > a {
 	@media (min-width: $screen-sm-min) {
 		padding: 25px 10px;
 	}
@@ -213,6 +208,14 @@
 		padding: 30px 15px;
 		.header-fixed & {
 			padding: 20px 15px;
+		}
+	}
+	&.icon-search {
+		@media (min-width: $screen-sm-min) {
+			line-height: .95;
+		}
+		@media (min-width: $screen-md-min) {
+			line-height: .9;
 		}
 	}
 }
@@ -233,7 +236,7 @@
 	}
 	min-width: 240px;
 	li.nav-subhead {
-		padding: 14px 20px 4px 20px;
+		padding: 20px 20px 4px 20px;
 		text-transform: uppercase;
 		font-size: 12px;
 		line-height: 1.2;
@@ -243,13 +246,14 @@
 		margin-left: 10px;
 	}
 	li > ul > li.nav-subhead {
-		padding-top: 3px;
+		padding-top: 5px;
 		font-size: 11px;
 	}
 	a, > li > a {
 		font-weight: 700;
 		color: $white;
-		padding: 5px 20px !important;
+		padding: 2px 20px !important;
+		display: block;
 	}
 	a:hover, a:focus, >li>a:hover, >li>a:focus {
 		background: none;

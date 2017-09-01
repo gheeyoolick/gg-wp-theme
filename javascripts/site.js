@@ -18,7 +18,7 @@ jQuery(document).ready(function($){
 	
 	// Limit max height of hero container to screen height
 	var pageHeight = $(window).height();
-	var navHeight = pageHeight - 116; // based on height of nav bar
+	var navHeight = pageHeight - 110; // based on height of nav bar
 	var pageHeightCSS = navHeight + "px";
 	$(".hero").css( "max-height", pageHeightCSS );
 	
