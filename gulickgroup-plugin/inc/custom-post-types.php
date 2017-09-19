@@ -48,7 +48,7 @@ function create_post_type() {
 				'parent_item_colon'  => '',
     			'menu_name'          => 'Homes'
 			),
-		'taxonomies' => array('category'),
+		'taxonomies' => array('category', 'series'),
 		'public' => true,
 		'has_archive' => false,
 		'menu_icon'   => 'dashicons-admin-home',

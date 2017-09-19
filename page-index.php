@@ -23,6 +23,7 @@ get_template_part( 'template-parts/content', 'header' );
 					$desc = get_sub_field('collection_description');
 					$content_select = get_sub_field('content_type');
 					$category = get_sub_field('category');
+					$series = get_sub_field('series');
 				?>
 				
 				<section class="content-section">
@@ -52,10 +53,27 @@ get_template_part( 'template-parts/content', 'header' );
 						
 					<?php $c = 0; ?>
 						
-						<?php $args = array('post_type' => array($content1,$content2,$content3), 'category'  => $category, 'orderby'=> 'title', 'order' => 'ASC', 'posts_per_page' => -1);
+						<?php
+						$series_query = '';
+						if ( $series ) {
+							$series_query = array(
+								'taxonomy' => 'series',
+								'field' => 'id',
+								'terms' => $series,
+								'include_children' => false
+							);
+						}
+						$args = array(
+							'tax_query' => array( $series_query ),
+							'post_type' => array($content1,$content2,$content3),
+							'category'  => $category,
+							'orderby'=> 'title',
+							'order' => 'ASC',
+							'posts_per_page' => -1
+						);
 						$featureposts = get_posts( $args );
 						foreach ( $featureposts as $post ) : setup_postdata( $post );
-						
+
 						get_template_part( 'template-parts/content', 'related-module' ); ?>
 						
 					<?php

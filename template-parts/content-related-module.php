@@ -19,7 +19,17 @@ $subhead = get_field( 'subheader' );
 		<figcaption>
 			<a href="<?php the_permalink(); ?>" class="module-text">
 				<h3><?php the_title(); ?></h3>
-				<?php if( $subhead ) { echo '<h4>'. $subhead . '</h4>'; } ?>
+				<?php
+				if ( $subhead ) {
+					echo '<h4>'. $subhead . '</h4>';
+				} else if ( has_term( '', 'series' ) ) {
+					$terms = get_the_term_list( $post->ID, 'series' );
+					$terms = strip_tags( $terms );
+					echo '<h4>'. $terms . '</h4>';
+				} else {
+					echo '';
+				}
+				?>
 				<div class="module-details">
 					<?php echo $summary_text; ?>
 					<p class="more">Learn More</p>

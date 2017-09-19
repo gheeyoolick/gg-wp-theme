@@ -103,7 +103,29 @@
                     },
                     "taxonomy": "category",
                     "field_type": "select",
-                    "allow_null": 0,
+                    "allow_null": 1,
+                    "add_term": 1,
+                    "save_terms": 0,
+                    "load_terms": 0,
+                    "return_format": "id",
+                    "multiple": 0
+                },
+                {
+                    "key": "field_59c149171f2e2",
+                    "label": "Series",
+                    "name": "series",
+                    "type": "taxonomy",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": "series",
+                    "field_type": "select",
+                    "allow_null": 1,
                     "add_term": 1,
                     "save_terms": 0,
                     "load_terms": 0,
@@ -132,5 +154,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1487820114
+    "modified": 1505841168
 }
