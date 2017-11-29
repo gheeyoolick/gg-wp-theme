@@ -3,6 +3,25 @@
     "title": "Sidebar: Model Home",
     "fields": [
         {
+            "key": "field_5a1f2158856ed",
+            "label": "Title",
+            "name": "model_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_58b8575787a09",
             "label": "Google Map Link",
             "name": "model_map_src",
@@ -81,5 +100,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1504237787
+    "modified": 1511989620
 }
