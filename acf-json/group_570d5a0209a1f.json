@@ -106,7 +106,7 @@
             "elements": "",
             "min": "",
             "max": "",
-            "return_format": "object"
+            "return_format": "id"
         }
     ],
     "location": [
@@ -140,5 +140,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1487820197
+    "modified": 1511991279
 }

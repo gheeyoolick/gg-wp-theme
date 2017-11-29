@@ -33,7 +33,7 @@ get_template_part( 'template-parts/content', 'bullets' );
 					'order' => 'ASC',
 					'posts_per_page' => -1
 				));
-				if ( $the_query->have_posts() ) : ?>
+				if ( ! empty( $connections ) && $the_query->have_posts() ) : ?>
 				<section class="content-section">
 					<h2>Details About This Community</h2>
 					<div class="row">
@@ -56,7 +56,7 @@ get_template_part( 'template-parts/content', 'bullets' );
 					'order' => 'ASC',
 					'posts_per_page' => -1
 				));
-				if ( $the_query2->have_posts() ) : ?>
+				if ( ! empty( $connections ) && $the_query2->have_posts() ) : ?>
 				<section class="content-section">
 					<h2>Details About This Home Model</h2>
 					<div class="row">
