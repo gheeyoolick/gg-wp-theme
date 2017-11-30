@@ -6,10 +6,10 @@
 	padding-bottom: 20px;
 	color: $brand-primary-light;	
 	a {
-		color: $brand-primary-light;
+		color: $brand-highlight;
 	}
 	a:hover {
-		color: $brand-highlight;
+		color: $brand-primary-medium;
 	}
 	z-index: 1000;
 	position: relative;
@@ -18,21 +18,43 @@
 	@extend .col-xs-12;
 	@extend .col-md-8;
 	@extend .col-lg-7;
-	font-weight: 700;
+	position: relative;
+	font-weight: 400;
 	text-transform: uppercase;
 	font-size: 11px;
-	padding-top: 15px;
-	line-height: 1.7;
-	@media (min-width: $screen-sm-min) {
-		line-height: 1.4;
-		padding-top: 30px;
-		padding-left: 0;
+	line-height: 1.8;
+	margin-top: 20px;
+	color: $brand-primary-gray-light;
+	text-align: center;
+	@media (min-width: $screen-md-min) {
+		text-align: left;
+		margin-top: 30px;
+		line-height: 1.6;
 	}
 	@media (min-width: $screen-lg-min) {
-		padding-top: 50px;
+		margin-top: 50px;
+	}
+	&:before {
+		content: "";
+		@include use-sprite("gs-sm-green");
+		margin-bottom: 10px;
+		@media (min-width: $screen-md-min) {
+			position: absolute;
+			left: 0;
+			top: 0;
+			margin-bottom: 0;
+		}
+	}
+	.text {
+		@media (min-width: $screen-md-min) {
+			margin-left: 32px;
+			padding-left: 15px;
+			border-left: 1px solid $brand-highlight;
+		}
 	}
 	ul {
-		margin-top: 4px;
+		margin-bottom: 9px;
+		font-weight: 500;
 	}
 	ul li {
 		display: inline-block;
@@ -45,20 +67,17 @@
 		margin-right: 0;
 		padding-right: 0;
 	}
-	&:before {
-		content: "";
-		@include use-sprite("gs-sm-green");
-		float: left;
-		margin-right: 15px;
-		margin-bottom: 15px;
-	}
 }
 .footer-script {
 	@extend .col-xs-12;
 	@extend .col-md-4;
 	@extend .col-lg-5;
+	text-align: center;
 	@media (min-width: $screen-sm-min) {
 		padding: 0;
+	}
+	@media (min-width: $screen-md-min) {
+		text-align: left;
 	}
 }
 .script-img {
@@ -76,15 +95,6 @@
 	}
 	@media (min-width: $screen-lg-min) {
 		margin-top: -15px;
-	}
-}
-p.copyright {
-	font-weight: 500;
-	margin: 10px 0 0 0;
-	clear: both;
-	@media (min-width: $screen-sm-min) {
-		margin: 5px 0 0 0;
-		clear: none;
 	}
 }
 .eho {

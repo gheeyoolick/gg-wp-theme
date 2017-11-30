@@ -4,12 +4,6 @@
 .home {
 	background: $brand-primary url(images/pattern-footer.png);
 	.script-img {
-		max-width: 270px;
-		margin-top: -270px;
-		@media (min-width: $screen-sm-min) {
-			max-width: 300px;
-			margin-top: -150px;
-		}
 		@media (min-width: $screen-md-min) {
 			max-width: 400px;
 			margin-top: -83px;
@@ -19,23 +13,8 @@
 		}
 	}
 	.footer-links {
-		padding-left: 80px;
-		&:before {
-			display: none;
-		}
-		@media (min-width: $screen-sm-min) {
-			padding-left: 80px;
-			padding-top: 20px;
-		}
-		@media (min-width: $screen-md-min) {
-			&:before {
-				display: inline-block;
-			}
-			padding-left: 0;
-			padding-top: 20px;
-		}
 		@media (min-width: $screen-lg-min) {
-			padding-top: 30px;
+			margin-top: 30px;
 		}
 	}
 }
@@ -84,13 +63,13 @@
 	h1:before {
 		content: "";
 		@include use-sprite("gs");
-		display: block;
+		display: block !important;
 		margin-left: auto;
 		margin-right: auto;
 		margin-bottom: 10px;
 		@media (min-width: $screen-lg-min) {
 			@include use-sprite("gs-large");
-			display: block;
+			display: block !important;
 			margin-bottom: 25px;
 		}
 	}
