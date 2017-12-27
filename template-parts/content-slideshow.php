@@ -8,6 +8,21 @@ if( $header_slideshow ) : ?>
 
 <div id="header-carousel" class="header-carousel carousel slide" data-ride="carousel" data-interval="false">
 	
+	 <!-- Indicators -->
+	<ol class="carousel-indicators">
+
+		<?php
+		$c=0;
+		foreach ( $header_slideshow as $slide ):
+		?>
+		<li data-target="#header-carousel" data-slide-to="<?php echo $c; ?>" <?php if($c==0) { ?>class="active"<?php } ?> ></li>
+		<?php
+		$c++;
+		endforeach;
+		?>
+				
+	</ol>
+	
 	<div class="carousel-inner" role="listbox">
 	
 	<?php
@@ -37,6 +52,8 @@ if( $header_slideshow ) : ?>
 		<span class="arrow-right" aria-hidden="true"></span>
 		<span class="sr-only">Next</span>
 	</a>
+		
+	<a href="#" class="btn btn-default show-caption">Caption</a>
 	
 </div>
 

@@ -21,6 +21,7 @@ jQuery(document).ready(function($){
 	var navHeight = pageHeight - 110; // based on height of nav bar
 	var pageHeightCSS = navHeight + "px";
 	$(".hero").css( "max-height", pageHeightCSS );
+	$(".header-carousel").css( "max-height", pageHeightCSS );
 	
 	// Toggle captions
 	$( ".show-caption" ).click(function(event) {

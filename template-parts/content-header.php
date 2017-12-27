@@ -15,7 +15,6 @@ $header_map = get_field( 'header_background_map' );
 <div class="hero">
 	<?php get_template_part( 'template-parts/content', 'slideshow' ); ?>
 	<?php get_template_part( 'template-parts/content', 'header-text' ); ?>
-	<a href="#" class="btn btn-default show-caption">Caption</a>
 </div>
 
 <?php } else if( $header_image ) { ?>

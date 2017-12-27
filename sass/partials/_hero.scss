@@ -26,7 +26,7 @@
 	}
 }
 .header-content {
-	background: $brand-primary-gray;
+	background: $title-bg;
 	@extend .col-xs-12;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -41,15 +41,21 @@
 	position: relative;
 	z-index: 800;
 	overflow: hidden;
+	@media (max-width: $screen-xs-max) {
+		max-height: 100% !important;
+	}
 	.hero-img {
 		width: 100%;
 		height: auto;
 	}
 	.header-page {
-		background: rgba(60,71,75,0.7);
-		position: absolute;
-		bottom: 0;
-		width: 100%;
+		background: $title-bg;
+		@media (min-width: $screen-sm-min) {
+			background: rgba(60,71,75,0.7);
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+		}
 		h1 {
 			@media (min-width: $screen-sm-min) {
 				font-size: 54px;
@@ -91,11 +97,5 @@
 	.hero-img {
 		width: 100%;
 		height: auto;
-	}
-}
-.header-carousel + .header-page .header-content {
-	@media (max-width: $screen-xs-max) {
-		padding-left: 60px;
-		padding-right: 60px;
 	}
 }
