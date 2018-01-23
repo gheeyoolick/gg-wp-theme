@@ -103,23 +103,25 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 					$attributes .= ' ' . $attr . '="' . $value . '"';
 				}
 			}
+			
+			$desc = '';
+			if ( ! empty( $item->description ) ) {
+				$desc = '<p class="desc">' . $item->description . '</p>';
+			}
+			
+			$thumbnail = '';
+			if ( has_post_thumbnail( $item->object_id ) ) {
+				$thumbnail = get_the_post_thumbnail( $item->object_id, 'thumbnail' );
+			}
 
 			$item_output = $args->before;
 
-			/*
-			 * Glyphicons
-			 * ===========
-			 * Since the the menu item is NOT a Divider or Header we check the see
-			 * if there is a value in the attr_title property. If the attr_title
-			 * property is NOT null we apply it as the class name for the glyphicon.
-			 */
-			if ( ! empty( $item->attr_title ) )
-				$item_output .= '<a'. $attributes .'><span class="glyphicon ' . esc_attr( $item->attr_title ) . '"></span>&nbsp;';
-			else
-				$item_output .= '<a'. $attributes .'>';
-
+			$item_output .= '<a'. $attributes .'>';
+			$item_output .= $thumbnail;
+			$item_output .= '<span>';
 			$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-			$item_output .= ( $args->has_children && 0 === $depth ) ? '</a>' : '</a>';
+			$item_output .= ( $args->has_children && 0 === $depth ) ? '</a>' : $desc . '</a>';
+			$item_output .= '</span>';
 			$item_output .= $args->after;
 
 			$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );

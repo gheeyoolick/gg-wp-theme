@@ -29,9 +29,8 @@ get_header(); ?>
 					
 					<?php
 					// Display the feature image
-					if( get_field('feature_image') )
-					{
-						echo wp_get_attachment_image( get_field('feature_image'), 'full', 'false', array( 'class' => 'wp-post-image', ) );
+					if ( has_post_thumbnail() ) {
+						the_post_thumbnail( 'large' );
 					}
 					
 					// Display the content

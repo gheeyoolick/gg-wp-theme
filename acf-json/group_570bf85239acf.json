@@ -3,6 +3,25 @@
     "title": "Price & MRIS",
     "fields": [
         {
+            "key": "field_5a64e0f319d86",
+            "label": "Sold?",
+            "name": "price_sold",
+            "type": "true_false",
+            "instructions": "If this is checked all price and MRIS data will be replaced with a \"Sold!\" message.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_570bf8523d602",
             "label": "Price Label",
             "name": "price_label",
@@ -19,9 +38,7 @@
             "placeholder": "",
             "prepend": "",
             "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
+            "maxlength": ""
         },
         {
             "key": "field_570bf8523d610",
@@ -40,9 +57,7 @@
             "placeholder": "",
             "prepend": "$",
             "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
+            "maxlength": ""
         },
         {
             "key": "field_570bf8523d61e",
@@ -61,9 +76,7 @@
             "placeholder": "",
             "prepend": "",
             "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
+            "maxlength": ""
         },
         {
             "key": "field_570bf8523d62c",
@@ -82,9 +95,7 @@
             "placeholder": "",
             "prepend": "MRIS ID:",
             "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
+            "maxlength": ""
         }
     ],
     "location": [
@@ -104,5 +115,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1487820232
+    "modified": 1516651800
 }

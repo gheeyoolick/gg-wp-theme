@@ -1,84 +1,7 @@
 {
     "key": "group_570d5a0209a1f",
-    "title": "Summary & Connections",
+    "title": "Content Connections",
     "fields": [
-        {
-            "key": "field_571520254d28a",
-            "label": "Summary",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_570d5a1c7f7f7",
-            "label": "Summary Image",
-            "name": "summary_image",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "id",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_570d5a527f7f8",
-            "label": "Summary Text",
-            "name": "summary_text",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": 2,
-            "new_lines": "wpautop",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_571520184d289",
-            "label": "Content Connections",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
         {
             "key": "field_5715203fb94ad",
             "label": "Connections",
@@ -132,7 +55,7 @@
             }
         ]
     ],
-    "menu_order": 1,
+    "menu_order": 6,
     "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
@@ -140,5 +63,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1511991279
+    "modified": 1516658412
 }

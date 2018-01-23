@@ -2,10 +2,13 @@
 /*
 Plugin Name: Gulick Group
 Description: Theme independent features: custom post types, custom taxonomy, sidebars and widgets, custom nav walker, acf 2 way connections
-Version: 1.2
+Version: 1.3
 Author: Brian Cordyack
 Author URI: http://cordyack.com
 */
+
+// Add Featured Image Support
+add_theme_support( 'post-thumbnails' );
 
 // Increase JPEG Compression Quality
 add_filter('jpeg_quality', function($arg){

@@ -77,19 +77,38 @@ p.meta {
 	font-size: 16px;
 	color: $brand-primary;
 }
-p.price, p.mris {
+p.price, p.mris, p.sold {
 	text-transform: uppercase;
 	font-weight: 300;
 	font-size: 40px;
-	color: $brand-highlight-dark;
-	background: $brand-background;
+	color: $white;
+	background: $brand-highlight-dark;
 	padding: 10px 15px;
 	margin-bottom: 20px;
 	line-height: 1;
-	border: 1px solid $brand-background-darker;
+	//border: 1px solid $brand-background-darker;
 }
 p.mris {
 	font-size: 30px;
+	color: $brand-highlight-dark;
+	background: $brand-background;
+}
+p.sold {
+	text-align: center;
+//	color: $white;
+	background: $brand-alert;
+	border: 4px solid $white;
+	font-weight: 700;
+	padding: 15px 20px;
+	@include box-shadow(0 1px 2px rgba(0,0,0,0.3));
+	font-size: 35px;
+	@media (min-width: $screen-sm-min) {
+		margin-top: 10px;
+		font-size: 40px;
+	}
+	@media (min-width: $screen-lg-min) {
+		font-size: 45px;
+	}
 }
 .callout {
 	@extend .h3;

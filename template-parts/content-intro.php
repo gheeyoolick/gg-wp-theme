@@ -25,11 +25,18 @@ if( $intro_text ) { ?>
 	<?php } ?>
 	
 	<?php
+	$sold = get_field( 'price_sold' );
 	$price_header = get_field( 'price_label' );
 	$price = get_field( 'price' );
 	$mris_header = get_field( 'mris_label' );
 	$mris = get_field( 'mris' );
-	if( $price ) { ?>
+				   
+	if( $sold == 1 ) { ?>
+		<div class="intro-details details">
+			<p class="sold">Sold!</p>
+		</div>
+	<?php
+	} else if( $price ) { ?>
 		<!--Details-->
 		<div class="intro-details details">
 			<?php if( $price_header ) {
@@ -45,5 +52,6 @@ if( $intro_text ) { ?>
 			?>
 		</div>
 	<?php } ?>
+	
 </div>
 <?php } ?>

@@ -90,6 +90,12 @@
 			pointer-events: auto;
 		}
 	}
+	.header-page {
+		background: rgba(60,71,75,0.7);
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+	}
 }
 
 // Slideshow

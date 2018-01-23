@@ -6,7 +6,7 @@
 $header_slideshow = get_field( 'header_background_slideshow' );
 if( $header_slideshow ) : ?>
 
-<div id="header-carousel" class="header-carousel carousel slide" data-ride="carousel" data-interval="false">
+<div id="header-carousel" class="header-carousel carousel slide" data-ride="carousel">
 	
 	 <!-- Indicators -->
 	<ol class="carousel-indicators">

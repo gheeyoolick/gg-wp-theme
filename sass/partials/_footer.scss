@@ -11,8 +11,10 @@
 	a:hover {
 		color: $brand-primary-medium;
 	}
-	z-index: 1000;
-	position: relative;
+	@media (min-width: $screen-md-min) {
+		z-index: 1000;
+		position: relative;
+	}
 }
 .footer-links {
 	@extend .col-xs-12;

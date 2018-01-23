@@ -202,6 +202,9 @@
 		font-size: 14px;
 	}
 }
+.navbar-nav > li > a > img {
+	display: none;
+}
 .nav > li > a {
 	@media (min-width: $screen-sm-min) {
 		padding: 25px 10px;
@@ -231,18 +234,27 @@
 	background: $brand-secondary-medium !important;
 	padding-bottom: 15px !important;
 	border: 0;
+	//min-width: 240px;
 	@media (min-width: $screen-sm-min) {
 		padding-top: 15px !important;
 		right: 0;
     	left: auto;
+		min-width: 470px;
 	}
-	min-width: 240px;
+	@media (min-width: $screen-md-min) {
+		min-width: 500px;
+	}
 	li.nav-subhead {
 		padding: 21px 20px 4px 20px;
 		text-transform: uppercase;
 		font-size: 12px;
 		line-height: 1.2;
 		color: $brand-secondary-light;
+		float: left;
+		width: 100%;
+	}
+	& > li.nav-subhead:first-child {
+		padding-top: 5px;
 	}
 	li > ul {
 		margin-left: 10px;
@@ -254,15 +266,63 @@
 	a, > li > a {
 		font-weight: 700;
 		color: $white;
-		padding: 2px 20px !important;
+		padding: 10px 20px !important;
 		display: block;
+		white-space: normal;
+		@include transition(background .3s ease, color .3s ease);
+		p.desc {
+			font-weight: normal;
+			color: $brand-secondary-light;
+			line-height: 1.3;
+			font-size: 12px;
+			margin: 0;
+		}
+	}
+	> li {
+		img {
+			display: inline-block;
+			margin-right: 10px;
+			width: 40px;
+			height: auto;
+			vertical-align: middle;
+		}
+		img + span {
+			display: inline-block;
+			width: calc(100% - 50px);
+			vertical-align: middle;
+		}
+		@media (min-width: $screen-sm-min) {
+			float: left;
+			width: 50%;
+			img {
+				width: 50px;
+			}
+			img + span {
+				width: calc(100% - 60px);
+			}
+		}
 	}
 	a:hover, a:focus, >li>a:hover, >li>a:focus {
-		background: none;
+		background: $brand-secondary;
 		color: $brand-secondary-light;
 	}
 	> .active > a {
 		background: $brand-secondary;
+	}
+	> li.nav-footer {
+		margin-top: 15px;
+		margin-bottom: -15px;
+		@media (min-width: $screen-sm-min) {
+			float: left;
+			width: 100%;
+		}
+		> a {
+			border-top: 1px solid $brand-secondary;
+			padding: 18px !important;
+			&:after {
+				content: " \0203A";
+			}
+		}
 	}
 	@media (min-width: $screen-sm-min) {
 		opacity: 0;
