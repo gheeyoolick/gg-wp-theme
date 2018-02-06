@@ -13,10 +13,17 @@ get_template_part( 'template-parts/content', 'bullets' );
 
 <main class="main-content">
 	<div class="container">
+		
 		<?php
+		
+		get_template_part( 'template-parts/content', 'tour' );
+		
 		get_template_part( 'template-parts/content', 'intro' );
+		
 		get_template_part( 'template-parts/content', 'floorplan' );
+		
 		?>
+		
 		<div class="row row-content">
 			<!--Main Content-->
 			<div class="content-main">

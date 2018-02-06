@@ -36,7 +36,7 @@
 	}
 }
 
-// Header with background photo
+// Header with background images
 .hero {
 	position: relative;
 	z-index: 800;
@@ -73,35 +73,54 @@
 	.header-content {
 		background: none;
 	}
+	// Map tabs
+	.nav {
+		background: $brand-primary-gray-dark;
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: 11px;
+		@include antialiased();
+		border-bottom: 1px solid $brand-primary-gray-dark;
+		text-align: center;
+		&.nav-tabs > li {
+			display: inline-block;
+			float: none;
+		}
+		& > li > a {
+			padding: 15px;
+			color: $brand-primary-medium;
+		}
+		&.nav-tabs > li.active > a, &.nav-tabs > li > a:hover {
+			background: $title-bg;
+			border-color: $title-bg;
+			color: $white;
+		}
+	}
 }
-.hero.map {
-	padding-bottom: 40%; // This is the aspect ratio
-	padding-top: 100px;
+.map {
+//	padding-bottom: 40%; // This is the aspect ratio
+//	padding-top: 100px;
+	padding-bottom: 50%;
+	position: relative;
+	display: block;
 	height: 0;
 	overflow: hidden;
 	iframe {
         position: absolute;
-        top: 0;
+        top: -46px;
+		//top: 0;
         left: 0;
         width: 100% !important;
-        height: 100% !important;
-		pointer-events: none;
-		&.clicked {
-			pointer-events: auto;
-		}
+        height: calc(100% + 46px) !important;
+//		pointer-events: none;
+//		&.clicked {
+//			pointer-events: auto;
+//		}
 	}
 	.header-page {
-		background: rgba(60,71,75,0.7);
-		position: absolute;
-		bottom: 0;
-		width: 100%;
-	}
-}
-
-// Slideshow
-.hero .carousel {
-	.hero-img {
-		width: 100%;
-		height: auto;
+//		background: rgba(60,71,75,0.7);
+//		position: absolute;
+//		bottom: 0;
+//		width: 100%;
 	}
 }

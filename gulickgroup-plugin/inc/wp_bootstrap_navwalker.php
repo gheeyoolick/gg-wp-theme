@@ -106,7 +106,8 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			
 			$desc = '';
 			if ( ! empty( $item->description ) ) {
-				$desc = '<p class="desc">' . $item->description . '</p>';
+				$description = str_ireplace( '#br#', '<br/>', $item->description );
+				$desc = '<p class="desc">' . $description . '</p>';
 			}
 			
 			$thumbnail = '';

@@ -6,7 +6,7 @@
 	"scripts": {
 		"build": "compass compile",
 		"watch": "compass watch",
-    	"sync": "browser-sync start --proxy gulickgroup.wp.dev --files '*.php' 'style.css'",
+    	"sync": "browser-sync start --proxy gulickgroup.wp.local --files '*.php' 'style.css'",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "Brian Cordyack",

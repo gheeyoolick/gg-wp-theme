@@ -1,26 +1,6 @@
 // Wordpress Reqs
 // --------------------------------------------------
 
-// Captions
-.wp-caption, .gallery-caption {
-	margin-bottom: 20px;
-	max-width: 100%;
-	img[class*="wp-image-"] {
-		display: block;
-		margin: 0;
-	}
-	.wp-caption-text {
-		color: $brand-secondary;
-		font-size: 13px;
-		padding-top: 8px;
-	}
-}
-
-// Misc
-.sticky, .bypostauthor {
-	display: inherit;
-}
-
 // Image Alignment
 .pull-left, .alignleft {
 	float: left;
@@ -33,8 +13,32 @@
 .aligncenter {
 	clear: both;
 	display: block;
-	margin: 0 auto;
+	margin: 20px auto;
 }
+
+// Captions
+.wp-caption, .gallery-caption {
+	margin-bottom: 20px;
+	max-width: 100%;
+}
+.wp-caption-text {
+	color: $brand-secondary;
+	font-size: 12px;
+	padding-top: 6px;
+}
+
+// Responsive Images
+.content-body-single img[class*="wp-image-"] {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+// Misc
+.sticky, .bypostauthor {
+	display: inherit;
+}
+
 // Text meant only for screen readers
 .says,
 .screen-reader-text {

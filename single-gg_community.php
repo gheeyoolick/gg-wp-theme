@@ -13,7 +13,15 @@ get_template_part( 'template-parts/content', 'bullets' );
 
 <main class="main-content">
 	<div class="container">
-		<?php get_template_part( 'template-parts/content', 'intro' ); ?>
+		
+		<?php
+		
+		get_template_part( 'template-parts/content', 'tour' );
+		
+		get_template_part( 'template-parts/content', 'intro' );
+		
+		?>
+		
 		<div class="row row-content flipped">
 			<!--Sidebars-->
 			<aside class="content-sidebar" role="complementary">

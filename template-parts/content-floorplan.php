@@ -22,7 +22,7 @@ if( $floorplan_slideshow ) : ?>
 					<?php } $i++; ?>
 					<?php
 						echo wp_get_attachment_image($slide['ID'], 'full'); ?>
-						<div class="carousel-caption">
+						<div id="floorplan-caption" class="carousel-caption">
 							<?php echo $slide['caption']; ?>
 						</div>
 					</div>

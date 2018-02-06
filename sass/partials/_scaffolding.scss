@@ -10,7 +10,7 @@ body {
 	@media (min-width: $screen-sm-min) {
 		padding-top: $header-primary-height-sm + $header-secondary-height;
 	}
-	@media (min-width: $screen-lg-min) {
+	@media (min-width: $screen-md-min) {
 		padding-top: $header-primary-height-lg + $header-secondary-height;
 	}
 }

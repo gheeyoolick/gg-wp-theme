@@ -26,7 +26,7 @@ jQuery(document).ready(function($){
 	// Toggle captions
 	$( ".show-caption" ).click(function(event) {
 	  	event.preventDefault();
-		$( ".carousel-caption" ).slideToggle( function() {
+		$( "#carousel-caption" ).slideToggle( function() {
 			// Animation complete.
 	  	});
 	});
