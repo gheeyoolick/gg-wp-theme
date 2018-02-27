@@ -21,6 +21,9 @@
 					echo '';
 				}
 				?>
+				
+				<?php if ( function_exists( 'ADDTOANY_SHARE_SAVE_KIT' ) ) { ADDTOANY_SHARE_SAVE_KIT(); } ?>
+				
 			</div>
 		</div>
 	</div>

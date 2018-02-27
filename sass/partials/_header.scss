@@ -37,12 +37,12 @@
 		display: block;
 		border-right: 1px solid $brand-secondary-medium;
 		padding: 10px;
-		&:before {
-			content: "";
-		}
-		&:after {
-			content: "";
-		}
+//		&:before {
+//			content: "";
+//		}
+//		&:after {
+//			content: "";
+//		}
 	}
 	span.text {
 		display: none;
@@ -57,12 +57,18 @@
 		}
 	}
 }
+
+// Social menu
 .nav-social {
 	a {
 		@include transition(background .3s ease);
+		// insure equal width
+		padding: 0;
+		text-align: center;
+		width: 2.75em;
 	}
 	a:hover {
-		background: $brand-secondary-medium;
+		//background: $brand-secondary-medium;
 	}
 	li:first-child > a {
 		border-left: 1px solid $brand-secondary-medium;
@@ -71,6 +77,8 @@
 		display: none;
 	}
 }
+
+// Latest news
 .nav-news {
 	float: left;
 	padding: 9px 15px;
@@ -116,6 +124,8 @@
 		width: 570px;
 	}
 }
+
+// Utility (contact and email) menu
 .nav-utility {
 	ul {
 		float: right;
@@ -141,7 +151,7 @@
 	}
 }
 
-//Primary
+// Primary nav bar
 .header-primary {
 	background: $brand-secondary url(images/pattern-header.png);
 }
@@ -224,10 +234,17 @@
 		}
 	}
 }
-.navbar-inverse .navbar-nav>.active>a {
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover {
 	background: inherit;
 }
-//--Dropdown Menus
+.icon-search:before {
+	content: "";
+	@include use-sprite("icon-search");
+	display: block;
+	height: 18px;
+}
+
+// Dropdown Menus
 .dropdown-menu {
 	border-radius: 0;
 	@include box-shadow(0 2px 3px rgba(0,0,0,0.3));
@@ -353,44 +370,9 @@
 		background: $brand-secondary-dark;
 	}
 }
-
-//Icons
 a.dropdown-toggle:after {
 	content: "";
 	@include use-sprite("icon-caret");
 	margin-left: 8px;
 	margin-bottom: 2px;
-}
-.icon-search:before {
-	content: "";
-	@include use-sprite("icon-search");
-	display: block;
-	height: 18px;
-}
-.icon-twitter a:after {
-	@include use-sprite("icon-twitter");
-}
-.icon-facebook a:after {
-	@include use-sprite("icon-facebook");
-}
-.icon-linkedin a:after {
-	@include use-sprite("icon-linkedin");
-}
-.icon-pinterest a:after {
-	@include use-sprite("icon-pinterest");
-}
-.icon-instagram a:after {
-	@include use-sprite("icon-instagram");
-}
-.icon-flickr a:after {
-	@include use-sprite("icon-flickr");
-}
-.icon-houzz a:after {
-	@include use-sprite("icon-houzz");
-}
-.icon-contact a:before {
-	@include use-sprite("icon-contact");
-}
-.icon-email-updates a:before {
-	@include use-sprite("icon-emailsignup");
 }

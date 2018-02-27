@@ -4,7 +4,7 @@
 .footer-site {
 	background: $brand-primary url(images/pattern-footer.png);
 	padding-bottom: 20px;
-	color: $brand-primary-light;	
+	color: $brand-primary-gray-light;	
 	a {
 		color: $brand-highlight;
 	}
@@ -16,6 +16,8 @@
 		position: relative;
 	}
 }
+
+// Links and text
 .footer-links {
 	@extend .col-xs-12;
 	@extend .col-md-8;
@@ -26,7 +28,6 @@
 	font-size: 11px;
 	line-height: 1.8;
 	margin-top: 20px;
-	color: $brand-primary-gray-light;
 	text-align: center;
 	@media (min-width: $screen-md-min) {
 		text-align: left;
@@ -70,6 +71,63 @@
 		padding-right: 0;
 	}
 }
+
+// EHO  text and icon
+.eho {
+	display: block;
+	@media (min-width: $screen-sm-min) {
+		display: inline;
+		margin-left: 7px;
+	}
+	&:before {
+		content: "";
+		@include use-sprite("icon-eho");
+		margin-right: 5px;
+	}
+}
+
+// Social links
+.social-links {
+	margin-top: 12px;
+	p, ul {
+		@media (min-width: $screen-md-min) {
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 7px;
+			margin-bottom: 0;
+		}
+	}
+	ul li {
+		border: none;
+		margin: 0;
+		padding: 0;
+	}
+	a {
+		display: inline-block;
+		padding: 0;
+		border: none;
+		@include transition(background .3s ease);
+		padding: 8px 0 5px 0;
+		text-align: center;
+		width: 3em;
+		height: 3em;
+		border-radius: 3em;
+		margin-right: 3px;
+		background: transparent;
+		border: 1px solid $brand-primary-highlight;
+		&:hover {
+			border-color: $brand-primary-gray-dark;
+		}
+		@media (min-width: $screen-md-min) {
+			
+		}
+	}
+	span.text {
+		display: none;
+	}
+}
+
+// Gulick script
 .footer-script {
 	@extend .col-xs-12;
 	@extend .col-md-4;
@@ -97,17 +155,5 @@
 	}
 	@media (min-width: $screen-lg-min) {
 		margin-top: -15px;
-	}
-}
-.eho {
-	display: block;
-	@media (min-width: $screen-sm-min) {
-		display: inline;
-		margin-left: 7px;
-	}
-	&:before {
-		content: "";
-		@include use-sprite("icon-eho");
-		margin-right: 5px;
 	}
 }

@@ -1,12 +1,15 @@
 // Slideshow Carousels
 // --------------------------------------------------
 
-.row-floorplan {
-	margin-top: 2px;
-}
 .carousel-inner img {
 	margin: 0 auto;
 }
+//.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+//	@media (max-width: $screen-sm-min) {
+//		max-height: 300px;
+//		width: auto;
+//	}
+//}
 .carousel-control {
 	text-shadow: 0;
 	height: 50px;
@@ -33,12 +36,14 @@
 	}
 }
 .carousel-control.left {
-	border-radius: 0 6px 6px 0;
+	//border-radius: 0 6px 6px 0;
+	border-radius: 0 3px 3px 0;
 	@include box-shadow(1px 1px 1px rgba(0,0,0,0.2));
 	padding-right: 5px;
 }
 .carousel-control.right {
-	border-radius: 6px 0 0 6px;
+	//border-radius: 6px 0 0 6px;
+	border-radius: 3px 0 0 3px;
 	@include box-shadow(-1px 1px 1px rgba(0,0,0,0.2));
 	padding-left: 5px;
 }
@@ -114,6 +119,7 @@
 	bottom: 10px;
 	right: 7px;
 	font-size: 11px;
+	border-radius: 3px;
 	@media (min-width: $screen-sm-min) {
 		padding: 7px 8px;
 		bottom: 15px;
@@ -125,5 +131,57 @@
 		background: $brand-background-light;
 		border-color: $brand-background-light;
 		color: $brand-secondary;
+	}
+}
+
+// Floorplan
+.row-floorplan {
+	margin-top: 2px;
+}
+#floorplan-carousel .carousel-indicators {
+//	bottom: auto;
+//	top: 20px;
+//	left: 20px;
+	left: 50%;
+	bottom: 3px;
+	li {
+		border-color: $brand-secondary-medium;
+		&:hover {
+			background: $brand-secondary-medium;
+		}
+	}
+	.active {
+		background: $brand-secondary-medium;
+	}
+}
+.floorplan-carousel {
+	background: $white;
+}
+.floorplan-caption {
+	text-align: center;
+//	background: rgba(251,250,246,0.85);
+//	position: absolute;
+//	top: 0;
+//	width: 100%;
+	padding: 18px 10px 5px 10px;
+	h3 {
+		margin: 0;
+		color: $brand-secondary-medium;
+	}
+	p {
+		margin-top: 6px;
+		margin-bottom: 0;
+		color: $brand-secondary-medium;
+	}
+}
+.floorplan-disclaimer {
+	text-align: center;
+//	top: auto;
+//	bottom: 0;
+	padding: 10px 10px 40px 10px;
+	font-size: 11px;
+	p {
+		margin: 0;
+		color: $brand-secondary-medium-light;
 	}
 }
