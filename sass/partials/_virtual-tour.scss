@@ -1,27 +1,57 @@
 // Virtual Tour
 // --------------------------------------------------
 
-.row-tour {
-	background: $brand-background-dark;
-	margin-top: 2px;
-	margin-bottom: 2px;
-	text-align: center;
-}
+//.row-tour {
+//	background: $brand-background-dark;
+//	margin-top: 2px;
+//	margin-bottom: 2px;
+//	text-align: center;
+//}
+
 a.tour {
-	@extend .col-xs-12;
-	padding: 22px 30px;
+	display: block;
+	text-align: center;
 	background: $brand-highlight-dark;
 	color: $white;
-	font-weight: 500;
+	font-weight: 700;
 	@include antialiased();
 	@include transition(background .2s ease);
-	font-size: 18px;
+	font-size: 13px;
 	line-height: 1;
-	@media (min-width: $screen-lg-min) {
-		font-size: 20px;
+	@media (min-width: $screen-sm-min) {
+		height: $tour-button-height;
+		position: absolute;
+		top: 0;
+		right: 0;
+		font-size: 14px;
+		&::before {
+			content: "";
+			display: inline-block;
+			vertical-align: top;
+			width: 0;
+			height: 0;
+			height: $tour-button-height;
+			width: $tour-button-height;
+			margin-left: -$tour-button-height;
+			border-top: $tour-button-height solid $brand-highlight-dark;
+			border-left: $tour-button-height solid transparent;
+			@include transition(border-color .2s ease);
+		}
 	}
-	&:hover {
-		background: $brand-highlight-medium;
+	@media (min-width: $screen-md-min) {
+		border-bottom-right-radius: 3px;
+		right: 15px;
+	}
+	span {
+		display: inline-block;
+		vertical-align: middle;
+		padding: 12px 15px 10px 15px;
+		@media (min-width: $screen-sm-min) {
+			padding: 10px 15px 0 2px;
+		}
+		@media (min-width: $screen-md-min) {
+			padding: 10px 10px 0 2px;
+		}
 	}
 	span:before {
 		content: "";
@@ -29,5 +59,13 @@ a.tour {
 		display: inline-block;
 		vertical-align: middle;
 		margin-right: 10px;
+		margin-top: -2px;
 	}
+	&:hover {
+		background: $brand-highlight-medium;
+		&::before {
+			border-top: $tour-button-height solid $brand-highlight-medium;
+		}
+	}
+	
 }

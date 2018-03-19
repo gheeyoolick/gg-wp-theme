@@ -43,7 +43,10 @@ $link-color: $brand-secondary;
 $link-hover-color: $brand-highlight-dark;
 $link-hover-decoration: none;
 $border-radius-base: 0px;
-$title-bg: $brand-primary-gray;
+$title-bg: $brand-primary-gray-dark;
+$hero-bg: rgba(36,47,51,0.75);
+$tour-button-height: 40px;
+$caption-height: 38px;
 
 //== Typography
 $font-family-sans-serif: "museo-sans", Helvetica, Arial, sans-serif !default;

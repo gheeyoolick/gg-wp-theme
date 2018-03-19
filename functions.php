@@ -43,7 +43,7 @@ function gulickgroup_scripts() {
 	
 	//Add additional scripts
 	wp_enqueue_script( 'gulickgroup-bootstrap', get_template_directory_uri() . '/javascripts/bootstrap.min.js', array( 'jquery' ), null, true );
-	wp_enqueue_script( 'gulickgroup-site', get_template_directory_uri() . '/javascripts/site.js', array( 'jquery' ), null, true );
+	wp_enqueue_script( 'gulickgroup-site', get_template_directory_uri() . '/javascripts/site.js?4', array( 'jquery' ), null, true );
 	
 }
 add_action( 'wp_enqueue_scripts', 'gulickgroup_scripts' );

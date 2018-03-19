@@ -15,7 +15,7 @@ if( $header_slideshow ) : ?>
 		$c=0;
 		foreach ( $header_slideshow as $slide ):
 		?>
-		<li data-target="#header-carousel" data-slide-to="<?php echo $c; ?>" <?php if($c==0) { ?>class="active"<?php } ?> ></li>
+			<li data-target="#header-carousel" data-slide-to="<?php echo $c; ?>" <?php if($c==0) { ?>class="active"<?php } ?> ></li>
 		<?php
 		$c++;
 		endforeach;
@@ -36,7 +36,7 @@ if( $header_slideshow ) : ?>
 			<?php
 				echo wp_get_attachment_image($slide['ID'], 'full'); ?>
 				<div id="carousel-caption" class="carousel-caption">
-					<?php echo $slide['caption']; ?> (<a href="<?php echo esc_url( home_url( '/' ) ); ?>photo-disclaimer/" class="disclaimer">Photo Disclaimer</a>)
+					<?php echo $slide['caption']; ?> (<a href="<?php echo esc_url( home_url( '/' ) ); ?>photo-disclaimer/" class="disclaimer">Disclaimer</a>)
 				</div>
 			</div>
 	<?php endforeach; ?>
@@ -53,7 +53,7 @@ if( $header_slideshow ) : ?>
 		<span class="sr-only">Next</span>
 	</a>
 		
-	<a href="#" class="btn btn-default show-caption">Caption</a>
+	<a href="#" class="btn btn-default show-caption">Captions</a>
 	
 </div>
 

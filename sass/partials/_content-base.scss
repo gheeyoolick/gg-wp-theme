@@ -39,8 +39,8 @@
 	h2 {
 		text-align: center;
 		background: url(images/pattern-subheader.png) no-repeat bottom center;
-		padding: 0 0 15px 0;
-		margin: 10px 0 30px 0;
+		padding: 0 0 20px 0;
+		margin: 10px 0 20px 0;
 	}
 }
 //Article
@@ -154,15 +154,18 @@
 	@extend .col-xs-12;
 	@extend .col-md-6;
 	padding: 10px 0;
-	&:first-child {
-		padding-top: 0;
+	@media (min-width: $screen-sm-min) {
+		padding: 10px;
 	}
-	&:last-child {
-		padding-bottom: 0;
-	}
-	@media (min-width: $screen-md-min) {
-		padding: 1px;
-	}
+//	&:first-child {
+//		padding-top: 0;
+//	}
+//	&:last-child {
+//		padding-bottom: 0;
+//	}
+//	@media (min-width: $screen-md-min) {
+//		padding: 1px;
+//	}
 }
 .content-main {
 	.clearfix {
@@ -186,7 +189,7 @@
 }
 .module {
 	border: 4px solid $white;
-	@include box-shadow(0 1px 2px rgba(0,0,0,0.3));
+	@include box-shadow(0 1px 2px rgba(0,0,0,0.2));
 	position: relative;
 	img {
 		width: 100%;
@@ -204,17 +207,21 @@
 }
 .module-text {
 	display: block;
-	background: rgba(251,250,246,0.75);
+	background: rgba(251,250,246,0.8);
+	//background: $brand-background-lightest;
 	position: absolute;
 	bottom: -1px;
 	width: 100%;
-	padding: 16px 20px;
-	height: 70px;
+	padding: 10px 20px;
+	height: 82px;
 	overflow: hidden;
 	@include transition(all .5s ease);
 	.module-details {
-		display: none;
-		margin-top: 15px;
+		//display: none;
+		opacity: 0;
+		margin-top: 12px;
+		color: $brand-primary;
+		@include transition(opacity .5s ease);
 	}
 	h3 {
 		text-align: center;
@@ -222,29 +229,48 @@
 	}
 	h4 {
 		text-align: center;
-		font-size: 15px;
-		color: $brand-highlight-dark;
-		margin-top: 5px;
+		font-size: 12px;
+		color: $brand-primary;
+		margin-top: 3px;
 		margin-bottom: 0;
 	}
 	p {
-		font-size: 13px;
-		line-height: 1.6;
-	}
-	p.more {
 		text-align: center;
 		font-size: 12px;
-		line-height: 1.2;
-		margin: 0;
+		line-height: 1.5;
 	}
+//	p.more {
+//		text-align: center;
+//		font-size: 12px;
+//		line-height: 1;
+//		margin: 4px 0 0 0;
+//		color: $brand-highlight-dark;
+//	}
 	&:hover {
-		p:not(.more) {
-			color: $text-color;
-		}
-		h3 {
-			color: $link-hover-color;
+//		p:not(.more) {
+//			color: $brand-primary;
+//		}
+//		h3, h4 {
+//			color: $link-hover-color;
+//		}
+		p.btn-module {
+			color: $white;	
 		}
 	}
+}
+.btn-module, p.btn-module {
+	font-size: 11px;
+	line-height: 1;
+	font-weight: 700;
+	@include antialiased();
+	background: $brand-highlight-medium;
+	border-color: $brand-highlight-medium;
+	border-radius: 10px;
+	color: $white;
+	padding: 4px 10px;
+	position: absolute;
+	bottom: 9px;
+	left: calc(50% - 45px);
 }
 .title-text {
 	padding: 10px 20px;
@@ -261,8 +287,9 @@
 }
 .module.active .module-text {
 	background: rgba(255,255,255,0.9);
-	height: 85%;
+	height: 90%;
 	.module-details {
-		display: block;
+		//display: block;
+		opacity: 1;
 	}
 }

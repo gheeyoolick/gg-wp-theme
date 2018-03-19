@@ -22,13 +22,19 @@ jQuery(document).ready(function($){
 	var pageHeightCSS = navHeight + "px";
 	$(".hero").css( "max-height", pageHeightCSS );
 	$(".header-carousel").css( "max-height", pageHeightCSS );
+	$(".carousel-inner .item").css( "max-height", pageHeightCSS );
 	
 	// Toggle captions
 	$( ".show-caption" ).click(function(event) {
 	  	event.preventDefault();
-		$( "#carousel-caption" ).slideToggle( function() {
-			// Animation complete.
-	  	});
+		$( ".header-page" ).toggleClass( "has-caption" );
+		$( ".carousel-caption" ).toggleClass( "has-caption" );
+		$( ".carousel-indicators" ).toggleClass( "has-caption" );
+		$( this ).toggleClass( "has-caption" );
+		$( this ).blur();
+//		$( ".carousel-caption" ).slideToggle( function() {
+//			// Animation complete.
+//	  	});
 	});
 	
 	// Prevent scrolling on Hero map

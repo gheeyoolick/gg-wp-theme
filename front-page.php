@@ -47,9 +47,9 @@ $bg_image = get_field( 'homepage_background_image' ); ?>
 							<figcaption>
 								<a href="<?php echo $link; ?>" class="module-text">
 									<h3><?php echo $title; ?></h3>
+									<p class="btn btn-module">Learn More</p>
 									<div class="module-details">
 										<p><?php echo $desc; ?></p>
-										<p class="more">Learn More</p>
 									</div>
 								</a>
 							</figcaption>

@@ -26,7 +26,7 @@ function create_post_type() {
 		'has_archive' => false,
 		'menu_icon'   => 'dashicons-location-alt',
 		'menu_position' => 20,
-		'rewrite' => array('slug' => 'communities'),
+		'rewrite' => array('with_front' => false, 'slug' => 'communities'),
 		'supports' => array( 'title', 'thumbnail', 'revisions' )
 		)
 	);
@@ -53,7 +53,7 @@ function create_post_type() {
 		'has_archive' => false,
 		'menu_icon'   => 'dashicons-admin-home',
 		'menu_position' => 20,
-		'rewrite' => array('slug' => 'homes'),
+		'rewrite' => array('with_front' => false, 'slug' => 'homes'),
 		'supports' => array( 'title', 'thumbnail', 'revisions' )
 		)
 	);
@@ -80,7 +80,7 @@ function create_post_type() {
 		'has_archive' => false,
 		'menu_icon'   => 'dashicons-admin-home',
 		'menu_position' => 20,
-		'rewrite' => array('slug' => 'quick-deliveries'),
+		'rewrite' => array('with_front' => false, 'slug' => 'quick-deliveries'),
 		'supports' => array( 'title', 'thumbnail', 'revisions' )
 		)
 	);

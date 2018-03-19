@@ -5,6 +5,7 @@
 ?>
 
 <header class="header-page">
+	<?php get_template_part( 'template-parts/content', 'tour' ); ?>
 	<div class="container">
 		<div class="row">
 			<div class="header-content">

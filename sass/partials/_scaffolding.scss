@@ -39,7 +39,7 @@ h1, .h1 {
 }
 h2, .h2 {
 	text-transform: uppercase;
-	font-size: 24px;
+	font-size: 23px;
 }
 h3, .h3 {
 	font-family: $font-family-sans-serif;
@@ -222,24 +222,73 @@ p.sold {
 }
 
 // Forms & Buttons
-.wpcf7-form-control.wpcf7-textarea, .wpcf7-form-control.wpcf7-text {
-	@extend .form-control;
+
+// Contact form 7 styles
+//.wpcf7-form-control.wpcf7-textarea, .wpcf7-form-control.wpcf7-text {
+//	@extend .form-control;
+//}
+//.wpcf7-form-control.wpcf7-submit {
+//	@extend .btn;
+//	@extend .btn-primary;
+//}
+
+// gravity forms plugin styles
+.content-main .gform_heading .gform_title {
+	display: none;
 }
-.wpcf7-form-control.wpcf7-submit {
-	@extend .btn;
-	@extend .btn-primary;	
+.gform_wrapper span.gform_description {
+	font-weight: 300 !important;
 }
-.btn {
+.gfield_label {
+	color: $brand-primary;
+	margin-bottom: 0;
+	font-weight: 500 !important;
+	line-height: 1.1 !important;
+	font-size: 15px !important;
+	.sidebar & {
+		font-size: 13px !important;
+	}
+}
+.gfield_description {
+	padding-top: 5px !important;
+	font-size: 13px !important;
+}
+.gform_wrapper textarea, .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+	border: 1px solid $brand-background-dark !important;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	.sidebar & {
+		width: 100%;
+	}
+}
+body .gform_wrapper .top_label div.ginput_container {
+	margin-top: 4px !important;
+}
+.gform_wrapper .top_label .captcha .gfield_label {
+	display: none !important;
+}
+.sidebar .gform_wrapper .gform_footer {
+	padding-top: 0;
+}
+.btn, .gform_button {
 	text-transform: uppercase;
-	font-size: 14px;
+	font-size: 15px;
 	font-weight: 500;
 	border-radius: 3px;
 	padding: 10px 20px;
 	@include transition(background .3s ease);
+	color: $white;
+	background: $link-color;
+	border: 1px solid $link-color;
 	&:hover {
+		color: $white;
 		background: $brand-highlight-dark;
 		border-color: $brand-highlight-dark;
 	}
+}
+
+.gform_button {
+	font-size: 15px !important;
 }
 
 // AddToAny icons
@@ -250,7 +299,7 @@ p.sold {
 	//border: 1px solid $brand-primary-gray-dark;
 }
 .addtoany_list a, .widget .addtoany_list a {
-	padding: 0 3px !important;
+	padding: 0 4px !important;
 }
 .a2a_menu {
 	border-radius: 3px !important;

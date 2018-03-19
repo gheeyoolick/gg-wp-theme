@@ -27,6 +27,10 @@ get_header(); ?>
 						?>
 					</p>
 					
+					<div class="addtoany_content">
+						<?php if ( function_exists( 'ADDTOANY_SHARE_SAVE_KIT' ) ) { ADDTOANY_SHARE_SAVE_KIT(); } ?>
+					</div>
+					
 					<?php
 					// Display the feature image
 					if ( has_post_thumbnail() ) {

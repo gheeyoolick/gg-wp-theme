@@ -323,7 +323,7 @@
 		background: $brand-secondary;
 		color: $brand-secondary-light;
 	}
-	> .active > a {
+	> .active > a, > .active > a:hover, > .active > a:focus {
 		background: $brand-secondary;
 	}
 	> li.nav-footer {

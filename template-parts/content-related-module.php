@@ -28,9 +28,9 @@ $subhead = get_field( 'subheader' );
 					echo '';
 				}
 				?>
+				<p class="btn btn-module">Learn More</p>
 				<div class="module-details">
 					<?php echo $summary_text; ?>
-					<p class="more">Learn More</p>
 				</div>
 			</a>
 		</figcaption>

@@ -16,8 +16,6 @@ get_template_part( 'template-parts/content', 'bullets' );
 		
 		<?php
 		
-		get_template_part( 'template-parts/content', 'tour' );
-		
 		get_template_part( 'template-parts/content', 'intro' );
 		
 		?>
