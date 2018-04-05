@@ -37,61 +37,8 @@ function add_ie_html5_shim () {
 }
 add_action('wp_head', 'add_ie_html5_shim');
 
-// Add sidebars and widgets
-function gulickgroup_widgets_init() {
-	
-	register_sidebar( array (
-		'name' => __( 'Primary Sidebar', 'gulickgroup' ),
-		'id' => 'sidebar-1',
-		'description' => __( 'Common sidebar for all Posts and non custom Pages', 'gulickgroup' ),
-		'before_widget' => '<div class="sidebar">',
-		'after_widget' => '</div>',
-		'before_title' => '<h4>',
-		'after_title' => '</h4>',
-	) );
-	
-	register_sidebar( array (
-		'name' => __( 'Communities Sidebar', 'gulickgroup' ),
-		'id' => 'sidebar-2',
-		'description' => __( 'Common sidebar for all Community pages', 'gulickgroup' ),
-		'before_widget' => '<div class="sidebar">',
-		'after_widget' => '</div>',
-		'before_title' => '<h4>',
-		'after_title' => '</h4>',
-	) );
-	
-	register_sidebar( array (
-		'name' => __( 'Homes Sidebar', 'gulickgroup' ),
-		'id' => 'sidebar-3',
-		'description' => __( 'Common sidebar for all Home pages', 'gulickgroup' ),
-		'before_widget' => '<div class="sidebar">',
-		'after_widget' => '</div>',
-		'before_title' => '<h4>',
-		'after_title' => '</h4>',
-	) );
-	
-	register_sidebar( array (
-		'name' => __( 'Quick Deliveries Sidebar', 'gulickgroup' ),
-		'id' => 'sidebar-4',
-		'description' => __( 'Common sidebar for all Quick Delivery pages', 'gulickgroup' ),
-		'before_widget' => '<div class="sidebar">',
-		'after_widget' => '</div>',
-		'before_title' => '<h4>',
-		'after_title' => '</h4>',
-	) );
-	
-	register_sidebar( array (
-		'name' => __( 'Floorplan Disclaimer', 'gulickgroup' ),
-		'id' => 'floorplan-disclaimer',
-		'description' => __( 'Common disclaimer text for Floorplan slideshows', 'gulickgroup' ),
-		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '',
-		'after_title' => '',
-	) );
-	
-}
-add_action( 'widgets_init', 'gulickgroup_widgets_init' );
+// Register Sidebars and Widgets
+require_once('inc/widgets-sidebars.php');
 
 // Disable default custom meta fields
 function remove_custom_meta_boxes() {
@@ -99,5 +46,8 @@ function remove_custom_meta_boxes() {
 	remove_meta_box('postcustom','page','normal');
 }
 add_action('admin_init','remove_custom_meta_boxes');
+
+// Add Gravity Forms visibility field
+add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
 
 ?>

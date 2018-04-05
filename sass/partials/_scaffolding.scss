@@ -257,8 +257,25 @@ p.sold {
 	border: 1px solid $brand-background-dark !important;
 	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
 	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	padding: 6px 10px !important;
 	.sidebar & {
 		width: 100%;
+	}
+	&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+		font-size: 13px;
+		color: $brand-primary-gray-light;
+	}
+	&::-moz-placeholder { /* Firefox 19+ */
+		font-size: 13px;
+		color: $brand-primary-gray-light;
+	}
+	&:-ms-input-placeholder { /* IE 10+ */
+		font-size: 13px;
+		color: $brand-primary-gray-light;
+	}
+	&:-moz-placeholder { /* Firefox 18- */
+		font-size: 13px;
+		color: $brand-primary-gray-light;
 	}
 }
 body .gform_wrapper .top_label div.ginput_container {
@@ -269,6 +286,17 @@ body .gform_wrapper .top_label div.ginput_container {
 }
 .sidebar .gform_wrapper .gform_footer {
 	padding-top: 0;
+}
+@media only screen and (min-width: 641px) {
+	.sidebar .gform_wrapper ul.gform_fields li.gfield {
+		padding-right: 0;
+	}
+}
+.gform_wrapper li.hidden_label {
+	margin-top: 10px !important;
+	input {
+		margin-top: 0 !important;
+	}
 }
 .btn, .gform_button {
 	text-transform: uppercase;

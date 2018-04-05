@@ -81,9 +81,6 @@ get_template_part( 'template-parts/content', 'bullets' );
 				<?php get_sidebar( 'location' ); ?>
 				<?php get_sidebar( 'model' ); ?>
 				<?php get_sidebar( 'contact' ); ?>
-				<?php if ( is_active_sidebar( 'sidebar-4' )  ) : ?>
-					<?php dynamic_sidebar( 'sidebar-4' ); ?>
-				<?php endif; ?>
 			</aside>
 		</div>
 	</div>
