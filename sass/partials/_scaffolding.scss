@@ -42,13 +42,14 @@ h2, .h2 {
 	font-size: 23px;
 }
 h3, .h3 {
+	text-transform: none;
 	font-family: $font-family-sans-serif;
 	font-size: 18px;
 	font-weight: 500;
 }
 h4, .h4 {
 	text-transform: uppercase;
-	font-size: 19px;
+	font-size: 18px;
 }
 h5, .h5 {
 	font-family: $font-family-sans-serif;
@@ -64,12 +65,26 @@ h6, .h6 {
 strong {
 	font-weight: 700;
 }
-.more {
+.more, .more-link {
 	text-transform: uppercase;
 	font-weight: 700;
-	&:after {
-		content: " ›";
+	&::after {
+		font-family: "Font Awesome 5 Free";
+		content: "\f054"; // fas fa-chevron-right
+		font-weight: 900;
+		font-size: 11px;
+		display: inline-block;
+		font-style: normal;
+		font-variant: normal;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+		line-height: 1;
+		margin-left: 5px;
 	}
+}
+.more-link {
+	display: block;
+	font-size: 13px;
 }
 p.meta {
 	text-transform: uppercase;
@@ -120,6 +135,23 @@ p.sold {
 }
 
 // Site Icons
+[class*="icon-"] {
+	a::before {
+		display: inline-block;
+		font-style: normal;
+		font-variant: normal;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+		font-family: "Font Awesome 5 Brands";
+		font-weight: 400;
+		font-size: 15px;
+		line-height: 1;
+		content: "";
+	}
+	a:hover::before {
+		color: $white;
+	}
+}
 .icon-directions:before {
 	content: "";
 	@include use-sprite("icon-directions");
@@ -137,35 +169,33 @@ p.sold {
 	@include use-sprite("icon-email");
 	margin: 0 10px -5px 0;
 }
-.icon-contact a:before {
-	content: "";
-	@include use-sprite("icon-contact");
+
+//.icon-phone {
+//	a::before {
+//		font-family: "Font Awesome 5 Free";
+//		content: "\f095"; // fas fa-phone
+//		font-weight: 900;
+//		margin: 0 10px -3px 0;
+//	}
+//}
+.icon-contact {
+	a::before {
+		font-family: "Font Awesome 5 Free";
+		content: "\f075"; // fas fa-comment
+		font-weight: 900;
+	}
 }
-.icon-email-updates a:before {
-	content: "";
-	@include use-sprite("icon-emailsignup");
+.icon-email-updates {
+	a::before {
+		font-family: "Font Awesome 5 Free";
+		content: "\f0e0"; // fas fa-envelope
+		font-weight: 900;
+	}
 }
 
 // Social Icons
-[class*="icon-"] {
-	a::after {
-		display: inline-block;
-		font-style: normal;
-		font-variant: normal;
-		text-rendering: auto;
-		-webkit-font-smoothing: antialiased;
-		font-family: "Font Awesome 5 Brands";
-		font-weight: 400;
-		font-size: 15px;
-		line-height: 1;
-		content: "";
-	}
-	a:hover::after {
-		color: $white;
-	}
-}
 .icon-twitter {
-	a::after {
+	a::before {
 		content: "\f099";
 	}
 	a:hover {
@@ -173,7 +203,7 @@ p.sold {
 	}
 }
 .icon-facebook {
-	a::after {
+	a::before {
 		content: "\f39e";
 	}
 	a:hover {
@@ -181,7 +211,7 @@ p.sold {
 	}
 }
 .icon-linkedin {
-	a::after {
+	a::before {
 		content: "\f0e1";
 	}
 	a:hover {
@@ -189,7 +219,7 @@ p.sold {
 	}
 }
 .icon-pinterest {
-	a::after {
+	a::before {
 		content: "\f0d2";
 	}
 	a:hover {
@@ -197,7 +227,7 @@ p.sold {
 	}
 }
 .icon-instagram {
-	a::after {
+	a::before {
 		content: "\f16d";
 	}
 	a:hover {
@@ -205,7 +235,7 @@ p.sold {
 	}
 }
 .icon-flickr {
-	a::after {
+	a::before {
 		content: "\f16e";
 	}
 	a:hover {
@@ -213,7 +243,7 @@ p.sold {
 	}
 }
 .icon-houzz {
-	a::after {
+	a::before {
 		content: "\f27c";
 	}
 	a:hover {
@@ -231,6 +261,10 @@ p.sold {
 //	@extend .btn;
 //	@extend .btn-primary;
 //}
+
+label {
+	font-weight: 500;
+}
 
 // gravity forms plugin styles
 .content-main .gform_heading .gform_title {
@@ -253,14 +287,36 @@ p.sold {
 	padding-top: 5px !important;
 	font-size: 13px !important;
 }
+@media only screen and (min-width: 641px) {
+	.gform_wrapper .top_label input.medium, .gform_wrapper .top_label select.medium, .gform_wrapper .top_label input.small, .gform_wrapper .top_label select.small {
+		width: 100% !important;
+	}
+	.sidebar .gform_wrapper ul.gform_fields li.gfield {
+		width: 100%;
+		padding-right: 7px;
+		display: inline-block;
+		margin-bottom: 5px;
+	}
+	.sidebar .gform_wrapper ul.gform_fields li.gfield.half {
+		width: 50%;
+	}
+	.sidebar .gform_wrapper ul.gform_fields li.gfield.one-third {
+		width: 30%;
+	}
+	.sidebar .gform_wrapper ul.gform_fields li.gfield.two-third {
+		width: 70%;
+	}
+}
+@media (min-width: $screen-lg-min) {
+	.gform_wrapper .top_label input.medium, .gform_wrapper .top_label select.medium {
+		width: 50% !important;
+	}
+}
 .gform_wrapper textarea, .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
 	border: 1px solid $brand-background-dark !important;
 	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
 	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
 	padding: 6px 10px !important;
-	.sidebar & {
-		width: 100%;
-	}
 	&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 		font-size: 13px;
 		color: $brand-primary-gray-light;
@@ -286,14 +342,10 @@ body .gform_wrapper .top_label div.ginput_container {
 }
 .sidebar .gform_wrapper .gform_footer {
 	padding-top: 0;
-}
-@media only screen and (min-width: 641px) {
-	.sidebar .gform_wrapper ul.gform_fields li.gfield {
-		padding-right: 0;
-	}
+	margin-top: 4px;
 }
 .gform_wrapper li.hidden_label {
-	margin-top: 10px !important;
+	margin-top: 0 !important;
 	input {
 		margin-top: 0 !important;
 	}
@@ -317,6 +369,43 @@ body .gform_wrapper .top_label div.ginput_container {
 
 .gform_button {
 	font-size: 15px !important;
+}
+
+.btn-load {
+	font-size: 13px;
+	background: $brand-background;
+	border-color: $brand-background;
+	border-radius: 0;
+	color: $brand-background-medium;
+	&::after {
+		font-family: "Font Awesome 5 Free";
+		content: "\f078"; // fas fa-comment
+		font-weight: 900;
+		display: inline-block;
+		font-style: normal;
+		font-variant: normal;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+		line-height: 1;
+		margin-left: 5px;
+	}
+}
+
+// Exclude email sidebar form from contact page
+.page-id-105 .content-sidebar {
+	.sidebar:nth-of-type(1) {
+		display: none;
+	}
+	.sidebar:nth-of-type(2) {
+		margin-top: 0;
+	}
+}
+
+// Exclude latest posts from contact page
+.blog .content-sidebar, .page-template-page-hub .content-sidebar {
+	.sidebar:last-child {
+		display: none;
+	}
 }
 
 // AddToAny icons

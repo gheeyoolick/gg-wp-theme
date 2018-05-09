@@ -4,7 +4,7 @@ Theme URI:
 Author: Brian Cordyack
 Author URI: http://cordyack.com
 Description: Description
-Version: 1.5
+Version: 1.6
 License: GPLv2
 Tags:
 */
@@ -23,10 +23,11 @@ Tags:
 @import "partials/footer";
 @import "partials/intro-quote";
 @import "partials/virtual-tour";
-@import "partials/hero";
+@import "partials/header-content";
 @import "partials/carousel";
 @import "partials/bullets";
 @import "partials/content-base";
 @import "partials/content-sidebars";
+@import "partials/content-hub";
 @import "partials/homepage";
 @import "partials/wordpress";

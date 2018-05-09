@@ -33,9 +33,9 @@ get_header(); ?>
 					
 					<?php
 					// Display the feature image
-					if ( has_post_thumbnail() ) {
-						the_post_thumbnail( 'large' );
-					}
+//					if ( has_post_thumbnail() ) {
+//						the_post_thumbnail( 'large' );
+//					}
 					
 					// Display the content
 					the_content();
@@ -50,7 +50,7 @@ get_header(); ?>
 					?>
 
 					<nav class="article-navigation">
-						<?php previous_post_link(); ?><?php next_post_link(); ?>
+						<?php previous_post_link( '<span class="prev">%link</span>' ); ?><?php next_post_link( '<span class="next">%link</span>' ); ?>
 					</nav>
 
 				</section>

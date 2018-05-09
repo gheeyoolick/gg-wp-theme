@@ -66,6 +66,11 @@
                 "value": "page"
             },
             {
+                "param": "page_template",
+                "operator": "!=",
+                "value": "page-hub.php"
+            },
+            {
                 "param": "page_type",
                 "operator": "!=",
                 "value": "front_page"
@@ -85,5 +90,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1488481862
+    "modified": 1525448027
 }

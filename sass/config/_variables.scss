@@ -22,6 +22,7 @@ $brand-highlight-dark: #678925;
 $brand-background: #e5e3dd; //tan
 $brand-background-light: #f1f0eb;
 $brand-background-lightest: #fbfaf6;
+$brand-background-medium: #999691;
 $brand-background-dark: #cfccc5;
 $brand-background-darker: #c0bdb7;
 $brand-alert: #8a2120; //Red
@@ -47,6 +48,10 @@ $title-bg: $brand-primary-gray-dark;
 $hero-bg: rgba(36,47,51,0.75);
 $tour-button-height: 40px;
 $caption-height: 38px;
+$line-color: $brand-background-dark;
+$line-color-grid: $brand-background;
+$content-padding: 30px;
+$content-padding-lg: 40px;
 
 //== Typography
 $font-family-sans-serif: "museo-sans", Helvetica, Arial, sans-serif !default;
@@ -70,7 +75,7 @@ $navbar-inverse-border: none;
 
 // Inverted navbar links
 $navbar-inverse-link-color: $white;
-$navbar-inverse-link-hover-color: $brand-secondary-light;
+$navbar-inverse-link-hover-color: $brand-highlight;
 $navbar-inverse-link-active-color: $white;
 $navbar-inverse-link-active-bg: $brand-secondary-medium;
 

@@ -40,4 +40,11 @@ jQuery(document).ready(function($){
 	// Prevent scrolling on Hero map
 	$(".hero.map").click(function(){$(this).find('iframe').addClass('clicked')}).mouseleave(function(){ $(this).find('iframe').removeClass('clicked')});
 	
+	// Show rest of index modules
+	$( '.load-button .btn-load' ).click(function(event) {
+	  	event.preventDefault();
+		$( this ).parent( '.load-button' ).addClass( 'off' );
+		$( this ).parent( '.load-button' ).siblings( '.off' ).removeClass( 'off' );
+	});
+	
 });

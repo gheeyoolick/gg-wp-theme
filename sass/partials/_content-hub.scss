@@ -1,0 +1,123 @@
+// Media Hub page
+// --------------------------------------------------
+
+.content-hub {
+	p {
+		margin-bottom: 5px;
+		font-size: 15px;
+		line-height: 1.35;
+	}
+	.row {
+		margin: 0;
+		&.row-feeds {
+			background: $brand-background-lightest;
+		}
+	}
+	h2 {
+		text-align: left;
+		background: none;
+		padding: 0;
+		font-size: 22px;
+		margin-top: 0;
+		margin-bottom: $content-padding;
+	}
+	.content-body {
+		padding-top: $content-padding-lg;
+		padding-bottom: $content-padding-lg;
+	}
+}
+.hub-feature {
+	border-bottom: 2px solid $line-color-grid !important;
+//	border-image-source: url(images/pattern-body.png);
+//	border-image-slice: 2;
+//	//border-image-width: 2px;
+//	border-image-repeat: repeat;
+	.feature {
+		@media (min-width: $screen-sm-min) {
+			float: left;
+			width: 100%;
+		}
+	}
+	h2 {
+		margin-top: 15px;
+		margin-bottom: 18px;
+		@media (min-width: $screen-md-min) {
+			margin-top: 0;
+		}
+	}
+	.h3 {
+		@media (min-width: $screen-md-min) {
+			margin-top: 0;
+			font-size: 26px;
+			margin-bottom: 18px;
+		}
+	}
+	.wp-post-image {
+		@include box-shadow(0 0 4px rgba(0,0,0,0.2));
+		float: none;
+		@media (min-width: $screen-md-min) {
+			float: left;
+			width: 50%;
+			max-width: 50%;
+		}
+		margin: 0;
+		padding: 0;
+		@media (min-width: $screen-md-min) {
+			margin: 0 $content-padding-lg 0 0;
+		}
+	}
+}
+.hub-news {
+	@media (min-width: $screen-md-min) {
+		padding-right: $content-padding-lg;
+	}
+	.article-summary:first-of-type {
+		border-top: none;
+		padding-top: 0;
+	}
+	.article-summary:last-of-type {
+		padding-bottom: 0;
+	}
+}
+.hub-social {
+	margin-top: 0;
+	border-top: 2px solid $line-color-grid;
+//	border-image-source: url(images/pattern-body.png);
+//	border-image-slice: 2;
+//	//border-image-width: 2px;
+//	border-image-repeat: repeat;
+	@media (min-width: $screen-md-min) {
+		border-top: none;
+		border-left: 2px solid $line-color-grid;
+		padding-left: $content-padding-lg;
+	}
+	.article-summary:last-of-type {
+		border-top: none;
+		padding-top: 15px;
+		padding-bottom: 0;
+	}
+}
+
+// Juicer
+.juicer-feed {
+	padding: 0 !important;
+	h1.referral {
+		text-align: left;
+		margin-bottom: 15px;
+	}
+	.j-display-filters {
+		text-align: left;
+		margin: 0 0 10px 0;
+		padding: 0;
+	}
+	.j-display-filters li {
+		margin: 0 10px 10px 0;
+	}
+	.j-display-filters li:first-of-type {
+		margin: 0 10px 10px 10px;
+	}
+	.j-display-filters li.all.highlight, .juicer-feed .j-display-filters li.all:hover {
+		background: $link-hover-color !important;
+		border-bottom: 1px solid $link-hover-color !important;
+	}
+}

@@ -38,8 +38,7 @@ function gulickgroup_scripts() {
 	
 	// Main Stylesheet
 	wp_enqueue_style( 'gulickgroup-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'gulickgroup-fa', get_template_directory_uri() . '/css/fontawesome.min.css' );
-	wp_enqueue_style( 'gulickgroup-fa-brands', get_template_directory_uri() . '/css/fa-brands.min.css' );
+	wp_enqueue_style( 'gulickgroup-fa', get_template_directory_uri() . '/css/fontawesome-all.min.css' );
 	
 	//Add additional scripts
 	wp_enqueue_script( 'gulickgroup-bootstrap', get_template_directory_uri() . '/javascripts/bootstrap.min.js', array( 'jquery' ), null, true );

@@ -1,11 +1,11 @@
 <?php
 /**
- * The main index template, used for announcements
+ * The main index template, used for blog
  */
 
 get_header();
 
-//get_template_part( 'template-parts/content', 'header' );
+get_template_part( 'template-parts/content', 'header-text' );
 
 ?>
 
@@ -18,27 +18,25 @@ get_header();
 					<?php
 					// Start the Loop.
 					if ( have_posts() ) : while ( have_posts() ) : the_post();
-					?>
+					
+					get_template_part( 'template-parts/content', 'blog-promo' );
+
+					endwhile; else : ?>
 					
 					<article class="article-summary">
-						<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-						<p class="meta"><?php the_time('F d, Y'); ?></p>
-						<?php the_excerpt(); ?>
-					</article>
-
-					<?php endwhile; else : ?>
+						<h3>0 Results</h3>
 						<p>Sorry, no content matched your criteria.</p>
+					</article>
+					
 					<?php endif; ?>
 					
-					<div class="article-navigation">
-						<?php
-						// Previous/next page navigation.
-						the_posts_pagination( array(
-							'prev_text'          => __( '< Previous', 'gulickgroup' ),
-							'next_text'          => __( 'Next >', 'gulickgroup' ),
-						) );
-						?>
-					</div>
+					<?php
+					// Previous/next page navigation.
+					the_posts_pagination( array(
+						'prev_text'          => __( 'Previous', 'gulickgroup' ),
+						'next_text'          => __( 'Next', 'gulickgroup' ),
+					) );
+					?>
 					
 				</section>
 			</div>

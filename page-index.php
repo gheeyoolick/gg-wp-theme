@@ -65,28 +65,38 @@ get_template_part( 'template-parts/content', 'header' );
 						}
 						$args = array(
 							'tax_query' => array( $series_query ),
-							'post_type' => array($content1,$content2,$content3),
-							'category'  => $category,
+							'post_type' => array( $content1,$content2,$content3 ),
+							'cat'  => $category,
 							'orderby'=> 'title',
 							'order' => 'ASC',
 							'posts_per_page' => -1
 						);
 						$featureposts = get_posts( $args );
 						foreach ( $featureposts as $post ) : setup_postdata( $post );
-
-						get_template_part( 'template-parts/content', 'related-module' ); ?>
+						?>
+						
+						<?php if ( $c == 5 ) { echo '<div class="module-load off">'; } ?>
+						
+						<?php get_template_part( 'template-parts/content', 'related-module' ); ?>
 						
 					<?php
 					// Add a clearfix after every 3 item to get clean grid
-					if($c % 3 == 1) {
-					?>
-					<div class="clearfix"></div>
+					if( $c % 3 == 1 ) { ?>
+						<div class="clearfix"></div>
 					<?php }
-					$c++; ?>
+						
+					$c++;
 					
-						<?php
-						endforeach; 
-						wp_reset_postdata();?>
+					endforeach;
+						
+					wp_reset_postdata();
+						
+					if ( $c >= 6 ) { ?>
+						</div>
+						<div class="load-button">
+							<a href="#" class="btn btn-default btn-load">See More</a>
+						</div>
+					<?php } ?>
 						
 					</div>
 				</section>
