@@ -375,3 +375,23 @@
 		width: 100%;
 	}
 }
+
+// Post sidebar
+.aside-post {
+	max-width: 300px;
+	text-align: center;
+	border: 1px solid $line-color;
+	padding: 20px;
+	h3 {
+		margin-top: 5px;
+		margin-bottom: 12px;
+	}
+	p, ul {
+		font-size: 15px;
+	}
+	&.aside-numbers {
+		h4 {
+			font-size: 30px;
+		}
+	}
+}

@@ -36,11 +36,13 @@ add_action( 'after_setup_theme', 'gulickgroup_setup' );
 // Enqueue scripts and styles
 function gulickgroup_scripts() {
 	
-	// Main Stylesheet
-	wp_enqueue_style( 'gulickgroup-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'gulickgroup-fa', get_template_directory_uri() . '/css/fontawesome-all.min.css' );
+	// Add FontAwesome
+	wp_enqueue_style( 'gulickgroup-fontawesome', '//use.fontawesome.com/releases/v5.0.13/css/all.css', array(), '5.0.13', 'all' );
 	
-	//Add additional scripts
+	// Add Main Stylesheet
+	wp_enqueue_style( 'gulickgroup-style', get_stylesheet_uri(), array(), '1.6.1', 'all' );
+	
+	// Add Scripts
 	wp_enqueue_script( 'gulickgroup-bootstrap', get_template_directory_uri() . '/javascripts/bootstrap.min.js', array( 'jquery' ), null, true );
 	wp_enqueue_script( 'gulickgroup-site', get_template_directory_uri() . '/javascripts/site.js?4', array( 'jquery' ), null, true );
 	
