@@ -9,7 +9,7 @@ get_template_part( 'template-parts/content', 'header-text' );
 
 ?>
 
-<main class="main-content single-content">
+<main id="main-content" class="main-content single-content">
 	<div class="container">
 		<div class="row row-content">
 			<div class="content-main">

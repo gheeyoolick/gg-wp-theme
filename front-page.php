@@ -12,7 +12,7 @@ $bg_image = get_field( 'homepage_background_image' ); ?>
 	style="background: url(<?php echo $bg_image; ?>) no-repeat; background-size: cover;"
 <?php } ?>
 >
-	<div class="content-homepage">
+	<div id="main-content" class="content-homepage">
 		<div class="container">
 			<div class="row">
 				<?php $tagline = get_field( 'tagline' ); ?>

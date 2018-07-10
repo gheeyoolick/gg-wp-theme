@@ -27,6 +27,7 @@
 <?php wp_head(); ?>	
 </head>
 <body <?php body_class(); ?>>
+	<a href="#main-content" class="sr-only sr-only-focusable skip-link">Skip to main content</a>
 	<header id="header-site" class="header-site">
 		<div class="header-secondary">
 			<div class="container">
@@ -90,7 +91,7 @@
 										'walker'         => new wp_bootstrap_navwalker())
 									); ?>
 									<ul class="nav navbar-nav">
-										<li class="nav-search"><a href="#" class="icon-search" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+										<li class="nav-search"><a href="#" class="icon-search" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="sr-only">Search</span></a>
 											<?php get_template_part( 'searchform', 'header' ); ?>
 										</li>
 									</ul>

@@ -248,11 +248,21 @@
 .navbar-inverse .navbar-nav>li>a:focus {
 	color: $navbar-inverse-link-color;
 }
-.icon-search:before {
-	content: "";
-	@include use-sprite("icon-search");
+.icon-search::before {
 	display: block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	font-size: 15px;
+	line-height: 1;
+	content: "\f002"; // fas fa-search
 	height: 18px;
+}
+.nav-search label {
+	color: $white;
 }
 
 // Dropdown Menus
@@ -381,9 +391,25 @@
 		background: $brand-secondary-dark;
 	}
 }
-a.dropdown-toggle:after {
-	content: "";
-	@include use-sprite("icon-caret");
-	margin-left: 8px;
+a.dropdown-toggle::after {
+	margin-left: 6px;
+	margin-left: 6px;
 	margin-bottom: 2px;
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	font-size: 13px;
+	line-height: 1;
+	content: "\f078"; // fas fa-chevron-down
+	color: $brand-secondary-medium-light;
+}
+a.dropdown-toggle:hover::after {
+	color: $brand-highlight;
+}
+.navbar-inverse .navbar-nav>.open>a.dropdown-toggle:hover::after {
+	color: $brand-secondary-medium-light;
 }

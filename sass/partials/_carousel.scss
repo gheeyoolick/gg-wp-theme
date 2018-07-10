@@ -14,7 +14,7 @@
 //	}
 //}
 .carousel-control {
-	text-shadow: 0;
+	text-shadow: none;
 	height: 50px;
 	width: 25px;
 	opacity: 0.6;
@@ -32,12 +32,15 @@
 		}
 	}
 	@include transition(all .3s ease);
+	.sr-only {
+		color: $black;
+	}
 }
 .carousel-control.left, .carousel-control.right {
-	background: $brand-background-lightest;
+	background: $brand-primary-light;
 	background-image: none;
 	&:hover {
-		background: $brand-background-lightest;
+		background: $brand-primary-light;
 		opacity: 1;
 	}
 }
@@ -51,11 +54,24 @@
 	@include box-shadow(-1px 1px 1px rgba(0,0,0,0.2));
 	padding-left: 5px;
 }
-.arrow-left {
-	@include use-sprite("arrow-left");
+.arrow-left::before, .arrow-right::before {
+	font-family: "Font Awesome 5 Free";
+	content: "\f053"; // fas fa-chevron-left
+	font-weight: 900;
+	font-size: 30px;
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	line-height: 1;
+	color: $brand-secondary;
 }
-.arrow-right {
-	@include use-sprite("arrow-right");
+.arrow-left::before {
+	content: "\f053"; // fas fa-chevron-left
+}
+.arrow-right::before {
+	content: "\f054"; // fas fa-chevron-right
 }
 .carousel-indicators {
 	left: 7px;
@@ -77,13 +93,13 @@
 	li {
 		margin: 0;
 		line-height: 1;
-		border-color: $brand-background-lightest;
+		border-color: $brand-primary-light;
 		&:hover {
-			background: $brand-background-lightest;
+			background: $brand-primary-light;
 		}
 	}
 	.active {
-		background: $brand-background-lightest;
+		background: $brand-primary-light;
 		margin: 0;
 		width: 10px;
 		height: 10px;
@@ -126,8 +142,8 @@
 .btn.show-caption {
 	z-index: 15;
 	background-color: transparent;
-	border: 1px solid $brand-background-lightest;
-	color: $brand-background-light;
+	border: 1px solid $brand-primary-light;
+	color: $brand-primary-medium;
 	padding: 2px 4px;
 	position: absolute;
 	bottom: 10px;
@@ -139,16 +155,13 @@
 	@include transition(background-color .3s ease);
 	@include transition(color .2s ease);
 	@media (min-width: $screen-sm-min) {
-		font-size: 11px;
 		padding: 5px 8px;
 		bottom: 15px;
 		right: 15px;
-		opacity: 0.8;
 	}
 	&:hover, &.has-caption {
-		opacity: 1;
-		background-color: $brand-background-lightest;
-		border-color: $brand-background-lightest;
+		background-color: $brand-primary-light;
+		border-color: $brand-primary-light;
 		color: $brand-secondary-dark;
 	}
 }
@@ -158,9 +171,6 @@
 	margin-top: 2px;
 }
 #floorplan-carousel .carousel-indicators {
-//	bottom: auto;
-//	top: 20px;
-//	left: 20px;
 	left: 50%;
 	bottom: 3px;
 	li {
@@ -178,10 +188,6 @@
 }
 .floorplan-caption {
 	text-align: center;
-//	background: rgba(251,250,246,0.85);
-//	position: absolute;
-//	top: 0;
-//	width: 100%;
 	padding: 18px 10px 5px 10px;
 	h3 {
 		margin: 0;
@@ -195,8 +201,6 @@
 }
 .floorplan-disclaimer {
 	text-align: center;
-//	top: auto;
-//	bottom: 0;
 	padding: 10px 10px 40px 10px;
 	font-size: 11px;
 	p {

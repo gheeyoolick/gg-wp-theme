@@ -59,6 +59,21 @@
 	@media (min-width: $screen-md-min) {
 		padding: 25px 35px;
 	}
+	position: relative;
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		right: 30px;
+		width: 0;
+		height: 0;
+		border: 32px solid transparent;
+		border-top-color: $brand-secondary;
+		border-bottom: 0;
+		border-left: 0;
+		margin-left: -16px;
+		margin-bottom: -32px;
+	}
 }
 .quote-author {
 	color:  $brand-secondary;
@@ -66,14 +81,6 @@
 	font-size: 12px;
 	font-weight: 700;
 	line-height: 1.2;
-	position: relative;
-	&:before {
-		content: "";
-		@include use-sprite("quote-arrow");
-		position: absolute;
-		top: 0;
-		right: 30px;
-	}
 	padding: 10px 90px 0 30px;
 	@media (min-width: $screen-md-min) {
 		padding: 15px 95px 0 35px;

@@ -9,7 +9,7 @@ get_template_part( 'template-parts/content', 'header' );
 
 ?>
 
-<main class="main-content">
+<main id="main-content" class="main-content">
 	<div class="container">
 		<?php get_template_part( 'template-parts/content', 'intro' );
 		$promo_title = get_field('promo_title');
@@ -31,7 +31,7 @@ get_template_part( 'template-parts/content', 'header' );
 						
 						<article class="module-wrapper">
 							<figure class="module title">
-								<img src="<?php echo get_template_directory_uri(); ?>/images/house-thumbnail-placeholder.png">
+								<img src="<?php echo get_template_directory_uri(); ?>/images/house-thumbnail-placeholder.png" alt="">
 								<figcaption class="title-text">
 									<h2><?php echo $title; ?></h2>
 									<?php echo $desc; ?>

@@ -5,5 +5,6 @@
 ?>
 
 <form role="search" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
-	<input type="text" name="s" class="form-control" value="<?php the_search_query(); ?>" placeholder="Search">
+	<label for="s-main" class="sr-only">Search:</label>
+	<input type="text" name="s" id="s-main" class="form-control" value="<?php the_search_query(); ?>" placeholder="Search">
 </form>

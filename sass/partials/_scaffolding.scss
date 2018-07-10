@@ -97,7 +97,7 @@ p.price, p.mris, p.sold {
 	font-weight: 300;
 	font-size: 40px;
 	color: $white;
-	background: $brand-highlight-dark;
+	background: $brand-highlight-medium;
 	padding: 10px 15px;
 	margin-bottom: 20px;
 	line-height: 1;
@@ -105,7 +105,7 @@ p.price, p.mris, p.sold {
 }
 p.mris {
 	font-size: 30px;
-	color: $brand-highlight-dark;
+	color: $brand-highlight-medium;
 	background: $brand-background;
 }
 p.sold {
@@ -148,43 +148,42 @@ p.sold {
 		line-height: 1;
 		content: "";
 	}
-	a:hover::before {
-		color: $white;
-	}
 }
-.icon-directions:before {
-	content: "";
-	@include use-sprite("icon-directions");
-	margin: 3px 10px 10px 0;
-	display: block;
-	float: left;
-}
-.icon-phone:before {
-	content: "";
-	@include use-sprite("icon-phone");
-	margin: 0 10px -3px 0;
-}
-.icon-email:before {
-	content: "";
-	@include use-sprite("icon-email");
-	margin: 0 10px -5px 0;
+.nav-social [class*="icon-"] a:hover::before, .nav-utility [class*="icon-"] a:hover::before {
+	color: $white;
 }
 
-//.icon-phone {
-//	a::before {
-//		font-family: "Font Awesome 5 Free";
-//		content: "\f095"; // fas fa-phone
-//		font-weight: 900;
-//		margin: 0 10px -3px 0;
-//	}
-//}
-.icon-contact {
+// -- content icons
+.icon-phone {
 	a::before {
 		font-family: "Font Awesome 5 Free";
-		content: "\f075"; // fas fa-comment
+		content: "\f095"; // fas fa-phone
 		font-weight: 900;
+		font-size: 19px;
+		margin: 0 10px 0 0;
 	}
 }
+.icon-directions {
+	a::before {
+		font-family: "Font Awesome 5 Free";
+		content: "\f14e"; // fas fa-compass
+		font-weight: 900;
+		font-size: 22px;
+		display: block;
+		float: left;
+		margin: 2px 8px 10px 0;
+	}
+}
+.icon-email {
+	a::before {
+		font-family: "Font Awesome 5 Free";
+		content: "\f0e0"; // fas fa-envelope
+		font-weight: 900;
+		font-size: 19px;
+		margin: 0 10px 0 0;
+	}
+}
+// -- utility header icons
 .icon-email-updates {
 	a::before {
 		font-family: "Font Awesome 5 Free";
@@ -192,8 +191,15 @@ p.sold {
 		font-weight: 900;
 	}
 }
+.icon-contact {
+	a::before {
+		font-family: "Font Awesome 5 Free";
+		content: "\f075"; // fas fa-comment
+		font-weight: 900;
+	}
+}
 
-// Social Icons
+// -- social Icons
 .icon-twitter {
 	a::before {
 		content: "\f099";
@@ -434,4 +440,29 @@ body .gform_wrapper .top_label div.ginput_container {
 .addtoany_list a:hover span {
     background-color: $brand-highlight-medium !important;
 	opacity: 1 !important;
+}
+.a2a_label {
+	.header-page & {
+		color: $white;
+	}
+}
+
+// Skip Link
+a.skip-link {
+	color: $link-color;
+	.home & {
+		color: $white;
+	}
+}
+
+// Tables
+.table>tbody>tr>td {
+	font-size: 15px;
+	line-height: 1.4;
+	padding: 15px;
+}
+@media (max-width: $screen-sm-max) {
+	.table-responsive>.table>thead>tr>th, .table-responsive>.table>thead>tr>td, .table-responsive>.table>tbody>tr>th, .table-responsive>.table>tbody>tr>td, .table-responsive>.table>tfoot>tr>th, .table-responsive>.table>tfoot>tr>td {
+		white-space: normal;
+	}
 }

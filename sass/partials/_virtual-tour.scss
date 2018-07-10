@@ -11,7 +11,7 @@
 a.tour {
 	display: block;
 	text-align: center;
-	background: $brand-highlight-dark;
+	background: $brand-highlight-medium;
 	color: $white;
 	font-weight: 700;
 	@include antialiased();
@@ -33,7 +33,7 @@ a.tour {
 			height: $tour-button-height;
 			width: $tour-button-height;
 			margin-left: -$tour-button-height;
-			border-top: $tour-button-height solid $brand-highlight-dark;
+			border-top: $tour-button-height solid $brand-highlight-medium;
 			border-left: $tour-button-height solid transparent;
 			@include transition(border-color .2s ease);
 		}
@@ -62,9 +62,9 @@ a.tour {
 		margin-top: -2px;
 	}
 	&:hover {
-		background: $brand-highlight-medium;
+		background: $brand-highlight-dark;
 		&::before {
-			border-top: $tour-button-height solid $brand-highlight-medium;
+			border-top: $tour-button-height solid $brand-highlight-dark;
 		}
 	}
 	

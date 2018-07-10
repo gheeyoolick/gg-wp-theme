@@ -5,14 +5,14 @@
 .header-page {
 	h1 {
 		color: $white;
-		@include text-shadow(1px 1px 1px rgba(0, 0, 0, 0.4));
+		@include text-shadow(1px 1px 1px rgba(0, 0, 0, 0.2));
 		margin: 0;
 		padding: 0;
 		line-height: 1;
 	}
 	h2 {
 		color: $brand-highlight;
-		@include text-shadow(1px 1px 1px rgba(0, 0, 0, 0.4));
+		@include text-shadow(1px 1px 1px rgba(0, 0, 0, 0.2));
 		font-size: 15px;
 		letter-spacing: 1px;
 		margin: 5px 0 0 0;
@@ -45,7 +45,7 @@
 		margin-top: 11px;
 		font-weight: 700;
 		text-transform: uppercase;
-		color: $brand-primary-gray-light;
+		color: $brand-primary-medium;
 		font-size: 10px;
 		@include antialiased();
 		a {

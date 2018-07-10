@@ -7,7 +7,7 @@ get_header();
 
 ?>
 
-<main class="main-content">
+<main id="main-content" class="main-content">
 	<div class="container">
 		<div class="row row-content">
 			<div class="content-main full">
