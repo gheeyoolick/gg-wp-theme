@@ -1,0 +1,137 @@
+// Type
+// --------------------------------------------------
+
+a {
+	@include transition(color .3s ease);
+	-webkit-tap-highlight-color: rgba(104,126,43,0.2);
+}
+
+b, strong {
+	font-weight: $font-weight-bold;
+}
+
+ul, ol {
+	
+}
+
+hr {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+blockquote {
+	padding-left: 2rem;
+	margin: 2rem;
+	color: $brown-500;
+	border-left: 1px solid $brown-300;
+	font-style: italic;
+}
+
+// text headers
+p + h1, p + h2, p + h3 {
+	margin-top: 2.7rem;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	@include link-dark();
+}
+
+// adjust font sizes for mobile
+@include media-breakpoint-down(md) {
+	h1 {
+		font-size: $h1-font-size-sm;
+	}
+	h2 {
+		font-size: $h2-font-size-sm;
+	}
+	h3 {
+		font-size: $h3-font-size-sm;
+	}
+}
+
+// section headers
+.heading-section {
+	text-transform: uppercase;
+	color: $primary;
+	font-weight: 500;
+	@include link-reversed-header( $primary, $headings-color );
+	margin: 3rem 0 1.75rem 0;
+	@include media-breakpoint-down(md) {
+		margin: 2rem 0;
+	}
+	display: flex;
+	&::after {
+		content: '';
+		flex: 1;
+		margin-left: .5rem;
+		background: $brown-200;
+		height: 1px;
+		margin-top: .4rem;
+	}
+}
+h2.heading-section {
+	font-size: remCalc(14px);
+	@include media-breakpoint-up(md) {
+		margin: 4.5rem 0 4rem 0;
+	}
+}
+h4.heading-section {
+	font-size: remCalc(12px);
+}
+
+// Date and location
+.meta {
+	color: $brown-500;
+}
+
+// More link
+.more-link::after {
+	font-family: "Font Awesome 5 Pro";
+	content: "\f054"; // fas fa-chevron-right
+	font-size: 11px;
+	display: inline-block;
+	line-height: 1;
+	margin-left: .5rem;
+}
+
+// Callout
+.callout {
+	font-size: remCalc(18px);
+	i {
+		color: $primary;
+		margin-left: 1rem;
+	}
+	a:hover i {
+		color: $link-hover-color;
+	}
+}
+
+// About the company
+.about {
+	margin: 2rem 0;
+	@include caption-text();
+}
+
+// Intro text
+.intro {
+	margin: 2rem 0;
+	font-size: remCalc(17px);
+	line-height: 1.7;
+	color: $brown-500;
+	@include media-breakpoint-up(md) {
+		font-size: remCalc(18px);
+		line-height: 1.75;
+		margin: 0 0 3.5rem 0;
+	}
+	@include link-text-block();
+}
+.single .intro {
+	// animate on scroll
+	opacity: 0;
+	@include transition(all .5s ease-in);
+	&.loaded {
+		opacity: 1;
+	}
+	@include media-breakpoint-down(sm) {
+		opacity: 1;
+	}
+}

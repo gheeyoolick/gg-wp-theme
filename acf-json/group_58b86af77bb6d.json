@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_58b86dfaddd41",
-            "label": "Optional Promo",
+            "label": "",
             "name": "",
             "type": "message",
             "instructions": "",
@@ -15,13 +15,13 @@
                 "class": "",
                 "id": ""
             },
-            "message": "Add a title and content to make sidebar appear. Otherwise, main index content will appear full width.",
+            "message": "Add a title and content to make sidebar appear",
             "new_lines": "wpautop",
             "esc_html": 0
         },
         {
             "key": "field_58b86b4cd25b1",
-            "label": "Sidebar Title",
+            "label": "Title",
             "name": "promo_title",
             "type": "text",
             "instructions": "",
@@ -40,7 +40,7 @@
         },
         {
             "key": "field_58b86af77ecbc",
-            "label": "Sidebar Content",
+            "label": "Content",
             "name": "promo_content",
             "type": "wysiwyg",
             "instructions": "",
@@ -90,5 +90,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1525448027
+    "modified": 1545416422
 }

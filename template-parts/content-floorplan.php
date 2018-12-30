@@ -6,65 +6,73 @@
 $floorplan_slideshow = get_field( 'floorplan_slides' );
 if( $floorplan_slideshow ) : ?>
 
-<div class="row row-floorplan">
-	<div id="floorplan-carousel" class="floorplan-carousel carousel slide" data-ride="carousel" data-interval="false">
-		
-		<!-- Indicators -->
-		<ol class="carousel-indicators">
+<section class="floorplan">
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div id="floorplan-carousel" class="floorplan-carousel carousel slide" data-ride="carousel" data-interval="false">
 
-			<?php
-			$c=0;
-			foreach ( $floorplan_slideshow as $slide ):
-			?>
-			<li data-target="#floorplan-carousel" data-slide-to="<?php echo $c; ?>" <?php if($c==0) { ?>class="active"<?php } ?> ></li>
-			<?php
-			$c++;
-			endforeach;
-			?>
+					<!-- Indicators -->
+					<ol class="carousel-indicators">
 
-		</ol>
-
-		<!-- Slides -->
-		<div class="carousel-inner" role="listbox">
-			
-			<?php
-				$i=1;
-				foreach ( $floorplan_slideshow as $slide ):
-				if($i==1) { ?>
-					<div class="item active">
-					<?php } else { ?>
-						<div class="item">
-					<?php } $i++; ?>
-					<div id="floorplan-caption" class="floorplan-caption">
 						<?php
-							if ($slide['title'] != '') { echo '<h3>' . $slide['title'] . '</h3>'; }
-							if ($slide['caption'] != '') { echo '<p>' . $slide['caption'] . '</p>'; }
+						$c=0;
+						foreach ( $floorplan_slideshow as $slide ):
 						?>
+						<li data-target="#floorplan-carousel" data-slide-to="<?php echo $c; ?>" <?php if($c==0) { ?>class="active"<?php } ?> ></li>
+						<?php
+						$c++;
+						endforeach;
+						?>
+
+					</ol>
+
+					<!-- Slides -->
+					<div class="carousel-inner">
+
+						<?php
+							$i=1;
+							foreach ( $floorplan_slideshow as $slide ):
+							if($i==1) { ?>
+								<div class="carousel-item active">
+								<?php } else { ?>
+									<div class="carousel-item">
+								<?php } $i++; ?>
+								<div id="floorplan-caption" class="floorplan-caption">
+									<?php
+										if ($slide['title'] != '') { echo '<h3>' . $slide['title'] . '</h3>'; }
+										if ($slide['caption'] != '') { echo '<p>' . $slide['caption'] . '</p>'; }
+									?>
+								</div>
+								<?php echo wp_get_attachment_image($slide['ID'], 'full', 'false', array( 'class' => 'img-fluid', ) ); ?>
+								</div>
+						<?php endforeach; ?>
+									
+						<div class="floorplan-disclaimer">
+							<?php
+							$disclaimer = get_field( 'floorplan_disclaimer', 'option' );
+							if ($disclaimer) {
+								echo $disclaimer;
+							}
+							?>
+						</div>
+
 					</div>
-					<?php echo wp_get_attachment_image($slide['ID'], 'full'); ?>
-					</div>
-			<?php endforeach; ?>
-			<div class="floorplan-disclaimer">
-				<?php
-				if ( is_active_sidebar( 'floorplan-disclaimer' )  ) :
-					dynamic_sidebar( 'floorplan-disclaimer' );
-				endif;
-				?>
+
+					<!-- Controls -->
+					<a class="carousel-control carousel-control-prev" href="#floorplan-carousel" role="button" data-slide="prev" aria-label="Previous">
+						<i class="far fa-chevron-left" aria-hidden></i>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control carousel-control-next" href="#floorplan-carousel" role="button" data-slide="next" aria-label="Next">
+						<i class="far fa-chevron-right" aria-hidden></i>
+						<span class="sr-only">Next</span>
+					</a>
+
+				</div>
 			</div>
-			
 		</div>
-
-		<!-- Controls -->
-		<a class="left carousel-control" href="#floorplan-carousel" role="button" data-slide="prev">
-			<span class="arrow-left" aria-hidden="true"></span>
-			<span class="sr-only">Previous</span>
-		</a>
-		<a class="right carousel-control" href="#floorplan-carousel" role="button" data-slide="next">
-			<span class="arrow-right" aria-hidden="true"></span>
-			<span class="sr-only">Next</span>
-		</a>
-
 	</div>
-</div>
+</section>
 	
 <?php endif; ?>

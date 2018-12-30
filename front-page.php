@@ -5,65 +5,60 @@
 
 get_header();
 
-$bg_image = get_field( 'homepage_background_image' ); ?>
+get_template_part( 'template-parts/content', 'header' );
 
-<div class="hero-homepage"
-<?php if( $bg_image ) { ?>
-	style="background: url(<?php echo $bg_image; ?>) no-repeat; background-size: cover;"
-<?php } ?>
->
-	<div id="main-content" class="content-homepage">
-		<div class="container">
-			<div class="row">
-				<?php $tagline = get_field( 'tagline' ); ?>
-				<?php if( $tagline ) { ?>
-					<h1><?php echo $tagline; ?></h1>
-				<?php } ?>
+$news = get_field( 'latest_news' );
+if ($news) { ?>
+<div class="latest-news">
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<span>latest news:</span>
+				<?php echo '<a href="' . $news['url'] . '" target="' . $news['target'] . '">' . $news['title'] . '</a>'; ?>
 			</div>
-			<div class="row">
-				
-				<?php $features = get_field( 'homepage_feature' );
-				if( $features ) {
-				
-					foreach($features as $feature) {
-					
-					if ( isset( $feature['homepage_feature_title'] ) )
-						$title = ( $feature['homepage_feature_title'] );
-					if ( isset( $feature['homepage_feature_text'] ) )
-						$desc = ( $feature['homepage_feature_text'] );
-					if ( isset( $feature['homepage_feature_image'] ) )
-						$img = wp_get_attachment_image_url( $feature['homepage_feature_image'], 'full', false );
-						$img_srcset = wp_get_attachment_image_srcset( $feature['homepage_feature_image'], 'full', false );
-						$img_alt = get_post_meta( $feature['homepage_feature_image'],'_wp_attachment_image_alt', true );
-					if ( isset( $feature['homepage_feature_link'] ) )
-						$link = ( $feature['homepage_feature_link'] );
-					?>
-				
-					<article class="module-wrapper">
-						<figure class="module">
-							<img src="<?php echo $img; ?>"
-							 srcset="<?php echo $img_srcset; ?>"
-							 sizes="(max-width: 786px) calc(100vw - 60px), 33.33vw" alt="<?php echo $img_alt; ?>">
-							<figcaption>
-								<a href="<?php echo $link; ?>" class="module-text">
-									<h3><?php echo $title; ?></h3>
-									<p class="btn btn-module">Learn More</p>
-									<div class="module-details">
-										<p><?php echo $desc; ?></p>
-									</div>
-								</a>
-							</figcaption>
-						</figure>
-					</article>
-				
-				<?php }
-				
-				} ?>
-				
+			<div class="col col-btn">
+				<a href="<?php echo esc_url( home_url( '/news/' ) ); ?>" class="btn btn-primary">see all news</a>
 			</div>
 		</div>
 	</div>
 </div>
+<?php	
+}
+?>
+
+<main id="main-content" class="main-homepage">
+	
+	<section class="section-intro-homepage">
+		<div class="container">
+			<div class="row justify-content-center">
+				<?php
+				
+				$tagline = get_field( 'intro_tagline' );
+				$details = get_field( 'intro_text' );
+				
+				if( $tagline ) {
+					echo '<div class="col"><h1>' . $tagline . '</h1></div>';
+				}
+				if( $details ) {
+					echo '<div class="col-lg-9">' . $details . '</div>';
+				}
+				
+				?>
+			</div>
+		</div>
+	</section>
+	
+	<?php
+	
+	// Get content collections
+	get_template_part( 'template-parts/content', 'collections' );
+	
+	// Get featured section
+	get_template_part( 'template-parts/content', 'featured-section' );
+	
+	?>
+	
+</main>
 
 <?php get_footer(); ?>
 

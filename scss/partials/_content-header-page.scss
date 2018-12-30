@@ -1,0 +1,60 @@
+// Page Headers
+// --------------------------------------------------
+
+.header-page {
+	@include shadow($section-shadow);
+	background: $white;
+	position: relative;
+	z-index: 10;
+	padding: 1.75rem 0 2.5rem 0;
+	@include media-breakpoint-down(md) {
+		padding: .5rem 0 1.25rem 0;	
+	}
+	h1 {
+		margin: 0 0 .35rem 0;
+	}
+	h2 {
+		color: $brown-500;
+		font-size: $h3-font-size;
+		margin: 0;
+		@include media-breakpoint-down(md) {
+			font-size: $h3-font-size-sm;
+		}
+	}
+	.col-header-share {
+		text-align: right;
+		padding-top: 1.5rem;
+		@include media-breakpoint-down(md) {
+			padding-top: .75rem;
+		}
+		@include media-breakpoint-down(sm) {
+			text-align: left;
+		}
+		span.share-label {
+			font-size: remCalc(12px);
+			color: $brown-300;
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: .25rem;
+			@include media-breakpoint-down(md) {
+				display: none;
+			}
+		}
+	}
+}
+
+// Single content header
+.header-single {
+	margin-bottom: 2.5rem;
+	include media-breakpoint-up(md) {
+		margin-bottom: 4rem;
+	}
+	p.meta {
+		margin: 1rem 0;
+	}
+	@include media-breakpoint-up(lg) {
+		h1 {
+			font-size: $font-size-base * 3.2;
+		}		
+	}
+}

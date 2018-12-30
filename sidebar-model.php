@@ -11,14 +11,14 @@ $model_details = get_field( 'model_additional_details' );
 if ($model_address) {
 ?>
 <div class="sidebar">
-	<h4><?php
+	<h4 class="heading-section"><?php
 	if( $model_title ) {
 		echo ( $model_title );
 	} else {
 		echo 'Model Home';
 	}
 	?></h4>
-	<p class="callout icon-directions"><a href="<?php echo esc_html( $model_map_url ); ?>" target="_blank"><?php echo ( $model_address ); ?></a></p>
+	<p class="callout"><a href="<?php echo esc_html( $model_map_url ); ?>" target="_blank"><?php echo ( $model_address ); ?><i class="fas fa-compass fa-lg"></i></a></p>
 	<?php if( $model_details ) {
 		echo wpautop( $model_details );
 	} ?>

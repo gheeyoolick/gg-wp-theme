@@ -1,0 +1,47 @@
+// Floorplan
+// --------------------------------------------------
+
+.floorplan {
+	@include shadow($section-shadow);
+	position: relative;
+	z-index: 10;
+	padding: 2.5rem 0;
+	text-align: center;
+	//@include section-bg-dark();
+	
+	.carousel-control-prev, .carousel-control-next {
+		color: $brown-900;
+		background: rgba(255,255,255,0.5);
+		&:hover {
+			background: rgba(255,255,255,1);
+			//border: none;
+		}
+	}
+	@include media-breakpoint-up(sm) {
+		.carousel-control-next {
+			right: -2.8%;
+		}
+		.carousel-control-prev {
+			left: -2.8%;
+		}
+	}
+	
+	.carousel-control {
+		i {
+			@include text-shadow(none);
+		}
+	}
+	
+	.carousel-indicators {
+		bottom: 40px;
+	}
+
+}
+
+.floorplan-disclaimer {
+	padding: 1rem;
+	p {
+		margin: 0;
+		@include caption-text();
+	}
+}

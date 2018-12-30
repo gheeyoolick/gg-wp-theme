@@ -1,0 +1,276 @@
+// Header
+// --------------------------------------------------
+
+// Skip Link
+a.skip-link {
+	color: $link-color;
+}
+
+// General
+.header-site {
+	background: $white;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 900;
+	font-size: remCalc(17px);
+	&.header-scrolling {
+		.navbar {
+			@include transition(padding .3s);
+			padding-top: $navbar-padding-y-xs;
+			padding-bottom: $navbar-padding-y-xs;
+			//@include shadow(0 0 3px rgba(0,0,0,0.3));
+		}
+	}
+	body.logged-in & { // account for WP admin bar
+		top: 32px;
+	}
+	.navbar {
+		@include shadow($section-shadow);
+		padding-top: $navbar-padding-y-xs;
+		padding-bottom: $navbar-padding-y-xs;
+		@include media-breakpoint-up(lg) {
+			padding-top: $navbar-padding-y-md;
+			padding-bottom: $navbar-padding-y-md;
+		}
+		@include media-breakpoint-up(xl) {
+			padding-top: $navbar-padding-y;
+			padding-bottom: $navbar-padding-y;
+		}
+		.navbar-nav > li > a > img {
+			display: none;
+		}
+	}
+	// active
+	.navbar-light .navbar-nav .active > .nav-link span {
+		//border-bottom: 1px solid $navbar-light-active-color;
+		position: relative;
+	}
+	.navbar-light .navbar-nav .active > .nav-link span:after {
+		display: block;
+		width: 100%;
+		height: 1px;
+		content: '';
+		background: $navbar-light-active-color;
+		position: absolute;
+		bottom: -15px;
+	}
+}
+
+#navbarGlobal {
+	@include media-breakpoint-down(md) {
+		overflow-y: auto;
+		max-height: calc(100vh - #{$navbar-header-height-sm});
+	}
+}
+
+// Logo
+// -- switch between 3
+.navbar-brand {
+	white-space: normal;
+	padding: 0;
+	margin: 0;
+	width: 200px;
+	height: 106px; // add padding to bottom
+	background-image: url(../images/GulickGroup-logo-tagline-sm.svg);
+	background-repeat: no-repeat;
+	background-size: 200px 93px;	
+	margin-top: -33px;
+	@include transition(all .3s);
+	@include media-breakpoint-up(lg) {
+		width: 240px;
+		height: 139px;
+		background-image: url(../images/GulickGroup-logo-tagline.svg);
+		background-size: 240px 139px;
+		margin-top: -94px;
+		.header-scrolling & {
+			background-image: url(../images/GulickGroup-logo-gs.svg);
+			width: 44px;
+			height: 44px;
+			background-size: 44px 44px;
+			margin-top: 0;
+		}
+	}
+	@include media-breakpoint-up(xl) {
+		width: 270px;
+		height: 157px;
+		background-size: 270px 157px;
+		margin-top: -112px;
+	}
+}
+
+// Toggler
+.navbar-toggler {
+	background: none;
+	border: none;
+	font-weight: 400;
+	&:hover, &:focus {
+		color: $link-color;
+	}
+}
+
+// Search
+.navbar-nav-search {
+	display: none;
+	@include media-breakpoint-up(md) {
+		display: block;
+		.site-search {
+			padding: .25rem .75rem .75rem .75rem;
+		}
+	}
+}
+#navbarSearch {
+	@include media-breakpoint-up(md) {
+		display: none !important;
+	}
+}
+
+// Social Links
+.navbar-nav-social {
+	.navbar-text {
+		font-size: remCalc(12px);
+		padding-right: .25rem;
+	}
+	.nav-link {
+		padding-left: .5rem !important;
+		padding-right: .5rem !important;
+		font-size: 14px;
+	}
+	flex-direction: row;
+	@include transition(all .1s);
+	@include media-breakpoint-up(md) {
+		opacity: 0;
+		position: absolute;
+		top: -200px;
+		.header-scrolling & {
+			position: static;
+			top: auto;
+			margin-top: 2px;
+			margin-left: 2rem;
+			opacity: 1;
+		}
+	}
+}
+
+// Dropdowns
+.dropdown-toggle::after {
+	border: none;
+	margin: 0;
+	display: inline-block;
+	opacity: 0;
+	position: absolute;
+	top: .4rem;
+	margin-left: .3rem;
+	font-family: "Font Awesome 5 Pro";
+	content: "\f078"; // far fa-chevron-down
+	font-size: 11px;
+	@include transition(all .3s ease);
+}
+.dropdown-toggle:hover::after, .show .dropdown-toggle::after {
+	opacity: 1;
+	top: 1rem;
+}
+.dropdown-menu {
+	top: 5.9rem;
+	font-size: remCalc(13px);
+	border: none;
+	@include media-breakpoint-up(lg) {
+		@include shadow(0 2px 2px rgba(0,0,0,0.2));
+		min-width: 500px;
+		right: 0;
+    	left: auto;
+		opacity: 0;
+		-webkit-transform-origin: top;
+		transform-origin: top;
+		-webkit-animation-fill-mode: forwards;  
+		animation-fill-mode: forwards; 
+		-webkit-transform: scale(1, 0);
+		display: block; 
+		transition: all 0.3s linear;
+		-webkit-transition: all 0.3s linear;
+		.show & {
+			-webkit-transform: scale(1, 1);
+			transform: scale(1, 1);  
+			opacity: 1;
+		}
+	}
+	@include media-breakpoint-up(xl) {
+		top: 6.4rem;
+	}
+	.header-scrolling & {
+		top: 3rem;
+	}
+	&.site-search {
+		left: auto;
+		right: 0;
+	}
+	.dropdown-header {
+		width: 100%;
+		text-align: center;
+		font-size: remCalc(15px);
+		@include media-breakpoint-up(lg) {
+			padding: 1rem;
+		}
+	}
+	& > li.dropdown-header:first-child {
+		padding-top: .2rem;
+	}
+	a, > li > a {
+		@include transition(background .4s ease, color .4s ease);
+		p.desc {
+			color: $brown-500;
+			line-height: 1.3;
+			font-size: remCalc(12px);
+			margin: 0;
+		}
+	}
+	// featured image display
+	> li {
+		img {
+			display: inline-block;
+			margin-right: 10px;
+			width: 44px;
+			height: auto;
+			vertical-align: middle;
+		}
+		img + span {
+			display: inline-block;
+			width: calc(100% - 54px);
+			vertical-align: middle;
+		}
+		@include media-breakpoint-up(lg) {
+			float: left;
+			width: 50%;
+		}
+	}
+	> li.dropdown-footer {
+		margin-top: .75rem;
+		border-top: 1px solid $brown-150;
+		border-bottom: 1px solid $brown-150;
+		> a {
+			padding: .75rem 0;
+			&::after {
+				content: " \0203A";
+			}
+		}
+		@include media-breakpoint-up(lg) {
+			width: 100%;
+			border-bottom: none;
+			margin-top: 1.5rem;
+			margin-bottom: -.5rem;
+			> a {
+				padding: 1.25rem;
+			}
+		}
+	}
+	a:hover, a:focus, >li>a:hover, >li>a:focus, .active > .nav-link {
+		background: $dropdown-link-hover-bg;
+		color: $dropdown-link-hover-color;
+		p.desc {
+			color: $dropdown-link-hover-color;
+		}
+	}
+	.active > .nav-link span:after {
+		display: none !important;
+	}
+}

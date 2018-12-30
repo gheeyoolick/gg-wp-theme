@@ -1,6 +1,6 @@
 {
     "key": "group_5708029f10b15",
-    "title": "Header Background Features",
+    "title": "Header Image Features",
     "fields": [
         {
             "key": "field_5708166be74ad",
@@ -15,20 +15,20 @@
                 "class": "",
                 "id": ""
             },
-            "open": 1,
-            "multi_expand": 1,
+            "open": 0,
+            "multi_expand": 0,
             "endpoint": 0
         },
         {
             "key": "field_57080acb232de",
-            "label": "Background Map",
+            "label": "Source (src url for custom google map)",
             "name": "header_background_map",
             "type": "url",
-            "instructions": "Enter src url for custom google map",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -37,14 +37,14 @@
         },
         {
             "key": "field_5a7881501bc8d",
-            "label": "Background Map Name",
+            "label": "Name",
             "name": "header_background_map_name",
             "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -56,14 +56,14 @@
         },
         {
             "key": "field_5a786f87bc5bc",
-            "label": "Background Map 2",
+            "label": "Source (src url for custom google map)",
             "name": "header_background_map_two",
             "type": "url",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -72,14 +72,14 @@
         },
         {
             "key": "field_5a78816a1bc8e",
-            "label": "Background Map 2 Name",
+            "label": "Name",
             "name": "header_background_map_name_two",
             "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -102,13 +102,13 @@
                 "class": "",
                 "id": ""
             },
-            "open": 1,
-            "multi_expand": 1,
+            "open": 0,
+            "multi_expand": 0,
             "endpoint": 0
         },
         {
             "key": "field_5708053ed535a",
-            "label": "Background Image",
+            "label": "",
             "name": "header_background_image",
             "type": "image",
             "instructions": "",
@@ -143,13 +143,13 @@
                 "class": "",
                 "id": ""
             },
-            "open": 1,
-            "multi_expand": 1,
+            "open": 0,
+            "multi_expand": 0,
             "endpoint": 0
         },
         {
             "key": "field_57080a87c0848",
-            "label": "Background Slideshow",
+            "label": "",
             "name": "header_background_slideshow",
             "type": "gallery",
             "instructions": "",
@@ -162,7 +162,7 @@
             },
             "min": "",
             "max": "",
-            "preview_size": "thumbnail",
+            "insert": "append",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -170,8 +170,7 @@
             "max_width": "",
             "max_height": "",
             "max_size": "",
-            "mime_types": "",
-            "insert": "append"
+            "mime_types": ""
         }
     ],
     "location": [
@@ -180,11 +179,6 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "page"
-            },
-            {
-                "param": "page_type",
-                "operator": "!=",
-                "value": "front_page"
             },
             {
                 "param": "page_template",
@@ -222,5 +216,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1525448072
+    "modified": 1545414715
 }

@@ -9,28 +9,34 @@ get_template_part( 'template-parts/content', 'header' );
 
 ?>
 
-<main id="main-content" class="main-content single-content">
+<main id="main-content" class="main-content has-sidebar sidebar-single">
+	
 	<div class="container">
-		<?php get_template_part( 'template-parts/content', 'intro' ); ?>
 		<div class="row row-content">
-			<div class="content-main">
-				<section class="content-section content-body">
+			
+			<div class="col-md-9 content-main content-single">
+				
+				<?php
+				
+				get_template_part( 'template-parts/content', 'intro' );
 
-					<?php
-					// Start the Loop.
-					if ( have_posts() ) : while ( have_posts() ) : the_post();
-					
-					the_content();
-					
-					endwhile; else : ?>
-						<p>Sorry, there is no content for this page.</p>
-					<?php endif; ?>
+				// Start the Loop.
+				if ( have_posts() ) : while ( have_posts() ) : the_post();
 
-				</section>
+				the_content();
+
+				endwhile; else : ?>
+					<p>Sorry, there is no content for this page.</p>
+				
+				<?php endif; ?>
+				
 			</div>
+			
 			<?php get_sidebar(); ?>
+			
 		</div>
 	</div>
+	
 </main>
 
 <?php get_footer(); ?>

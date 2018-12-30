@@ -1,0 +1,158 @@
+// General Mixins
+// --------------------------------------------------
+
+$font-size-base-calc: 16px;
+
+// REM Calc
+@function remCalc($size) {
+  $remSize: $size / $font-size-base-calc;
+  @return #{$remSize}rem;
+}
+
+// Antialiased
+@mixin antialiased() {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;	
+}
+
+// Text Shadow
+@mixin text-shadow($shadow...) {
+	text-shadow: $shadow;	
+}
+
+// Shadow
+@mixin shadow($shadow...) {
+	-webkit-box-shadow: $shadow;
+  	-moz-box-shadow:    $shadow;
+	box-shadow:         $shadow;
+}
+
+// Circle
+@mixin circle ($radius) {
+     height: $radius;
+     width: $radius;
+     border-radius: $radius;
+     -moz-border-radius: $radius;
+     -webkit-border-radius: $radius;
+	 outline: none;
+}
+
+// Equal height row
+@mixin equal-height() {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display:         flex;
+}
+
+//Animations
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }  
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }  
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};      
+}
+
+//Transitions
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+// Project Mixins
+// --------------------------------------------------
+
+// Dark background white links
+@mixin link-reversed() {
+	a {
+		color: $brown-100;
+		&:hover, &:focus {
+			color: $white;
+			text-decoration: underline;
+		}
+	}
+}
+
+// Brown links
+@mixin link-medium() {
+	a {
+		color: $brown-500;
+		&:hover, &:focus {
+			color: $brown-900;
+			text-decoration: none;
+		}
+	}
+}
+
+// Dark links
+@mixin link-dark() {
+	a {
+		color: $brown-900;
+		&:hover, &:focus {
+			color: $link-color;
+			text-decoration: none;
+		}
+	}
+}
+
+// Dark header links
+@mixin link-reversed-header( $color, $hover-color ) {
+	a {
+		color: $color;
+		&:hover, &:focus {
+			color: $hover-color;
+			text-decoration: none;
+		}
+	}
+}
+
+// Text block links
+@mixin link-text-block() {
+	a {
+		text-decoration: underline;
+		color: $brown-900;
+		&:hover, &:focus {
+			color: $link-color;
+		}
+	}
+}
+
+// Dark background section
+@mixin section-bg-dark() {
+	background: $brown-500;
+	color: $brown-100;
+}
+
+// Light background section
+@mixin section-bg-light() {
+	background: $brown-100;
+}
+
+// Caption
+@mixin caption-text() {
+	color: $brown-500;
+	font-size: remCalc(13px);
+	line-height: 1.7;
+}

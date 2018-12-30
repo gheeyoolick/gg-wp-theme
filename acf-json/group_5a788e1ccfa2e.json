@@ -1,13 +1,13 @@
 {
     "key": "group_5a788e1ccfa2e",
-    "title": "Virtual Tour",
+    "title": "Promo Tab",
     "fields": [
         {
-            "key": "field_5a788e233396f",
-            "label": "Link Text",
-            "name": "virtual_tour_text",
+            "key": "field_5c1a6829dfc41",
+            "label": "Text",
+            "name": "promo_text",
             "type": "text",
-            "instructions": "",
+            "instructions": "Wrap a 'span' tag around anything that should be larger and bolded",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -22,11 +22,11 @@
             "maxlength": ""
         },
         {
-            "key": "field_5a788e3f33970",
-            "label": "Link",
-            "name": "virtual_tour_link",
-            "type": "url",
-            "instructions": "",
+            "key": "field_5c1a669c50ef8",
+            "label": "Icon",
+            "name": "promo_icon",
+            "type": "text",
+            "instructions": "Enter class name from Font Awesome Pro 5. Will default to 'fas fa-arrow-circle-right' if nothing is entered.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -35,7 +35,25 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": ""
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5c1a664ed25e4",
+            "label": "Link",
+            "name": "promo_link",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url"
         }
     ],
     "location": [
@@ -59,6 +77,18 @@
                 "operator": "==",
                 "value": "gg_community"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "page_template",
+                "operator": "!=",
+                "value": "page-hub.php"
+            }
         ]
     ],
     "menu_order": 2,
@@ -69,5 +99,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1517930617
+    "modified": 1545561402
 }

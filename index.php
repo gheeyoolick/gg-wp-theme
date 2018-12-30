@@ -9,11 +9,12 @@ get_template_part( 'template-parts/content', 'header-text' );
 
 ?>
 
-<main id="main-content" class="main-content single-content">
+<main id="main-content" class="main-content has-sidebar sidebar-single">
+	
 	<div class="container">
 		<div class="row row-content">
-			<div class="content-main">
-				<section class="content-section content-body content-body-index">
+			
+			<div class="col-md-9 content-main">
 					
 					<?php
 					// Start the Loop.
@@ -33,16 +34,18 @@ get_template_part( 'template-parts/content', 'header-text' );
 					<?php
 					// Previous/next page navigation.
 					the_posts_pagination( array(
-						'prev_text'          => __( 'Previous', 'gulickgroup' ),
-						'next_text'          => __( 'Next', 'gulickgroup' ),
+						'prev_text'          => __( 'previous', 'gulickgroup' ),
+						'next_text'          => __( 'next', 'gulickgroup' ),
 					) );
 					?>
 					
-				</section>
 			</div>
+			
 			<?php get_sidebar(); ?>
+			
 		</div>
 	</div>
+	
 </main>
 
 <?php get_footer(); ?>

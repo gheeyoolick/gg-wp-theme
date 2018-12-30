@@ -1,0 +1,98 @@
+// Scaffolding
+// --------------------------------------------------
+
+// Body
+body {
+	@include transition(padding-top .3s ease);
+	padding-top: $navbar-header-height-sm;
+	@include media-breakpoint-up(lg) {
+		padding-top: $navbar-header-height-md;
+		&.scrolling {
+			padding-top: $navbar-header-height-xs;
+		}
+	}
+	@include media-breakpoint-up(xl) {
+		padding-top: $navbar-header-height;
+	}
+}
+
+// Print header
+#header-site-print {
+	display: none;
+}
+
+// Images
+.promo-image {
+	border: 4px solid $white;
+	@include shadow(0 0 3px rgba(0,0,0,0.2));
+}
+
+// Main Content section
+#main-content {
+	@include shadow($section-shadow);
+	position: relative;
+	z-index: 9;
+}
+
+// Search
+.site-search {
+	input {
+		font-size: remCalc(12px);
+	}
+	.btn {
+		border-radius: 0;
+		padding: .25rem .75rem;
+		border: 1px solid $input-border-color;
+		border-left: none;
+		&:hover, &:active {
+			color: $link-color;
+		}
+	}
+}
+
+// Share -- AddToAny plugin
+.addtoany_list {
+	.a2a_svg {
+		border-radius: 50% !important;
+		padding: 4px !important;
+		vertical-align: middle;
+	}
+	a span {
+		@include transition(background-color .3s ease);
+	}
+	a.a2a_button_email span {
+		background-color: $brown-500 !important;
+	}
+	a:hover span, a.a2a_button_email:hover span {
+		background-color: $link-hover-color !important;
+		opacity: 1 !important;
+	}
+}
+
+// Tables
+.table > tbody > tr > td {
+	font-size: remCalc(14px);
+	padding: 1rem;
+}
+@include media-breakpoint-down(xs) {
+	.table-responsive>.table>thead>tr>th, .table-responsive>.table>thead>tr>td, .table-responsive>.table>tbody>tr>th, .table-responsive>.table>tbody>tr>td, .table-responsive>.table>tfoot>tr>th, .table-responsive>.table>tfoot>tr>td {
+		white-space: normal;
+	}
+}
+
+// Exclude email sidebar form from contact and thank you page
+.page-id-105 .content-sidebar, .page-id-1893 .content-sidebar {
+	.sidebar:nth-of-type(1) {
+		display: none;
+	}
+	.sidebar:nth-of-type(2) {
+		margin-top: 0;
+	}
+}
+
+// Exclude latest posts from contact page
+.blog .content-sidebar, .page-template-page-hub .content-sidebar {
+	.sidebar:last-child {
+		display: none;
+	}
+}

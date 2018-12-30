@@ -1,8 +1,8 @@
 <?php
 /*
 Plugin Name: Gulick Group
-Description: Theme independent features: custom post types, custom taxonomy, sidebars and widgets, custom nav walker, acf 2 way connections
-Version: 1.3
+Description: Theme independent features: custom post types, custom taxonomy, sidebars and widgets, custom nav walker, acf 2 way connections, acf options page
+Version: 2.0
 Author: Brian Cordyack
 Author URI: http://cordyack.com
 */
@@ -14,6 +14,14 @@ add_theme_support( 'post-thumbnails' );
 add_filter('jpeg_quality', function($arg){
 	return 95;
 });
+
+// Create ACF Options page
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page( array(
+		'page_title' => 'Site Settings',
+		'updated_message' => __('Settings Updated', 'acf'),
+	));
+}
 
 // Create Custom Post Types
 require_once('inc/custom-post-types.php');
@@ -39,13 +47,6 @@ add_action('wp_head', 'add_ie_html5_shim');
 
 // Register Sidebars and Widgets
 require_once('inc/widgets-sidebars.php');
-
-// Disable default custom meta fields
-function remove_custom_meta_boxes() {
-	remove_meta_box('postcustom','post','normal');
-	remove_meta_box('postcustom','page','normal');
-}
-add_action('admin_init','remove_custom_meta_boxes');
 
 // Add Gravity Forms visibility field
 add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );

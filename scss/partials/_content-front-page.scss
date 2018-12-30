@@ -1,0 +1,64 @@
+// Front Page
+// --------------------------------------------------
+
+// Latest News
+.latest-news {
+	background: $brown-500;
+	color: $white;
+	font-size: remCalc(12px);
+	.col {
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
+	.col-btn {
+		text-align: right;
+	}
+	a:not(.btn) {
+		color: $white;
+		text-decoration: underline;
+		&:hover, &:focus {
+			color: $brown-200;
+		}
+	}
+	span {
+		display: none;
+	}
+	@include media-breakpoint-up(md) {
+		background: $carousel-caption-background;
+		height: $navbar-header-height-xs;
+		margin-top: -$navbar-header-height-xs;
+		position: relative;
+		span {
+			display: inline-block;
+			margin-right: .35rem;
+		}
+		.col {
+			padding-top: 1.5rem;
+			padding-bottom: 1.5rem;
+		}
+	}
+}
+
+// Intro
+.section-intro-homepage {
+	@include section-bg-dark();
+	@include shadow($section-shadow);
+	position: relative;
+	z-index: 11;
+	text-align: center;
+	@include antialiased();
+	padding: 4rem 0;
+	position: relative;
+	h1 {
+		font-size: remCalc(37px);
+		color: $brown-100;
+		margin-bottom: 2.5rem;
+	}
+	p {
+		font-size: remCalc(16px);
+		line-height: 1.75;
+	}
+	@include media-breakpoint-down(md) {
+		display: none;
+	}
+}

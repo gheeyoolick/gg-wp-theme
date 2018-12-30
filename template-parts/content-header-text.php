@@ -4,11 +4,17 @@
  */
 ?>
 
+<?php if ( is_front_page() ) {
+	
+} else {
+	
+?>
+<?php get_template_part( 'template-parts/content', 'promo' ); ?>
+
 <header class="header-page">
-	<?php get_template_part( 'template-parts/content', 'tour' ); ?>
 	<div class="container">
 		<div class="row">
-			<div class="header-content">
+			<div class="col-md-8">
 				<h1>
 					<?php
 					// get the correct page title
@@ -41,13 +47,13 @@
 					echo '';
 				}
 				?>
-				
-				<div class="header-share">
-					Share This On:
-					<?php if ( function_exists( 'ADDTOANY_SHARE_SAVE_KIT' ) ) { ADDTOANY_SHARE_SAVE_KIT(); } ?>
-				</div>
-				
+			</div>
+			<div class="col-md-4 col-header-share">
+				<span class="share-label">share this on:</span>
+				<?php if ( function_exists( 'ADDTOANY_SHARE_SAVE_KIT' ) ) { ADDTOANY_SHARE_SAVE_KIT(); } ?>
 			</div>
 		</div>
 	</div>
 </header>
+
+<?php } ?>

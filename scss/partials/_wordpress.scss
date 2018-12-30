@@ -1,0 +1,60 @@
+// Wordpress Reqs
+// --------------------------------------------------
+
+// Responsive Images
+.main-content img[class*="wp-image-"] {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+// Captions
+.wp-caption, .gallery-caption {
+	margin-bottom: 2rem;
+	max-width: 100%;
+	&.aligncenter {
+		width: 100% !important;
+	}
+}
+.wp-caption-text {
+	@include caption-text();
+	padding-top: .75rem;
+}
+
+// Image Alignment
+.alignleft {
+	float: left;
+	margin: 0 2rem 2rem 0;
+}
+.alignright {
+	float: right;
+	margin: 0 0 2rem 2rem;
+}
+.aligncenter, .alignone {
+	margin: 2rem auto;
+}
+@include media-breakpoint-down(xs) {
+	.alignright, .alignleft, .wp-caption img[class*="wp-image-"] {
+		width: 100% !important;
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+// Misc
+.sticky, .bypostauthor {
+	display: inherit;
+}
+
+// Text meant only for screen readers
+.says,
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute !important;
+	width: 1px;
+	/* many screen reader and browser combinations announce broken words as they would appear visually */
+	word-wrap: normal !important;
+}

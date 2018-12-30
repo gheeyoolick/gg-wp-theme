@@ -5,7 +5,7 @@
 ?>
 
 <?php if ( is_active_sidebar( 'sidebar-1' )  ) : ?>
-	<aside class="content-sidebar" role="complementary">
+	<aside class="col-md-3 content-sidebar" role="complementary">
 		<?php 
 		get_sidebar( 'contact' );
 		dynamic_sidebar( 'sidebar-1' );

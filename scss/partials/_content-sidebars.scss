@@ -1,0 +1,161 @@
+// Sidebars
+// --------------------------------------------------
+
+// Sidebar bg to the right
+.has-sidebar {
+	@include media-breakpoint-up(md) {
+		background-image:
+			linear-gradient(
+			to right,
+			$white,
+			$white 70%,
+			$sidebar-bg 70%
+		);
+	}
+	&.sidebar-single {
+		@include media-breakpoint-up(md) {
+			background-image:
+				linear-gradient(
+				to right,
+				$white,
+				$white 80%,
+				$sidebar-bg 80%
+			);
+		}
+		@include media-breakpoint-up(xl) {
+			background-image:
+				linear-gradient(
+				to right,
+				$white,
+				$white 75%,
+				$sidebar-bg 75%
+			);
+		}
+		@media (min-width: 2200px) {
+			background-image:
+				linear-gradient(
+				to right,
+				$white,
+				$white 65%,
+				$sidebar-bg 65%
+			);
+		}
+	}
+}
+
+// Sidebar wrapper
+.content-sidebar {
+	background: $sidebar-bg;
+	padding-bottom: 2rem;
+	font-size: remCalc(12px);
+	border-bottom: 1px solid $brown-150;
+	
+	@include media-breakpoint-up(md) {
+		border-bottom: none;
+		border-left: 1px solid $brown-150;
+		
+		// intro for mobile
+		.intro {
+			display: none;
+		}
+	}
+	
+	@include media-breakpoint-up(xl) {
+		padding-left: 40px;
+	}
+	
+	@include link-medium();
+	
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		li {
+			margin-bottom: .35rem;
+		}
+	}
+}
+
+// Bullets
+.bullets {
+	text-align: center;
+	margin: 2.5rem 0 0 0;
+	i {
+		font-size: 20px;
+		color: $primary;
+	}
+	p {
+		margin: .5rem 0 0 0;
+		line-height: 1.35;
+	}
+	span {
+		font-weight: 500;
+	}
+	.bullet {
+		padding: 1.25rem 15px;
+		&:nth-child(-n+3) {
+			border-bottom: 1px solid $brown-150;
+		}
+		&:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(4), &:nth-of-type(5) {
+			border-right: 1px solid $brown-150;
+		}
+		@include media-breakpoint-between(md, lg) {
+			&:nth-child(-n+4) {
+				border-bottom: 1px solid $brown-150;
+			}
+			&:nth-of-type(3) {
+				border-right: 1px solid $brown-150;
+			}
+			&:nth-of-type(2), &:nth-of-type(4) {
+				border-right: none;
+			}
+		}
+	}
+}
+
+// Prices
+.sold {
+	background: $red;
+	color: $white;
+	font-size: remCalc(30px);
+	text-transform: uppercase;
+	font-weight: 500;
+	margin-left: -$grid-gutter-width-half;
+	margin-right: -$grid-gutter-width-half;
+	padding: 1rem $grid-gutter-width-half;
+	@include media-breakpoint-up(md) {
+		border-bottom-right-radius: 10px;	
+	}
+	@include media-breakpoint-up(xl) {
+		margin-left: -40px;	
+	}
+}
+.price, .mris {
+	font-size: remCalc(28px);
+}
+
+// Maps
+.sidebar .map {
+	max-width: 640px;
+	max-height: 640px;
+	margin: 0 auto;
+	margin-bottom: 1.25rem;
+	.google_map {
+		width: 100%;
+		overflow: hidden;
+		display: block;
+		position: relative;
+		background-size: cover;
+		height: 0;
+		padding-bottom: 100%;
+		img {
+			width: 640px;
+			height: 640px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-left: -320px; /* Half image width */
+			margin-top: -320px; /* Half image height */
+		}
+	}
+}

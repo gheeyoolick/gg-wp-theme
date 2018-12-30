@@ -5,18 +5,21 @@
 
 get_header(); ?>
 
-<main id="main-content" class="main-content single-content">
+<main id="main-content" class="main-content has-sidebar sidebar-single">
+	
 	<div class="container">
 		<div class="row row-content">
-			<div class="content-main">
-				<section class="content-section content-body content-body-single">
+			
+			<div class="col-md-9 content-main content-single">
 
-					<?php
-					// Start the Loop.
-					while ( have_posts() ) : the_post();
-					?>
+				<?php
+				// Start the Loop.
+				while ( have_posts() ) : the_post();
+				?>
 
-					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+				<header class="header-single">
+					
+					<?php the_title( '<h1>', '</h1>' ); ?>
 					<p class="meta">
 						<?php the_time('F d, Y'); ?>
 						<?php
@@ -26,38 +29,37 @@ get_header(); ?>
 						}
 						?>
 					</p>
-					
-					<div class="addtoany_content">
-						<?php if ( function_exists( 'ADDTOANY_SHARE_SAVE_KIT' ) ) { ADDTOANY_SHARE_SAVE_KIT(); } ?>
-					</div>
-					
-					<?php
-					// Display the feature image
-//					if ( has_post_thumbnail() ) {
-//						the_post_thumbnail( 'large' );
-//					}
-					
-					// Display the content
-					the_content();
-					?>
-					
-					<div class="category-description">
-						<?php echo category_description( get_category_by_slug('press-release')->term_id ); ?>
-					</div>
-					
-					<?php
-					endwhile;
-					?>
 
-					<nav class="article-navigation">
-						<?php previous_post_link( '<span class="prev">%link</span>' ); ?><?php next_post_link( '<span class="next">%link</span>' ); ?>
-					</nav>
+					<?php if ( function_exists( 'ADDTOANY_SHARE_SAVE_KIT' ) ) { ADDTOANY_SHARE_SAVE_KIT(); } ?>
 
-				</section>
+				</header>
+				
+				<?php
+
+				// Display the content
+				the_content();
+				
+				// Display the about text
+				$about = get_field( 'co_about', 'option' );
+				if ( $about ) {
+					echo '<div class="about">' . $about . '</div>';
+				}
+				
+				// End the loop
+				endwhile;
+				?>
+
+				<nav class="pagination nav-posts">
+					<?php previous_post_link( '<span class="prev">%link</span>' ); ?><?php next_post_link( '<span class="next">%link</span>' ); ?>
+				</nav>
+
 			</div>
+			
 			<?php get_sidebar(); ?>
+			
 		</div>
 	</div>
+	
 </main>
 
 <?php get_footer(); ?>

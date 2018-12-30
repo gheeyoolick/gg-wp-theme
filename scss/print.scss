@@ -1,0 +1,55 @@
+/*
+Theme Name: Gulick Group
+Description: Print styles
+*/
+
+// Mixins and variables
+@import "config/mixins";
+@import "config/variables";
+
+@media print {
+	#header-site-print {
+		display: block;
+		.logo {
+			width: 200px;
+			height: auto;
+			margin-bottom: 30px;
+		}
+	}
+	#header-site {
+		display: none;
+	}
+	.sidebar-single {
+		.content-main {
+			flex: 0 0 100%;
+			width: 100%;
+			max-width: 100%;
+			padding-right: 0;
+		}
+		.content-sidebar {
+			display: none;
+		}
+	}
+	.section-connected .module {
+		width: 50%;
+	}
+	.module-more {
+		display: none;
+	}
+	.promo {
+		display: none;
+	}
+	.carousel-indicators, .carousel-control {
+		display: none;
+	}
+	.footer-utility, .footer-social {
+		display: none;
+	}
+	.footer-company {
+		color: $brown-500;
+		padding: 0;
+	}
+	.pagination {
+		padding-bottom: 0;
+	}
+}

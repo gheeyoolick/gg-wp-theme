@@ -1,0 +1,28 @@
+/*
+Theme Name: Gulick Group
+Description: Main styles
+*/
+
+// Mixins and variables
+@import "config/mixins";
+@import "config/variables";
+
+// Bootstrap
+@import "config/bootstrap";
+
+// Core CSS
+@import "partials/type";
+@import "partials/buttons";
+@import "partials/forms";
+@import "partials/scaffolding";
+@import "partials/footer";
+@import "partials/header";
+@import "partials/content-hero";
+@import "partials/content-header-page";
+@import "partials/content-floorplan";
+@import "partials/content-main";
+@import "partials/content-main-collections";
+@import "partials/content-sidebars";
+@import "partials/content-hub";
+@import "partials/content-front-page";
+@import "partials/wordpress";

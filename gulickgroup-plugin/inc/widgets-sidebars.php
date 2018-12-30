@@ -42,18 +42,18 @@ class gulickgroup_widgets_contact extends WP_Widget {
 		echo $before_widget;
 		
 		if ( $phone_override ) {
-			echo '<h4>Call Us</h4>';
-			echo '<p class="callout icon-phone"><a href="tel:' . esc_html($phone_override) . '" >' . esc_html($phone_override) . '</a></p>';
+			echo '<h4 class="heading-section">Call Us</h4>';
+			echo '<p class="callout"><a href="tel:' . esc_html($phone_override) . '" >' . esc_html($phone_override) . '<i class="fas fa-phone"></i></a></p>';
 		} else if ( $phone ) {
-			echo '<h4>Call Us</h4>';
-			echo '<p class="callout icon-phone"><a href="tel:' . esc_html($phone) . '" >' . esc_html($phone) . '</a></p>';
+			echo '<h4 class="heading-section">Call Us</h4>';
+			echo '<p class="callout"><a href="tel:' . esc_html($phone) . '" >' . esc_html($phone) . '<i class="fas fa-phone"></i></a></p>';
 		}
 		
 		if ( $team_override ) {
-			echo '<h4>Sales Team</h4>';
+			echo '<h4 class="heading-section">Sales Team</h4>';
 			echo wpautop( $team_override );
 		} else if ( $team ) {
-			echo '<h4>Sales Team</h4>';
+			echo '<h4 class="heading-section">Sales Team</h4>';
 			echo wpautop( $team );
 		}
 		
@@ -71,7 +71,7 @@ function gulickgroup_widgets_init() {
 		'description' => __( 'Common sidebar for Communities, Homes & Quick Deliveries', 'gulickgroup' ),
 		'before_widget' => '<div class="sidebar">',
 		'after_widget' => '</div>',
-		'before_title' => '<h4>',
+		'before_title' => '<h4 class="heading-section">',
 		'after_title' => '</h4>',
 	) );
 	
@@ -81,18 +81,8 @@ function gulickgroup_widgets_init() {
 		'description' => __( 'Common sidebar for all Posts and Pages', 'gulickgroup' ),
 		'before_widget' => '<div class="sidebar">',
 		'after_widget' => '</div>',
-		'before_title' => '<h4>',
+		'before_title' => '<h4 class="heading-section">',
 		'after_title' => '</h4>',
-	) );
-	
-	register_sidebar( array (
-		'name' => __( 'Floorplan Disclaimer', 'gulickgroup' ),
-		'id' => 'floorplan-disclaimer',
-		'description' => __( 'Common disclaimer text for Floorplan slideshows', 'gulickgroup' ),
-		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '',
-		'after_title' => '',
 	) );
 	
     register_widget( 'gulickgroup_widgets_contact' );
