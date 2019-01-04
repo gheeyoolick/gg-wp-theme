@@ -40,7 +40,7 @@ function gulickgroup_scripts() {
 	wp_enqueue_style( 'gulickgroup-fontawesome', '//pro.fontawesome.com/releases/v5.5.0/css/all.css', array(), '5.5.0', 'all' );
 	
 	// Set version for site css and js
-	$code_ver = '2.0.1';
+	$code_ver = '2.0.4';
 	
 	// Add Main Stylesheets
 	wp_enqueue_style( 'gulickgroup-style-main', get_template_directory_uri() . '/css/main.css', false, $code_ver, 'all' );

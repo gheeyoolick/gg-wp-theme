@@ -21,7 +21,7 @@ if ($sec_title) {
 			</header>
 		</div>
 		<div class="row">
-			<div class="col">
+			<div class="col-12">
 				
 				<article class="module module-section">
 					<div class="module-text">

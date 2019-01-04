@@ -65,6 +65,9 @@
 	}
 	
 	@include link-medium();
+	a {
+		border-bottom: 1px solid $brown-200;
+	}
 	
 	ul {
 		list-style: none;

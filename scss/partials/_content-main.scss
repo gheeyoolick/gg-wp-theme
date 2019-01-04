@@ -27,6 +27,14 @@
 // Main content single post/page
 .content-single {
 	@include link-text-block();
+	.btn {
+		color: $white;
+		border-bottom: none;
+		&:hover, &:focus {
+			color: $white;
+			border-bottom: none;
+		}
+	}
 	color: $brown-600;
 	> ul {
 		list-style: none;
@@ -122,6 +130,7 @@
 		margin-top: 3rem;
 	}
 	//font-size: remCalc(14px);
+	@include link-dark();
 	.page-numbers {
 		border-left: $line;
 		padding: 0 .5rem 0 1rem;
@@ -130,7 +139,8 @@
 		}
 	}
 	a {
-		text-decoration: none !important;
+		text-decoration: none;
+		border-bottom: 1px solid $white;
 	}
 	> a:nth-child(2) {
 		border-left: $line;
@@ -146,6 +156,22 @@
 		border-left: $line;
 		padding-left: 1rem;
 		margin-left: 1rem;
+	}
+	&.nav-posts {
+		.prev, .next {
+			width: 50%;
+			display: inline-block;
+			vertical-align: top;
+		}
+		.prev {
+			padding-right: .5rem;
+		}
+		.next {
+			text-align: right;
+			border-left: none;
+			margin-left: 0;
+			padding-left: .5rem;
+		}
 	}
 }
 .prev::before, .next::after {

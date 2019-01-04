@@ -6,10 +6,13 @@
 
 <?php if ( is_front_page() ) {
 	
+	get_template_part( 'template-parts/content', 'promo' );
+	
 } else {
 	
+get_template_part( 'template-parts/content', 'promo' );
+
 ?>
-<?php get_template_part( 'template-parts/content', 'promo' ); ?>
 
 <header class="header-page">
 	<div class="container">

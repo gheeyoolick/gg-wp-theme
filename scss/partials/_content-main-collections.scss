@@ -68,8 +68,8 @@
 .module {
 	background: $white;
 	@include shadow(0 0 3px rgba(0,0,0,0.15));
-	display: flex;
-	flex-direction: column;
+//	display: flex;
+//	flex-direction: column;
 	margin-bottom: 1.5rem;
 	
 	// animate on scroll
@@ -98,6 +98,7 @@
 	}
 	@include media-breakpoint-up(lg) {
 		.section-connected & {
+			display: flex;
 			flex-direction: row;
 			.module-image, .module-text {
 				width: 50%;
@@ -148,6 +149,8 @@
 	
 	// Module section
 	&.module-section {
+		display: flex;
+		flex-direction: column;
 		.module-text {
 			text-align: center;
 			padding: 1.5rem 2rem;

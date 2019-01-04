@@ -47,7 +47,8 @@ p + h1, p + h2, p + h3 {
 
 a {
 	color: $brown-900;
-	text-decoration: underline;
+	//text-decoration: underline;
+	border-bottom: 1px solid $brown-300;
 }
 
 p {

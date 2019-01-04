@@ -83,6 +83,7 @@ a.skip-link {
 		background-image: url(../images/GulickGroup-logo-tagline.svg);
 		background-size: 240px 139px;
 		margin-top: -94px;
+		//display: flex !important;
 		.header-scrolling & {
 			background-image: url(../images/GulickGroup-logo-gs.svg);
 			width: 44px;
@@ -140,11 +141,13 @@ a.skip-link {
 	@include transition(all .1s);
 	@include media-breakpoint-up(md) {
 		opacity: 0;
-		position: absolute;
-		top: -200px;
+		//position: absolute;
+		//top: -200px;
+		display: none;
 		.header-scrolling & {
-			position: static;
-			top: auto;
+			display: flex;
+			//position: static;
+			//top: auto;
 			margin-top: 2px;
 			margin-left: 2rem;
 			opacity: 1;

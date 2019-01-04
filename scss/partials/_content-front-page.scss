@@ -15,9 +15,12 @@
 	}
 	a:not(.btn) {
 		color: $white;
-		text-decoration: underline;
+		//text-decoration: underline;
+		border-bottom: 1px solid $white;
 		&:hover, &:focus {
 			color: $brown-200;
+			border-bottom: 1px solid $brown-200;
+			text-decoration: none !important;
 		}
 	}
 	span {
@@ -35,6 +38,11 @@
 		.col {
 			padding-top: 1.5rem;
 			padding-bottom: 1.5rem;
+		}
+		// account for promo tab
+		.col-btn-left {
+			text-align: left;
+			padding-left: 0;
 		}
 	}
 }

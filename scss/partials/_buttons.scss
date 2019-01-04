@@ -5,6 +5,13 @@
 	font-size: $btn-font-size;
 }
 
+.btn-primary, .btn-secondary {
+	&:hover, &:focus {
+		background-color: $link-hover-color;
+		border-color: $link-hover-color;
+	}
+}
+
 button {
 	background-color: $white;
 }
