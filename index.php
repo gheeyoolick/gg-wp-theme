@@ -14,7 +14,7 @@ get_template_part( 'template-parts/content', 'header-text' );
 	<div class="container">
 		<div class="row row-content">
 			
-			<div class="col-md-9 content-main">
+			<div class="col-lg-9 content-main">
 					
 					<?php
 					// Start the Loop.

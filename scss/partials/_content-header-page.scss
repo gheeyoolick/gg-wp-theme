@@ -12,6 +12,9 @@
 	}
 	h1 {
 		margin: 0 0 .35rem 0;
+		@include media-breakpoint-down(md) {
+			margin-top: .5rem;	
+		}
 	}
 	h2 {
 		color: $brown-500;

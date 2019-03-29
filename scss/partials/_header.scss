@@ -113,7 +113,7 @@ a.skip-link {
 // Search
 .navbar-nav-search {
 	display: none;
-	@include media-breakpoint-up(md) {
+	@include media-breakpoint-up(lg) {
 		display: block;
 		.site-search {
 			padding: .25rem .75rem .75rem .75rem;
@@ -121,7 +121,7 @@ a.skip-link {
 	}
 }
 #navbarSearch {
-	@include media-breakpoint-up(md) {
+	@include media-breakpoint-up(lg) {
 		display: none !important;
 	}
 }

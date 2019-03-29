@@ -159,6 +159,6 @@ $font-size-base-calc: 16px;
 // Caption
 @mixin caption-text() {
 	color: $brown-500;
-	font-size: remCalc(13px);
-	line-height: 1.7;
+	font-size: remCalc(14px);
+	line-height: 1.6;
 }

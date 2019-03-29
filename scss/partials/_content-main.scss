@@ -57,7 +57,7 @@
 
 	@include media-breakpoint-down(md) {
 		// adjust font sizes for mobile
-		font-size: remCalc(14px);
+		//font-size: remCalc(14px);
 	}
 }
 
@@ -71,7 +71,7 @@
 
 // Article list
 .article-summary {
-	font-size: remCalc(13px);
+	font-size: remCalc(15px);
 	border-top: $line;
 	padding-top: 2.25rem;
 	margin-bottom: 1rem;
@@ -82,11 +82,11 @@
 		border-top: none;
 	}
 	h3 {
-		font-size: remCalc(22px);
+		font-size: remCalc(24px);
 		margin-bottom: .75rem;
 	}
 	h4 {
-		font-size: remCalc(13px);
+		font-size: remCalc(14px);
 		color: $brown-500;
 		margin-bottom: 1.25rem;
 	}

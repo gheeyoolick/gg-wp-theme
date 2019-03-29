@@ -116,3 +116,22 @@ body .gform_wrapper .top_label div.ginput_container {
 	padding: $btn-padding-y-lg $btn-padding-x-lg !important;
 	line-height: $btn-line-height-lg !important;
 }
+
+// CAPTCHA
+.ginput_recaptcha {
+	margin-bottom: 1rem;
+	@include media-breakpoint-up(md) {
+		margin-bottom: .5rem;	
+	}
+	@include media-breakpoint-up(lg) {
+		transform-origin: 0 0;
+		-webkit-transform-origin: 0 0;
+		transform: scale(0.64);
+		-webkit-transform: scale(0.64);
+		margin-bottom: 0;
+	}
+	@include media-breakpoint-up(xl) {
+		transform: scale(0.74);
+		-webkit-transform: scale(0.74);
+	}
+}
