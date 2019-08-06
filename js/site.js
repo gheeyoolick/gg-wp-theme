@@ -54,11 +54,11 @@ jQuery(document).ready(function($){
 				$(this).addClass('loaded');
 			}
 		});
-		$('.single .intro').each(function() {
-			if (isScrolledIntoView(this) === true) {
-				$(this).addClass('loaded');
-			}
-		});
+//		$('.single .intro').each(function() {
+//			if (isScrolledIntoView(this) === true) {
+//				$(this).addClass('loaded');
+//			}
+//		});
 	});
 	
 });

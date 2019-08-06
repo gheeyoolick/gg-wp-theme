@@ -127,14 +127,14 @@ h4.heading-section {
 	}
 	@include link-text-block();
 }
-.single .intro {
-	// animate on scroll
-	opacity: 0;
-	@include transition(all .5s ease-in);
-	&.loaded {
-		opacity: 1;
-	}
-	@include media-breakpoint-down(sm) {
-		opacity: 1;
-	}
-}
+//.single .intro {
+//	// animate on scroll
+//	opacity: 0;
+//	@include transition(all .5s ease-in);
+//	&.loaded {
+//		opacity: 1;
+//	}
+//	@include media-breakpoint-down(sm) {
+//		opacity: 1;
+//	}
+//}

@@ -1,6 +1,6 @@
 {
 	"name": "gulick-group",
-	"version": "2.0.0",
+	"version": "2.0.9",
 	"description": "Gulick Group Wordpress Theme",
 	"main": "index.js",
 	"scripts": {
