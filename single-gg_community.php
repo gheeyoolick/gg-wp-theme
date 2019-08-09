@@ -18,6 +18,9 @@ get_template_part( 'template-parts/content', 'header' );
 			<aside class="col-md-4 order-md-last content-sidebar" role="complementary">
 				<?php
 				
+				// Get intro (mobile only)
+				get_template_part( 'template-parts/content', 'intro' );
+				
 				// Bullets
 				get_template_part( 'template-parts/content', 'bullets' );
 				

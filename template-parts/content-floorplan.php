@@ -48,14 +48,7 @@ if( $floorplan_slideshow ) : ?>
 								</div>
 						<?php endforeach; ?>
 									
-						<div class="floorplan-disclaimer">
-							<?php
-							$disclaimer = get_field( 'floorplan_disclaimer', 'option' );
-							if ($disclaimer) {
-								echo $disclaimer;
-							}
-							?>
-						</div>
+						
 
 					</div>
 
@@ -69,6 +62,14 @@ if( $floorplan_slideshow ) : ?>
 						<span class="sr-only">Next</span>
 					</a>
 
+				</div>
+				<div class="floorplan-disclaimer">
+					<?php
+					$disclaimer = get_field( 'floorplan_disclaimer', 'option' );
+					if ($disclaimer) {
+						echo $disclaimer;
+					}
+					?>
 				</div>
 			</div>
 		</div>

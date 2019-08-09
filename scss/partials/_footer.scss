@@ -19,10 +19,13 @@
 	background: $white;
 	padding: 2rem 0;
 	@include link-medium();
+	line-height: 1.1;
 	a {
 		border-bottom: 1px solid $white;
 	}
-	line-height: 1.1;
+	.footer-logo a {
+		border: none;
+	}
 }
 
 .footer-utility {
@@ -97,6 +100,7 @@
 		}
 	}
 	@include media-breakpoint-up(xl) {
+		font-size: remCalc(12px);
 		.phone {
 			display: inline;
 			margin-left: 1.4rem;

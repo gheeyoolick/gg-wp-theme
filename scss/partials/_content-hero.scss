@@ -105,6 +105,8 @@
 			}
 		}
 	}
+}
+.hero .carousel-indicators {
 	@include media-breakpoint-down(sm) {
 		justify-content: flex-start;
 		flex-wrap: wrap;
