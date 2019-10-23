@@ -96,3 +96,22 @@ body {
 		display: none;
 	}
 }
+
+// Address font awesome conflict with Juicer
+[class^="fa-"]:before, [class*=" fa-"]:before {
+	font-family: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+//    speak: none;
+//    display: inline-block;
+//    text-decoration: inherit;
+    width: auto;
+    margin-right: 0;
+//    text-align: center;
+    font-variant:  inherit;
+//    text-transform: none;
+    line-height: inherit;
+    margin-left: 0;
+//    -webkit-font-smoothing: antialiased;
+//    -moz-osx-font-smoothing: grayscale;
+}

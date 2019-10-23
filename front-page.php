@@ -18,7 +18,7 @@ if ($news) { ?>
 				<?php echo '<a href="' . $news['url'] . '" target="' . $news['target'] . '">' . $news['title'] . '</a>'; ?>
 			</div>
 			<div class="col col-btn <?php if( $promo_text ) { echo 'col-btn-left'; } ?>">
-				<a href="<?php echo esc_url( home_url( '/news/' ) ); ?>" class="btn btn-primary">see all news</a>
+				<a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>" class="btn btn-primary">see all news</a>
 			</div>
 		</div>
 	</div>

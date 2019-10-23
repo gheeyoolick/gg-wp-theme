@@ -12,6 +12,11 @@ jQuery(document).ready(function($){
 		}
 	});
 	
+	// Animate Info Button
+	$( window ).load(function() {
+		$('#btnMoreInfo').addClass('loaded');
+	});
+	
 	// Limit max height of hero container to screen height
 	/*var pageHeight = $(window).height();
 	var navHeight = pageHeight - 110; // based on height of nav bar
@@ -35,6 +40,11 @@ jQuery(document).ready(function($){
 		$( this ).parent( '.load-button' ).addClass( 'off' );
 		$( this ).parent( '.load-button' ).siblings( '.off' ).removeClass( 'off' );
 	});
+	
+	// Add active to Blog Menu item
+	$( 'body.single-post .nav-item.blog' ).addClass( 'active' );
+	$( 'body.category .nav-item.blog' ).addClass( 'active' );
+	$( 'body.blog .nav-item.blog' ).addClass( 'active' );
 	
 	// Check if element is scrolled into view
 	function isScrolledIntoView(elem) {

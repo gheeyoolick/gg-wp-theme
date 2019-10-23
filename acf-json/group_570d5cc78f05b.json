@@ -136,7 +136,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-index.php"
+                "value": "template-features.php"
             }
         ],
         [
@@ -157,5 +157,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1545415212
+    "modified": 1568827664
 }

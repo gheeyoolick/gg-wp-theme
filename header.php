@@ -22,6 +22,10 @@ The theme header file.
 </head>
 <body <?php body_class(); ?>>
 	<a href="#main-content" class="sr-only sr-only-focusable skip-link">Skip to main content</a>
+	<?php
+	$button = get_field( 'info_button', 'option' );
+	if ( $button ) { get_template_part( 'template-parts/content', 'moreinfo' ); }
+	?>
 	<header id="header-site" class="header-site">
 			
 		<nav class="navbar navbar-expand-lg navbar-light" role="navigation">
@@ -43,6 +47,13 @@ The theme header file.
 				<div class="collapse navbar-collapse" id="navbarGlobal">
 					
 					<?php
+					// More Information button
+					if ( $button ) { ?>
+					<button type="button" id="btnMoreInfo" class="btn btn-success" data-toggle="modal" data-target="#moreInfoModal">
+						<i class="fas fa-arrow-circle-right"></i><?php echo $button; ?>
+					</button>
+					<?php	
+					}
 					
 					// Social Links
 					if( have_rows('social_set', 'option') ):

@@ -12,6 +12,13 @@
 	}
 }
 
+.btn-success {
+	&:hover, &:focus {
+		background-color: $link-color;
+		border-color: $link-color;
+	}
+}
+
 button {
 	background-color: $white;
 }

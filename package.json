@@ -4,7 +4,7 @@
 	"description": "Gulick Group Wordpress Theme",
 	"main": "index.js",
 	"scripts": {
-			"watch": "node-sass --watch scss/ --output css --output-style=expanded",
+			"watch": "node-sass --watch scss/ --output css --output-style=compressed",
 			"build": "node-sass scss/ --output css --output-style=expanded",
 			"prod": "node-sass scss/ --output css --output-style=compressed",
 			"sync": "browser-sync start --proxy gulickgroup.wp.local --files '*.php' 'style.css'",

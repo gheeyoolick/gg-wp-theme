@@ -170,7 +170,9 @@
             "max_width": "",
             "max_height": "",
             "max_size": "",
-            "mime_types": ""
+            "mime_types": "",
+            "return_format": "array",
+            "preview_size": "medium"
         }
     ],
     "location": [
@@ -183,7 +185,7 @@
             {
                 "param": "page_template",
                 "operator": "!=",
-                "value": "page-hub.php"
+                "value": "template-hub.php"
             }
         ],
         [
@@ -216,5 +218,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1545414715
+    "modified": 1568827703
 }

@@ -135,3 +135,78 @@ body .gform_wrapper .top_label div.ginput_container {
 		-webkit-transform: scale(0.74);
 	}
 }
+
+// More Info Modal
+.modal-header {
+	background-color: $orange;
+	background-image: url(../images/GulickGroup-logo-gs-white.svg);
+	background-repeat: no-repeat;
+	background-position: -35px -15px;
+	@include antialiased();
+	h5 {
+		font-size: remCalc(17px);
+		font-weight: 500;
+		color: $white;
+		width: 100%;
+		text-align: center;
+	}
+	.close {
+		position: absolute;
+		right: 0;
+		top: 0;
+		margin: 0;
+		font-size: 16px;
+		color: $white;
+		font-weight: 400;
+		text-shadow: none;
+		opacity: 1;
+		&:not(:disabled):not(.disabled):hover, &:not(:disabled):not(.disabled):focus {
+			color: $white;
+			opacity: 0.5;
+		}
+	}
+}
+.modal-body {
+	padding-top: 2rem;
+	input {
+		width: 100% !important;
+	}
+	.gform_wrapper ul.gform_fields li.gfield {
+		padding-right:  0 !important;
+	}
+	.gform_wrapper span.gform_description {
+		color: $brown-900;
+		width: 100% !important;
+		font-size: remCalc(14px);
+		margin-bottom: 0 !important;
+	}
+	body & .gform_wrapper .top_label div.ginput_container {
+		margin-top: 20px !important;
+	}
+	.gform_wrapper {
+		margin: 0 !important;
+	}
+	.gform_wrapper .gform_footer {
+		padding: 0 !important;
+		margin-top: 24px !important;
+	}
+	.gform_wrapper .gform_footer input.button, .gform_wrapper .gform_footer input[type=submit], .gform_wrapper .gform_page_footer input.button, .gform_wrapper .gform_page_footer input[type=submit] {
+		width: 100% !important;
+		display: block !important;
+		margin: 0 !important;
+	}
+	.gform_button {
+		font-size: remCalc(16px) !important;
+		font-weight: 500 !important;
+		background: $primary;
+		border: 1px solid $primary;
+		@include antialiased();
+		padding-top: .3rem !important;
+		padding-bottom: .3rem !important;
+		cursor: pointer;
+		&:hover {
+			background: $success;
+			border-color: $success;
+		}
+	}
+}

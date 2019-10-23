@@ -68,7 +68,7 @@
             {
                 "param": "page_template",
                 "operator": "!=",
-                "value": "page-hub.php"
+                "value": "template-hub.php"
             },
             {
                 "param": "page_type",
@@ -90,5 +90,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1545416422
+    "modified": 1568827729
 }

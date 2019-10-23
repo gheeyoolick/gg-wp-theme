@@ -58,6 +58,7 @@ a.skip-link {
 }
 
 #navbarGlobal {
+	position: relative;
 	@include media-breakpoint-down(md) {
 		overflow-y: auto;
 		max-height: calc(100vh - #{$navbar-header-height-sm});
@@ -133,24 +134,34 @@ a.skip-link {
 		padding-right: .25rem;
 	}
 	.nav-link {
-		padding-left: .5rem !important;
-		padding-right: .5rem !important;
-		font-size: 14px;
+		padding-left: .6rem !important;
+		padding-right: .6rem !important;
+		font-size: 16px;
 	}
 	flex-direction: row;
 	@include transition(all .1s);
-	@include media-breakpoint-up(md) {
+	@include media-breakpoint-up(lg) {
 		opacity: 0;
-		//position: absolute;
-		//top: -200px;
 		display: none;
+		.nav-link {
+			padding-left: .35rem !important;
+			padding-right: .35rem !important;
+			font-size: 14px;
+		}
 		.header-scrolling & {
 			display: flex;
-			//position: static;
-			//top: auto;
 			margin-top: 2px;
-			margin-left: 2rem;
+			margin-left: 1rem;
 			opacity: 1;
+		}
+	}
+	@include media-breakpoint-up(xl) {
+		.header-scrolling & {
+			margin-left: 2rem;
+		}
+		.nav-link {
+			padding-left: .5rem !important;
+			padding-right: .5rem !important;
 		}
 	}
 }
@@ -275,5 +286,42 @@ a.skip-link {
 	}
 	.active > .nav-link span:after {
 		display: none !important;
+	}
+}
+
+// More Info button
+#btnMoreInfo {
+	@include transition(all .4s);
+	opacity: 0;
+	position: absolute;
+	right: 0;
+	top: -140px;
+	padding-left: .5rem;
+	z-index: 910;
+	padding-bottom: .2rem;
+	&.loaded {
+		opacity: 1;
+		top: -40px;
+	}
+	i {
+		margin-right: .35rem;
+		font-size: 14px;
+	}
+	@include media-breakpoint-down(lg) {
+		&.loaded {
+			top: -33px;
+		}
+	}
+	@include media-breakpoint-down(md) {
+		position: static;
+		top: auto;
+		right: auto;
+		margin: .65rem 0;
+	}
+	@include media-breakpoint-up(lg) {
+		.header-scrolling &.loaded {
+			top: 62px;
+			border-radius: 0 0 $btn-border-radius $btn-border-radius;
+		}
 	}
 }

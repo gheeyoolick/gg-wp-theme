@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Features Index
+ * Template Name: Features
  */
 
 get_header();

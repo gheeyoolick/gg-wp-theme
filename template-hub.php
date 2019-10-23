@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: News & Media Hub
+ * Template Name: Blog Hub
  */
 
 get_header();
@@ -34,6 +34,14 @@ get_template_part( 'template-parts/content', 'header-text' );
 								
 									<div class="article-text">
 										<h2 class="h3"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+										<?php
+										$cats = get_the_category();
+										if ( $cats != null ){
+											foreach( $cats as $cat ):
+												echo '<h4><a class="article-category" href="'.get_category_link( $cat->term_id ).'">'.$cat->name.'</a></h4>';
+											endforeach;
+										}
+										?>
 										<?php the_excerpt(); ?>
 									</div>
 								
@@ -52,7 +60,7 @@ get_template_part( 'template-parts/content', 'header-text' );
 				
 					<section class="col-md-6 section-hub-news">
 							
-						<h2 class="heading-section">Announcements</h2>
+						<h2 class="heading-section">Latest Posts</h2>
 
 						<?php
 						$args2 = array(
@@ -70,7 +78,7 @@ get_template_part( 'template-parts/content', 'header-text' );
 						?>
 
 						<article class="article-summary">
-							<a class="more-link" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">see more announcements</a>
+							<a class="more-link" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">see all posts</a>
 						</article>
 
 					</section>
