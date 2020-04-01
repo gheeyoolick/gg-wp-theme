@@ -12,6 +12,8 @@
 // Feature
 .section-hub-feature {
 	.article-summary {
+		border-top: 0;
+		padding-top: 0;
 		@include media-breakpoint-down(md) {
 			flex-direction: column;
 			img {
@@ -31,6 +33,18 @@
 			img {
 				max-width: 420px;
 			}
+		}
+	}
+	.article-sticky + .article-summary {
+		padding-top: 3rem;
+	}
+	.article-sticky {
+		background: $gray-100;
+		padding: 1.25rem;
+		margin-bottom: 1rem;
+		border-left: 3px solid $orange;
+		.h4 {
+			margin-bottom: 0;
 		}
 	}
 }

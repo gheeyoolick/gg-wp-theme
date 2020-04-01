@@ -19,17 +19,50 @@ get_template_part( 'template-parts/content', 'header-text' );
 				<div class="row">
 					
 					<section class="col section-hub-feature">
-				
-							<article class="article-summary">
 								
-								<?php
-								$args1 = array(
-									'posts_per_page' => 1,
-								);
-								
-								$blogpost = get_posts( $args1 );
-								foreach ( $blogpost as $post ) : setup_postdata( $post );
+						<?php
+						// Get all sticky posts
+						
+						$sticky = get_option( 'sticky_posts' );
+						$args1 = array(
+							'posts_per_page' => -1,
+							'post__in' => $sticky,
+						);
+
+						$query = new WP_Query( $args1 );
+
+						if ( $query->have_posts() && ( $sticky ) ) {
+
+							while ( $query->have_posts() ) : $query->the_post();
+							
+							?>
+
+								<article class="article-sticky">
+									<h2 class="h4"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+								</article>
+
+							<?php
+							endwhile;
+							wp_reset_postdata();
+						}
+						?>
+						
+						<article class="article-summary">
+							<?php
+							// Get the latest post that is not sticky
+							
+							$args2 = array(
+								'posts_per_page' => 1,
+								'post__not_in' => $sticky,
+							);
+
+							$query = new WP_Query( $args2 );
+
+							if ( $query->have_posts() ) {
+
+								while ( $query->have_posts() ) : $query->the_post();
 								?>
+
 									<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail('medium_large', array('class' => 'img-fluid') ); ?></a>
 								
 									<div class="article-text">
@@ -44,13 +77,14 @@ get_template_part( 'template-parts/content', 'header-text' );
 										?>
 										<?php the_excerpt(); ?>
 									</div>
-								
+
 								<?php
-								endforeach; 
+								endwhile;
 								wp_reset_postdata();
-								?>
-								
-							</article>
+							}
+							?>
+							
+						</article>
 					
 					</section>
 					
@@ -63,18 +97,24 @@ get_template_part( 'template-parts/content', 'header-text' );
 						<h2 class="heading-section">Latest Posts</h2>
 
 						<?php
-						$args2 = array(
+						// Get the latest 5 posts minus any sticky and very latest
+						$args3 = array(
 							'posts_per_page' => 5,
 							'offset'		 => 1,
+							'post__not_in' => $sticky,
 						);
+						
+						$query3 = new WP_Query( $args3 );
 
-						$blogposts = get_posts( $args2 );
-						foreach ( $blogposts as $post ) : setup_postdata( $post );
+						if ( $query3->have_posts() ) {
+							
+							while ( $query3->have_posts() ) : $query3->the_post();
 
-							get_template_part( 'template-parts/content', 'blog-promo' );
+								get_template_part( 'template-parts/content', 'blog-promo' );
 
-						endforeach; 
-						wp_reset_postdata();
+							endwhile;
+							wp_reset_postdata();
+						}
 						?>
 
 						<article class="article-summary">
